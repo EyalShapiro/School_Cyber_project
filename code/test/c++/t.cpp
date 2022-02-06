@@ -8,7 +8,6 @@ int main() {
   cin >> num1;
   cout << "Please enter num: ";
   cin >> num2;
-
   cout << "num1 % num2 = ";
 
   cout << num1 % num2 << endl;
