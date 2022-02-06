@@ -19,8 +19,8 @@ class Speech:
 
     def __init__(self, text, locat, language='en', file_name='Speech'):
         '''
-        text (str): טקס לקריאה 
-        language (str) : השפה 
+        text (str): טקס לקריאה
+        language (str) : השפה
         file_name(str): שם הקובץ
         locat(str): מיקום הקובץ
         '''
