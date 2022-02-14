@@ -1,23 +1,53 @@
-#import library
-import speech_recognition as sr
+import pyaudio
+import wave
 
-# Initialize recognizer class (for recognizing the speech)
-r = sr.Recognizer()
+# the file name output you want to record into
+filename = "recorded.wav"
+# set the chunk size of 1024 samples
+chunk = 1024
+# sample format
+FORMAT = pyaudio.paInt16
+# mono, change to 2 if you want stereo
+channels = 1
+# 44100 samples per second
+sample_rate = 44100
+record_seconds = 5
 
-# Reading Audio file as source
-# listening the audio file and store in audio_text variable
+# initialize PyAudio object
+p = pyaudio.PyAudio()
 
-with sr.AudioFile('Speech.wav') as source:
+# open stream object as input & output
+stream = p.open(format=FORMAT,
+                channels=channels,
+                rate=sample_rate,
+                input=True,
+                output=True,
+                frames_per_buffer=chunk)
 
-    audio_text = r.listen(source)
+frames = []
+print("Recording...")
+for i in range(int(sample_rate / chunk * record_seconds)):
+    data = stream.read(chunk)
+    # if you want to hear your voice while recording
+    # stream.write(data)
+    frames.append(data)
+print("Finished recording.")
+# stop and close stream
+stream.stop_stream()
+stream.close()
+# terminate pyaudio object
+p.terminate()
 
-# recoginize_() method will throw a request error if the API is unreachable, hence using exception handling
-    try:
-
-        # using google speech recognition
-        text = r.recognize_google(audio_text)
-        print('Converting audio transcripts into text ...')
-        print(text)
-
-    except:
-        print('Sorry.. run again...')
+# save audio file
+# open the file in 'write bytes' mode
+wf = wave.open(filename, "wb")
+# set the channels
+wf.setnchannels(channels)
+# set the sample format
+wf.setsampwidth(p.get_sample_size(FORMAT))
+# set the sample rate
+wf.setframerate(sample_rate)
+# write the frames as bytes
+wf.writeframes(b"".join(frames))
+# close the file
+wf.close()

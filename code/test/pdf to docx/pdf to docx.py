@@ -1,6 +1,8 @@
+# לא עובד
 # Import Libraries
 from pdf2docx import parse
 from typing import Tuple
+import sys
 
 
 def convert_pdf2docx(input_file: str, output_file: str, pages: Tuple = None):
@@ -20,7 +22,6 @@ def convert_pdf2docx(input_file: str, output_file: str, pages: Tuple = None):
 
 
 if __name__ == "__main__":
-    import sys
     input_file = sys.argv[1]
     output_file = sys.argv[2]
     convert_pdf2docx(input_file, output_file)

@@ -39,7 +39,7 @@ def main():
     global text, language
     language = 'en'
     text = 'FIRST® Robotics Competition combines the excitement of sport with the rigors of science and technology. Teams of students are challenged to design, build, and program industrial-size robots and compete for awards, while they also create a team identity, raise funds, hone teamwork skills, and advance respect and appreciation for STEM within the local community.'
-    text = 'שלום לכולם'
+    # text = 'שלום לכולם'
     print("The text that happened : \t\n" + text)
     open(Text_to_mp3(text, language))
 
