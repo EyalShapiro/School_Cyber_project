@@ -17,10 +17,10 @@ class Speech:
         else:
             file_name = list_type[0]+'.mp3'
 
-    def __init__(self, text, location, language='en', file_name='Speech'):
+    def __init__(self, location, text, language='en', file_name='Speech'):
         '''
-        text (str): טקס לקריאה
         location(str): מיקום הקובץ
+        text (str): טקס לקריאה
         language (str) : השפה
         file_name(str): שם הקובץ
         '''

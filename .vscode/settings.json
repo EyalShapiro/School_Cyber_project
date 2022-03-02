@@ -23,5 +23,6 @@
     "**/.*/**",
     "**/.vscode",
     "**/.vscode/**"
-  ]
+  ],
+  "android-dev-ext.trace": true
 }

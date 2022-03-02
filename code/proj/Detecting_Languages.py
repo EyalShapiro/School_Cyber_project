@@ -1,7 +1,7 @@
 # https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
-from googletrans import constants
+import googletrans
 ###########################################
-dict_language = constants.LANGUAGES  # Dictionaries_Language
+dict_language = googletrans.LANGUAGES  # Dictionaries_Language
 ###########################################
 
 
@@ -37,7 +37,7 @@ def print_languages_Kes():
 def main():
     t = Find_Language('hebrew')
     print(t)
-    # print_languages_Kes()
+    print_languages_Kes()
 
 
 if __name__ == '__main__':

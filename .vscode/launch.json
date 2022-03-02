@@ -2,6 +2,20 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "name": "Python: Current File",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Python: Current File",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal"
+    },
+    {
       "name": "(Windows) Launch",
       "type": "cppvsdbg",
       "request": "launch",
@@ -20,9 +34,9 @@
         ""
       ],
       "stopAtEntry": false,
-      "cwd": "c:/Eyal/School_Cyber_project/code/test/c++",
+      "cwd": "c:/Eyal/School_Cyber_project/code/c++/c++",
       "environment": [],
-      "program": "c:/Eyal/School_Cyber_project/code/test/c++/build/Debug/outDebug",
+      "program": "c:/Eyal/School_Cyber_project/code/c++/c++/build/Debug/outDebug",
       "internalConsoleOptions": "openOnSessionStart",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
