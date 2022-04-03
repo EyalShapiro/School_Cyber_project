@@ -24,5 +24,11 @@
     "**/.vscode",
     "**/.vscode/**"
   ],
-  "android-dev-ext.trace": true
+  "android-dev-ext.trace": true,
+  "cSpell.words": [
+    "הפעולה",
+    "והיא",
+    "מחזרה",
+    "קיימת"
+  ]
 }

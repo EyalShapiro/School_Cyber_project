@@ -3,7 +3,6 @@ from hashlib import md5
 
 def deciphering(text):
     # פענוך הצפנה
-    #     text = '000005fab4534d05api_key9a0554259914a86fb9e7eb014e4e5d52permswrite'
     return md5(text.encode()).hexdigest()
 
 
@@ -13,7 +12,12 @@ def Encryption(text):
 
 
 def main():
-    pass
+    t = 'test'
+    print(Encryption(t))
+    t = Encryption(t)
+    print(t)
+    t = deciphering(t)
+    print(t)
 
 
 if __name__ == '__main__':

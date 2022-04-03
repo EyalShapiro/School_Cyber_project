@@ -1,7 +1,14 @@
 import pip
 import platform
-
 from pip import _internal
+import multiprocessing
+
+
+def Cores_computer():
+    '''
+    הפעולה מוצת את כמות הליבות במחשב
+    '''
+    return multiprocessing.cpu_count()
 
 
 def Operating_System():
@@ -40,14 +47,27 @@ def Pip_Install(name_package):
         pip._internal.main(['install', name_package])
 
 
-# Example
+def List_To_Install(list_internal):
+    '''
+   החבילות של רשימה   את מוסיף
+   קיימת לא והיא במידה
+    '''
+    for i in list_internal:
+        if i in list_internal:
+            pass
+        else:
+            Pip_Install(i)
+    return 'Fins install`'
+
+
 def main():
     print('Operating System: ' + Operating_System())
+    print("Quantity cores in computer: ", Cores_computer())
     print('Python Version: ' + GET_Python_Version())
-    print('all ')
-    while True:
-        name_package = input("Enter name for package python\n ->")
-        Pip_Install(name_package)
+    print('all packs'+GET_List_Install())
+    # while True:
+    #     name_package = input("Enter name for package python\n ->")
+    #     Pip_Install(name_package)
 
 
 if __name__ == '__main__':
