@@ -41,7 +41,7 @@ class Speech:
     #     else:
     #         self.file_name = list_type[0]+'.mp3'
 
-    def _Save_Speech(self):
+    def Save_Speech(self):
         '''
         הפעולה שמורת את הקובץ לפי  המיקום
         return
@@ -57,7 +57,7 @@ class Speech:
             print("The file name is incorrect or its type")
             return False
 
-    def _Open_Speech(self):
+    def Play_Sound(self):
         playsound.playsound(self.location)
 #################################################
 
@@ -65,7 +65,9 @@ class Speech:
 def main():
     loc = 'C:\Eyal\School_Cyber_project'
     s = Speech('text', loc)
-    s.save_speech()
+    s.Save_Speech()
+    s.file_type()
+    s.Play_Sound()
 
 
 if __name__ == '__main__':
