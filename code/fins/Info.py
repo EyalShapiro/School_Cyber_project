@@ -3,6 +3,7 @@ from pip import _internal
 import platform
 import multiprocessing
 
+
 class info:
 
     def Get_Operating_System():
@@ -30,8 +31,8 @@ class info:
 
     def Pip_Install(name_package):
         """
-        pip install a python packages
-        package[str]: שם של החבילה
+        pip install a python3 packages
+        name_package[str]: שם של החבילה
         """
         help = 'pip install'
 
