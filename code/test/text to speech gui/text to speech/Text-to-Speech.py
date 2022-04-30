@@ -13,15 +13,16 @@ root.title('TEXT_TO_SPEECH_@python.py_')
 # text variable
 Msg = StringVar()
 
-
 # define function
 
 
 def Text_to_speech():
+    locals = 'C:\Eyal\School_Cyber_project\code\\test\\text to speech gui\\text to speech\python.mp3'
+
     Message = entry_field.get()
     speech = gTTS(text=Message)
-    speech.save('python.mp3')
-    playsound('python.mp3')
+    speech.save(locals)
+    playsound(locals)
 
 
 def Exit():

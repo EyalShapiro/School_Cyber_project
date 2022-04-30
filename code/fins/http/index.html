@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- <link href="default.css" rel="stylesheet" type="text/css"> -->
+<style type="text/css">
+    html {
+        color: #0156f3;
+        background-color: hsl(200, 50%, 20%);
+        color: hsl(200, 20%, 90%);
+
+    }
+
+</style>
+<head>
+    <title>מקריא טקסטים </title>
+</head>
+<script>
+    function readFile(files) {
+        var fileReader = new FileReader();
+        fileReader.readAsArrayBuffer(files[0]);
+        fileReader.onload = function (e) {
+            playAudioFile(e.target.result);
+            console.log(("Filename: '" + files[0].name + "'"), ("(" + ((Math.floor(files[0].size / 1024 / 1024 * 100)) / 100) + " MB)"));
+        }
+    }
+    function playAudioFile(file) {
+        var context = new window.AudioContext();
+        context.decodeAudioData(file, function (buffer) {
+            var source = context.createBufferSource();
+            source.buffer = buffer;
+            source.loop = false;
+            source.connect(context.destination);
+            source.start(0);
+        });
+    }
+</script>
+
+<body>
+    <div id="header">
+        <h1>מקריא טקסטים</h1>
+        <!-- C:\Eyal\School_Cyber_project\code\fins\http\m.jpg -->
+        <img src="m.jpg" alt="tuki" width="350" height="200" align="top" />
+    </div>
+
+    <div id="form">
+        <form id="f1">
+            <!-- <label>שפה: </label>
+            <select name="gender" id="gender">
+                <option value="en">name</option>
+                <label>Enter text:</label> -->
+            <label for="avatar">תרשום תביעה או בחר קובץ טקסט</label>
+            <input type="file" id="avatar" name="avatar" accept="txt/txt ,txt/txt"><!-- הלעת קבצים סוג רק טקסט  -->
+            <textarea name="text" cols="100" rows="15">הקלד כאן את טקסט </textarea>
+            <!--תביעה לרשם  -->
+            </p>
+            <p>
+                <input type="button" name="submit" value=" הקראה" />
+                <input id="audioFileChooser" type="file" value="הקראה" accept="audio" onchange="readFile(this.files);">
+
+                <input type="button" name="reset" id="reset all" value="איפוס">
+            </p>
+            <!-- <p>האם אתה מעוניין בדיוור אלקטרוני?</p>
+                <p>
+                    <input type="radio" name="newsletter" /> כן
+                    <input type="radio" name="newsletter" /> לא
+                </p> -->
+            <input type="image" id="image" alt="download" width="60" height="50" src="download.png">
+
+            <p>
+                <input type="range" list="tickmarks">
+                <datalist id="tickmarks">
+                    <option value="0"></option>
+                    <option value="10"></option>
+                    <option value="20"></option>
+                    <option value="30"></option>
+                    <option value="40"></option>
+                    <option value="50"></option>
+                    <option value="60"></option>
+                    <option value="70"></option>
+                    <option value="80"></option>
+                    <option value="90"></option>
+                    <option value="100"></option>
+                </datalist>
+
+            </p>
+
+        </form>
+    </div>
+</body>
+
+</html>

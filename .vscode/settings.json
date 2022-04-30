@@ -31,6 +31,8 @@
     "טקסט",
     "משתמש",
     "פייתון",
-    "פענוך"
-  ]
+    "פענוך",
+    "תוכי"
+  ],
+  "livePreview.defaultPreviewPath": "/code/fins/http/index.html"
 }

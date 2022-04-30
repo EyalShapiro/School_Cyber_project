@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD//XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>יצירת טופס הרשמה לאתר</title>
+    <link href="formcss.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <div id="header">
+        <h1>אנא הרשמו לאתר כדי לקבל גישה לתכנים נוספים</h1>
+    </div>
+
+    <div id="form">
+        <form id="f1">
+            <p><label>שם פרטי: </label><input type="text" name="firstname" /></p>
+            <p><label>שם משפחה: </label><input name="lastname" type="text" /></p>
+            <p>
+            <p>
+                <label>מין: </label>
+                <select name="gender" id="gender">
+                    <option value="male">זכר</option>
+                    <option value="female">נקבה</option>
+                </select>
+            </p>
+            <label>כמה מילים על עצמך: </label><br />
+            <textarea name="textarea" cols="30" rows="5">
+            </textarea>
+            </p>
+            <p><label>סיסמא: </label><input type="password" name="password" /></p>
+            <p><label>הזן שוב סיסמא: </label><input type="password" name="re-password" /></p>
+
+            <p>נושאים מועדפים: </p>
+            <p>
+                <input type="checkbox" name="basketball" /> כדורסל
+                <input type="checkbox" name="soccer" /> כדורגל
+                <input type="checkbox" name="swim" /> שחיה
+                <input type="checkbox" name="tennis" /> טניס
+            </p>
+
+            <p>האם אתה מעוניין בדיוור אלקטרוני?</p>
+            <p>
+                <input type="radio" name="newsletter" /> כן
+                <input type="radio" name="newsletter" /> לא
+            </p>
+
+            <p>
+                <input type="submit" name="send" id="send-b" value="שלח" />
+                <input type="reset" name="reset" id="reset-b" value="איפוס" />
+            </p>
+        </form>
+    </div>
+</body>
+
+</html>
