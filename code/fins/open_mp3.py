@@ -1,4 +1,4 @@
 import playsound
 
-loc = "D:\Cyber_project\Speech.mp3"  # המיקום הקובץ
+loc = "code/fins/soket/hello.wav"  # המיקום הקובץ
 playsound.playsound(loc)
