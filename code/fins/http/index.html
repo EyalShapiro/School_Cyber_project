@@ -47,16 +47,14 @@
                 <option value="en">name</option>
                 <label>Enter text:</label> -->
             <label for="avatar">תרשום תביעה או בחר קובץ טקסט</label>
-            <input type="file" id="avatar" name="avatar" accept="txt/txt ,txt/txt"><!-- הלעת קבצים סוג רק טקסט  -->
+            <input type="file" id="avatar" name="avatar" accept=".doc,.docx,.txt">
+            <!-- הלעת קבצים סוג רק טקסט  -->
             <textarea name="text" cols="100" rows="15">הקלד כאן את טקסט </textarea>
             <!--תביעה לרשם  -->
             </p>
             <p>
-                <!-- <input type="button" name="submit" value=" הקראה" href="http" /> -->
                 <a type="button" href="vois.html" title="קראה"><input type='button' value="הקראה "></a>
-
-                <input id="audioFileChooser" type="file" value="הקראה" accept="audio" onchange="readFile(this.files);">
-
+                <!-- <input id="audioFileChooser" type="file" value="הקראה" accept="audio" onchange="readFile(this.files);"> -->
                 <input type="button" name="reset" id="reset all" value="איפוס">
             </p>
         </form>
