@@ -108,10 +108,10 @@ def Deciphering_File_Text(name_file):  # file txt RSA
 
 
 def main():
-    file = 'hello.txt'
+    file="test.txt"
     print('File is encrypted⇨ ', Encryption_File_Text(file), '\n')
     print('File is decrypted⇨ ', Deciphering_File_Text(file), '\n')
-
+    
     # text = 'Hello and help'
     # print("original string ⇨ ", text)
     # text = Encryption_String(text)
