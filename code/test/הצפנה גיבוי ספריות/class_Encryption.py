@@ -12,6 +12,7 @@ def main():
     Client_Server = Client_Server_Encryption()
     Main_Server = Main_Server_Encryption()
     file = "hello.wav"
+
     print('File is decrypted⇨ ', Main_Server.Encryption_File_wav(file), '\n')
     print('File is encrypted⇨ ', Client_Server.Deciphering_File_wav(file), '\n')
     # text = 'Hello and help'

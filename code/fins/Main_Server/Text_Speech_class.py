@@ -1,22 +1,21 @@
 from gtts import gTTS
 import gtts
-import playsound
-from playsound import playsound
-
-# הגש בקשה לגוגל כדי לקבל סינתזה
-tts = gtts.gTTS("Hello world")
-# שמור את קובץ השמע
-tts.save("hello.mp3")
-# הפעל את קובץ האודיו
-playsound("hello.mp3")
+import os
+# # הגש בקשה לגוגל כדי לקבל סינתזה
+# tts = gtts.gTTS("Hello world")
+# # שמור את קובץ השמע
+# tts.save("hello.wav")
+# # הפעל את קובץ האודיו
+# playsound("hello.wav")
 
 
 # all available languages along with their IETF tag
-print(gtts.lang.tts_langs())
+print(gTTS.lang.tts_langs())
+
 
 class Text_Speech_class:
 
-    def __init__(self, location, text, language='en', file_name='Speech'):
+    def __init__(self, text, location, language='en', file_name='Speech'):
         '''
         location(str): מיקום הקובץ
         text (str): טקס לקריאה
@@ -25,9 +24,17 @@ class Text_Speech_class:
         '''
         self.text = text
         self.file_name = file_name
+        if location[-1] != "\\":
+            location += '\\'
+            print(location)
         self.location = location
         self.language = language
-
+    def Set_Language(self,language):
+        self.language=language
+    def Set_text(self,text):
+        self.text=text
+    def Get_text(self):
+        return self.text
     def Save_Speech(self):
         '''
         הפעולה שמורת את הקובץ לפי  המיקום
@@ -37,23 +44,22 @@ class Text_Speech_class:
         '''
         obj = gTTS(text=self.text, lang=self.language, slow=False)
         try:
-            obj.save(self.file_name)
+            obj.save(self.location+self.file_name)
             return True
         except:
             # שם הקובץ שגוי או סוג שלו
-            print("The file name is incorrect or its type")
             return False
 
     def Play_Sound(self):
-        playsound.playsound(self.location)
+        os.system(self.location+self.file_name)
+
 #################################################
 
 
 def main():
-    loc = 'C:\Eyal\School_Cyber_project'
-    s = Speech('text', loc)
+    loc = 'code/fins/Main_Server/'
+    s = Text_Speech_class('text', loc)
     s.Save_Speech()
-    s.file_type()
     s.Play_Sound()
 
 

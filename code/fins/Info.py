@@ -1,15 +1,17 @@
-import pip
-from pip import _internal
-import platform
 import multiprocessing
+import os
+import sys
 
-class info:
+print(sys.platform)
+
+
+class Info:
     def Get_Operating_System():
         """
         הפעולה מחזירה את סוג מרחת הפעלה
         וגרסה של מרחת הפעלה שאת משתמש
         """
-        return platform.system() + platform.release()
+        return os.cpu_count()
 
     def Cores_computer():
         ''' 
@@ -21,36 +23,28 @@ class info:
         """
         הפעולה מחזירה את גרסת פייתון שאת משתמש
         """
-        return platform.python_version()
-
-    def Get_List_Install():
-        # מהציג את כל החבילות המותקנות
-        return _internal.main(['list'])
+        return os.system("Python --version")
 
     def Pip_Install(name_package):
         """
         pip install a python3 packages
         name_package[str]: שם של החבילה
         """
-        help = 'pip install'
+        return os.system('pip install '+str(name_package))
 
-        if (help == name_package[0:len(help)]):
-            name_package = name_package[len(help):]
-        if hasattr(pip, 'main'):
-            pip.main(['install', name_package])
-            return True
-        else:
-            _internal.main(['install', name_package])
-            return True
-        return False
+    def This_code_Location():
+        """
+        הפעולה מחזיר את הנתיב לתוכנית שעכשיו מריצה את הסקריפט
+        """
+        return sys.executable()
 
 
 def main():
     # info.Pip_Install(input("Enter name for package python\n ->"))
-    print('all packs \n', info.Get_List_Install())
-    print('Operating System: ', info.Get_Python_Version())
-    print("Quantity cores in computer: ", info.Cores_computer())
-    print('Python Version: ', info.Get_Version())
+    print('Operating System: ', Info.Get_Python_Version())
+    print("Quantity cores in computer: ", Info.Cores_computer())
+    print('Python Version: ', Info.Get_Python_Version())
+    print('code_Location: ', Info.mro())
 
 
 if __name__ == '__main__':

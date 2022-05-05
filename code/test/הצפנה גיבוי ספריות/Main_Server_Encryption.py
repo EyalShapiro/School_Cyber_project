@@ -1,9 +1,11 @@
 from cryptography.fernet import Fernet
 
+
 class Main_Server_Encryption:
-    fernet = Fernet(Fernet.generate_key())
-    file_key = "file_key.key"
-    locate = "code/fins/soket/"
+    def __init__(self, locate="code/fins/soket/"):
+        self.fernet = Fernet(Fernet.generate_key())
+        self.file_key = "file_key.key"
+        self.locate = "code/fins/soket/"
 
     def Deciphering_String(self, text):  # str
         # פענוך הצפנה של טקסט
