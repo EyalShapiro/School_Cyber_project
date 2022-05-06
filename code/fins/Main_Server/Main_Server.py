@@ -1,12 +1,14 @@
-
 import socket
 import os
 from _thread import *
 from threading import *
 from Main_Server_Encryption import *
 from Info import *
+import Text_To_Speech
 ###########################################
 server_encryption = Main_Server_Encryption()
+text_to_speech = Text_To_Speech('text', Info)
+
 ServerSocket = socket.socket()
 host = '127.0.0.1'
 port = 1233
@@ -26,15 +28,27 @@ socket.listen([backlog]):
 אפשר לשרת לקבל חיבורים. אם צוין צבר, הוא חייב להיות לפחות 0 (אם הוא נמוך יותר, הוא מוגדר ל-0);
 הוא מציין את מספר החיבורים הלא מקובלים שהמערכת תאפשר לפני שתסרב לחיבורים חדשים.
 """
-ServerSocket.listen(Info.Cores_computer())
+# ServerSocket.listen(Info.Cores_computer())
+ServerSocket.listen(Info.Cores_computer()//2)
+
 ###########################################
+
+
+def Send_Wav(filename):
+    """
+    מחזר קובץ wav
+    מצפן
+    """
+    global server_encryption
+    return server_encryption.Encryption_File_wav(filename)
 
 
 def threaded_client(connection):
     global server_encryption
     connection.send(str.encode('Welcome to the Servern'))
     while True:
-        data = connection.recv(2048).decode('utf-8')
+        data = connection.recv(2048)
+        data=data.decode('utf-8')
         data = server_encryption.Deciphering_String(data)
         reply = 'Server Says: ' + data
         # print(reply)

@@ -8,6 +8,16 @@ host = '127.0.0.1'
 port = 1233
 ###########################################
 
+
+def Receiving_wav(data, filename):
+    """
+    שומר את מדעיה מתקבל
+    """
+    global client_encryption
+    with open(client_encryption.Get_Locate()+filename, 'wb') as file:
+        file.write()
+
+
 def main():
     print('Waiting for connection')
     try:
@@ -17,7 +27,7 @@ def main():
     Response = ClientSocket.recv(1024)
     while True:
         send_message = input('Say Something: ')
-        send_message=client_encryption.Encryption_String(send_message)
+        send_message = client_encryption.Encryption_String(send_message)
         ClientSocket.send(str.encode(send_message))
         Response = ClientSocket.recv(1024)
         print(Response.decode('utf-8'))

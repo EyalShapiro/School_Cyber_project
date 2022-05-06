@@ -7,11 +7,23 @@ class Client_Server_Encryption:
         self.file_key = "file_key.key"
         self.locate = locate
 
+    def load_key():
+        """
+         טוען את המפתח מהספרייה הנוכחית בשם 'key.key'
+        """
+        return open("key.key", "rb").read()
+
+    def Get_Locate(self):
+        return self.locate
+
+    def Set_Locate(self, location):
+        self.locate = location
+
     def Encryption_String(self, text):  # str
         # הצפנה של טקסט
-        global fernet
-        encMessage = fernet.encrypt(text.encode())
-        return encMessage
+        f = self.fernet
+        encrypted_text = f.encrypt(bytes(text, "UTF-8"))
+        return encrypted_text.decode()
 
     def Encryption_File_Text(self, name_file):  # file txt RSA
         # מצפין את תןכן הקובץ
