@@ -9,8 +9,8 @@ import os
 # playsound("hello.wav")
 
 
-# all available languages along with their IETF tag
-print(gTTS.lang.tts_langs())
+# # all available languages along with their IETF tag
+# print(gTTS.lang.tts_langs())
 
 
 class Text_Speech_class:

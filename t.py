@@ -1,5 +1,2 @@
-from docx import Document
-
-document = Document('test_doc.docx')
-
-print (document.paragraphs)
+import threading
+print(threading.get_ident())

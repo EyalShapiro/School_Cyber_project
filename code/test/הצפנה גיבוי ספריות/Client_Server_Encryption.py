@@ -2,10 +2,10 @@ from cryptography.fernet import Fernet
 
 
 class Client_Server_Encryption:
-    def __init__(self, locate="code/fins/soket/"):
-        self.fernet =Fernet(Fernet.generate_key())
+    def __init__(self, locate="code/fins/"):
+        self.fernet = Fernet(Fernet.generate_key())
         self.file_key = "file_key.key"
-        self.locate = "code/fins/soket/"
+        self.locate = locate
 
     def Encryption_String(self, text):  # str
         # הצפנה של טקסט
