@@ -11,6 +11,7 @@ send_data = File_Data()
 print('Waiting for connection')
 try:
     ClientSocket.connect((host, port))
+    
 except socket.error as e:
     print(str(e))
 ###########################################

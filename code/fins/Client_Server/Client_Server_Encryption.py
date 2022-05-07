@@ -1,11 +1,13 @@
 from cryptography.fernet import Fernet
 ###########################################
 f = Fernet(Fernet.generate_key())
+f = Fernet(f"N__Ys89Ct7kVKc65IgCly9l1nTXqOuxsotMZkqty4L4=")
 ###########################################
 
 
 class Client_Server_Encryption:
     def __init__(self, locate="code/fins/"):
+        global f
         self.fernet = f
         self.file_key = "file_key.key"
         self.locate = locate
@@ -16,10 +18,10 @@ class Client_Server_Encryption:
         """
         return open("key.key", "rb").read()
 
-    def Get_Locate(self):
+    def Get_Locate(self):  # מחזרית את מיקום הקובץ
         return self.locate
 
-    def Set_Locate(self, location):
+    def Set_Locate(self, location):  # מדקן  את מיקום הקובץ
         self.locate = location
 
     def Encrypt_text(self, text):  # str
@@ -80,3 +82,11 @@ class Client_Server_Encryption:
         with open(locate+name_file, 'wb+') as decrypted_file:
             decrypted_file.write(decrypt_file)
         return decrypt_file  # קורא את כל עמידע של קובץ
+
+    def GenerateKey(self):
+        Key = Fernet.generate_key()
+        return Key
+
+
+k = Client_Server_Encryption()
+print(k.GenerateKey())

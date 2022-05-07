@@ -1,10 +1,12 @@
+import googletrans
 from gtts import gTTS
-import gtts
+from gtts import *
 import os
 # https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
-import googletrans
+
 ###########################################
 dict_language = googletrans.LANGUAGES  # Dictionaries_Language
+translator = googletrans.Translator()
 ###########################################
 
 
@@ -21,8 +23,13 @@ dict_language = googletrans.LANGUAGES  # Dictionaries_Language
 
 
 class Text_To_Speech:
+    def Identifies_Languages(text):
+        """
+        הפעולה מקבלת טקסט ומחזיר את מפתח השפה 
+        """
+        return googletrans.Translator().detect("hello world!").lang
 
-    def __init__(self, text, location, language='en', file_name='Speech'):
+    def __init__(self, text, location, file_name='say.wav'):
         '''
         location(str): מיקום הקובץ
         text (str): טקס לקריאה
@@ -35,13 +42,14 @@ class Text_To_Speech:
             location += '\\'
             print(location)
         self.location = location
-        self.language = language
+        self.language = Text_To_Speech.Identifies_Languages(text)
 
     def Set_Language(self, language):
         self.language = language
 
     def Set_text(self, text):
         self.text = text
+        self.language = Text_To_Speech.Identifies_Languages(text)
 
     def Get_text(self):
         return self.text
@@ -62,10 +70,9 @@ class Text_To_Speech:
             return False
 
     def Open_Sound(self):
-        self.Save_Speech()
         os.system(self.location+self.file_name)
 
-    def Find_Language(self,name_language):
+    def Find_Language_key(self, name_language):
         global dict_language  # מילון הם כל השפות
         '''
         name_language[str]= שם של שפה
@@ -83,7 +90,6 @@ class Text_To_Speech:
             print('not find thi language'+language)
         return kes
 
-
     def print_languages_Kes(self):
         global dict_language  # מילון הם כל השפות
         '''
@@ -93,6 +99,23 @@ class Text_To_Speech:
         for kes, language in dict_language.items():
             print('kes=', kes, ': language=', language)
 
+    def Get_Num_Languages(self):
+        """
+        מחזירה את מספר השפות
+        """
+        global dict_language
+        return len(dict_language)
+
+    def Translator_Text(self, language):
+        """
+        הפעולה מחקבלת שפה ומתרגמת את טקסט 
+        הוא מחזר את טקסט מתוגם לאותו שפה 
+        """
+        global translator
+        self.language = language
+        result = translator.translate(self.text, language)
+        self.text = result.text
+        return self.text
 #################################################
 
 
@@ -101,6 +124,8 @@ def main():
     s = Text_To_Speech('text', loc)
     s.Save_Speech()
     s.Open_Sound()
+    print(s.Translator_Text('he'))
+    print(s.Find_Language_key('hebrew'))
 
 
 if __name__ == '__main__':

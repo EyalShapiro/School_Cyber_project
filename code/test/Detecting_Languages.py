@@ -1,7 +1,9 @@
 # https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
 import googletrans
+
 ###########################################
 dict_language = googletrans.LANGUAGES  # Dictionaries_Language
+
 ###########################################
 
 

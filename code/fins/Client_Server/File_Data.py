@@ -1,4 +1,5 @@
 import PyPDF2
+import docx
 
 
 class File_Data():
@@ -13,15 +14,15 @@ class File_Data():
         """מתקן את שם הקובץ"""
         self.file_name = file_name
 
-    def pdf_file(self):
+    def Pdf_File(self):
         """
         מקבלת את שם הקובץ עם הסיומת
             pdf הפעולה קורא את המידע של הקובץ
         str  ומחזריה אותו בתור
         """
         data_str = ''
-        l = self.file_name.split('.')
-        if l[-1] != 'pdf':
+        extension = self.file_name.split('.')
+        if extension[-1] != 'pdf':
             return 'This is Not a correct file'
         # creating a pdf file object
         pdfFileObj = open(self.file_name, 'rb')
@@ -36,20 +37,37 @@ class File_Data():
         pdfFileObj.close()
         return data_str
 
-    def txt_file(self):
+    def Txt_File(self):
         """
         מקבלת את שם הקובץ עם הסיומת
         txt הפעולה קורא את המידע של הקובץ
         str  ומחזריה אותו בתור 
         """
         data_str = ''
-        l = self.file_name.split('.')
-        if l[-1] != 'txt':
+        extension = self.file_name.split('.')
+        if extension[-1] != 'txt':
             return 'This is Not a correct file'
         with open(self.file_name) as f:
             data_str = f.read()
         return data_str
-# לסים את פעולה
+
+    def Docx_File(self):
+        """
+        מקבלת את שם הקובץ עם הסיומת
+        doc or docx הפעולה קורא את המידע של הקובץ
+        str  ומחזריה אותו בתור
+        """
+        data_str = ''
+        extension = self.file_name.split('.')
+
+        if extension[-1] != 'doc' and extension[-1] != 'docx':
+            return 'This is Not a correct file'
+        doc = docx.Document(self.file_name)
+
+        all_paras = doc.paragraphs
+        for pageObj in all_paras:
+            data_str += str(pageObj.text)+'\n'
+        return data_str
 
     def Read_Data(self):
         """
@@ -61,19 +79,28 @@ class File_Data():
          c/c++(Cpp) ב
         ⇊⇊"""
         switcher = {
-            "txt": self.txt_file(),
-            "pdf": self.pdf_file()
+            "txt": self.Txt_File(),
+            "pdf": self.Pdf_File(),
+            "doc": self.Docx_File(),
+            "docx": self.Docx_File()
         }  # סוג קובץ העניין הוא נכון
-        return switcher.get(extension[-1], self.file_name())  # אחר מחזר תוכן רק
+        # אחר מחזר תוכן רק
+        return switcher.get(extension[-1], self.Get_File_Name())
 
 
 def main():
-    txt = File_Data('code\\fins\\test.txt')
-    pdf = File_Data('code\\fins\\test.pdf')
+    txt = File_Data('code/fins/test.txt')
+    pdf = File_Data('code/fins/test.pdf')
 
-    print("txt file :\n", txt.txt_file())
-    print("pdf file :\n", pdf.pdf_file())
-    print(txt.Read_Data())
+    doc = File_Data('code/fins/test.doc')
+    docx = File_Data('code/fins/test.docx')
+    text = File_Data('text')
+    print("txt file :\n", txt.Txt_File())
+    print("pdf file :\n", pdf.Pdf_File())
+    print("doc file :\n", doc.Docx_File())
+    print("docx file :\n", docx.Docx_File())
+
+    print(text.Read_Data())
 
 
 if __name__ == '__main__':

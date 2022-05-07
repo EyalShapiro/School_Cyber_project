@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!-- <?xml version="1.0" encoding="utf-8"?> -->
 <!-- <link href="default.css" rel="stylesheet" type="text/css"> -->
 <style type="text/css">
     html {
@@ -12,7 +12,7 @@
 <head>
     <title>מקריא טקסטים </title>
 </head>
-<script>
+<!-- <script>
     function readFile(files) {
         var fileReader = new FileReader();
         fileReader.readAsArrayBuffer(files[0]);
@@ -31,12 +31,12 @@
             source.start(0);
         });
     }
-</script>
+</script> -->
 <body>
     <div id="header">
         <h1>מקריא טקסטים</h1>
-        <!-- C:\Eyal\School_Cyber_project\code\fins\http\m.jpg -->
-        <img src="m.jpg" alt="tuki" width="350" height="200" align="top" />
+        <!-- C:\Eyal\School_Cyber_project\code\fins\html_client\m.jpg -->
+        <img src="m.jpg" alt="tuki" width="350" height="200"/>
     </div>
 
     <div id="form">
@@ -46,9 +46,9 @@
                 <option value="en">name</option>
                 <label>Enter text:</label> -->
             <label for="avatar">תרשום תביעה או בחר קובץ טקסט</label>
-            <input type="file" id="avatar" name="avatar" accept=".doc,.docx,.txt,pdf">
+            <input action="input" method="post" type="file" id="avatar" name="avatar" accept=".doc,.docx,.txt,pdf">
             <!-- הלעת קבצים סוג רק טקסט  -->
-            <textarea name="text" cols="100" rows="15">הקלד כאן את טקסט </textarea>
+            <textarea action="input" method="post" name="text" cols="100" rows="15">הקלד כאן את טקסט </textarea>
             <!--תביעה לרשם  -->
             </p>
             <p>

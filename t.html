@@ -1,30 +1,20 @@
-<!-- <label for="audioFileChooser">Upload an audio file: </label><br><br>
-<input id="audioFileChooser" type="file" onchange="readFile(this.files);">
+<!DOCTYPE html>
+<html>
 
-<audio controls>
-    <source src="readFile(this.files);" type="audio/*">
-    Your browser does not support the audio tag.
-</audio>
-<script>
-    function readFile(files) {
-        var fileReader = new FileReader();
-        fileReader.readAsArrayBuffer(files[0]);
-        fileReader.onload = function (e) {
-            playAudioFile(e.target.result);
-            console.log(("Filename: '" + files[0].name + "'"), ("(" + ((Math.floor(files[0].size / 1024 / 1024 * 100)) / 100) + " MB)"));
-        }
-    }
-    function playAudioFile(file) {
-        var context = new window.AudioContext();
-        context.decodeAudioData(file, function (buffer) {
-            var source = context.createBufferSource();
-            source.buffer = buffer;
-            source.loop = false;
-            source.connect(context.destination);
-            source.start(0);
-        });
-    }
-</script> -->
-<form action="https://google.com">
-    <input type="submit" value="Go to Google" />
-</form>
+<body>
+    <h1>GeeksforGeeks</h1>
+    <h2>HTML output Tag</h2>
+    <form oninput="sumresult.value = parseInt(A.value)
+				+ parseInt(B.value) + parseInt(C.value)">
+        <input type="number" name="A" value="50" /> +
+        <input type="range" name="B" value="0" /> +
+        <input type="number" name="C" value="50" />
+        <br /> Submit Result:
+        <!-- output tag -->
+        <output name="sumresult" for="A B C"></output>
+        <br>
+        <input type="submit">
+    </form>
+</body>
+
+</html>

@@ -9,7 +9,7 @@ from Info import *
 import Text_To_Speech
 ###########################################
 server_encryption = Main_Server_Encryption()
-text_to_speech = Text_To_Speech('text', Info)
+text_to_speech = Text_To_Speech('text')
 
 ServerSocket = socket.socket()
 host = '127.0.0.1'

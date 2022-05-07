@@ -1,17 +1,22 @@
 from cryptography.fernet import Fernet
 ###########################################
 f = Fernet(Fernet.generate_key())
+f = Fernet(f"N__Ys89Ct7kVKc65IgCly9l1nTXqOuxsotMZkqty4L4=")
+
 ###########################################
+
+
 class Main_Server_Encryption:
     def __init__(self, locate="code/fins/"):
-        self.fernet = Fernet(Fernet.generate_key())
+        global f
+        self.fernet = f
         self.file_key = "file_key.key"
         self.locate = locate
 
-    def Get_Locate(self):
+    def Get_Locate(self):  # מחזרית את מיקום הקובץ
         return self.locate
 
-    def Set_Locate(self, location):
+    def Set_Locate(self, location):  # מדקן  את מיקום הקובץ
         self.locate = location
 
     def load_key():
@@ -73,3 +78,8 @@ class Main_Server_Encryption:
         with open(locate+"encrypted_"+file_name, 'wb') as encrypted_file:
             encrypted_file.write(encrypt_file)
         return encrypt_file  # קורא את כל עמידע של קובץ
+    # def Get_key(self):
+
+    def GenerateKey(self):
+        Key = Fernet.generate_key()
+        return Key
