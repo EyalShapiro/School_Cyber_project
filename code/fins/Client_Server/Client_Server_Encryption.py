@@ -1,9 +1,12 @@
 from cryptography.fernet import Fernet
+###########################################
+f = Fernet(Fernet.generate_key())
+###########################################
 
 
 class Client_Server_Encryption:
     def __init__(self, locate="code/fins/"):
-        self.fernet = Fernet(Fernet.generate_key())
+        self.fernet = f
         self.file_key = "file_key.key"
         self.locate = locate
 
@@ -19,9 +22,8 @@ class Client_Server_Encryption:
     def Set_Locate(self, location):
         self.locate = location
 
-    def Encryption_String(self, text):  # str
+    def Encrypt_text(self, text):  # str
         # הצפנה של טקסט
-        f = self.fernet
         encrypted_text = f.encrypt(bytes(text, "UTF-8"))
         return encrypted_text.decode()
 

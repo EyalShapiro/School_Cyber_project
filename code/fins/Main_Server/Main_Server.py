@@ -2,6 +2,8 @@ import socket
 import os
 from _thread import *
 from threading import *
+
+from grpc import server
 from Main_Server_Encryption import *
 from Info import *
 import Text_To_Speech
@@ -11,7 +13,7 @@ text_to_speech = Text_To_Speech('text', Info)
 
 ServerSocket = socket.socket()
 host = '127.0.0.1'
-port = 1233
+port = 5001
 ThreadCount = 0
 try:
     ServerSocket.bind((host, port))
@@ -29,7 +31,7 @@ socket.listen([backlog]):
 הוא מציין את מספר החיבורים הלא מקובלים שהמערכת תאפשר לפני שתסרב לחיבורים חדשים.
 """
 # ServerSocket.listen(Info.Cores_computer())
-ServerSocket.listen(Info.Cores_computer()//2)
+ServerSocket.listen(4)
 
 ###########################################
 
@@ -41,7 +43,6 @@ def Send_Wav(filename):
     """
     global server_encryption
     return server_encryption.Encryption_File_wav(filename)
-
 
 def threaded_client(connection):
     global server_encryption
@@ -56,8 +57,15 @@ def threaded_client(connection):
             break
         connection.sendall(str.encode(reply))
     connection.close()
-
-
+def Sand_File(filename):
+    """
+    הפעולה מקבלת קובץ wav
+    שולח את קובץ wav
+    """
+    
+    with open(filename, 'rb') as f:
+        file = f.read()
+    return file
 def main():
     global ServerSocket, ThreadCount
     while True:
@@ -67,7 +75,6 @@ def main():
         ThreadCount += 1
         print('Thread Number: ' + str(ThreadCount))
     ServerSocket.close()
-
 
 if __name__ == "__main__":
     main()

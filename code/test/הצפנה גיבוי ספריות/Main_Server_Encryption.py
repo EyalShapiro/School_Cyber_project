@@ -1,6 +1,7 @@
 from cryptography.fernet import Fernet
-
-
+###########################################
+f = Fernet(Fernet.generate_key())
+###########################################
 class Main_Server_Encryption:
     def __init__(self, locate="code/fins/"):
         self.fernet = Fernet(Fernet.generate_key())
@@ -19,9 +20,9 @@ class Main_Server_Encryption:
         """
         return open("key.key", "rb").read()
 
-    def Deciphering_String(self, text):  # str
+    def Decrypt_text(self, text):  # str
         # פענוך הצפנה של טקסט
-        f = self.fernet
+        global f
         decrypt_text = f.decrypt(bytes(text, "UTF-8"))
         return decrypt_text.decode()
 

@@ -1,24 +1,10 @@
-from cryptography.fernet import Fernet
+import os
+# open file for reading
+file='hello.wav'
+f = open(file)
 
-# Put this somewhere safe!
-f = Fernet(Fernet.generate_key())
+# move file cursor to end
+f.seek(0, os.SEEK_END)
 
-
-def Encrypt_text(text):
-    encrypted_text = f.encrypt(bytes(text, "UTF-8"))
-    return encrypted_text.decode()
-
-
-def Decrypt_text(text):
-    decrypt_text = f.decrypt(bytes(text, "UTF-8"))
-    return decrypt_text.decode()
-
-
-# Testing
-text = "test message"
-
-text = Encrypt_text(text)
-print("Encrypted message = ", text)
-
-decrypted_text = Decrypt_text(t)
-print("Decrypted message = ", decrypted_text)
+# get the current cursor position
+print('Size of file is', f.tell(), 'bytes')

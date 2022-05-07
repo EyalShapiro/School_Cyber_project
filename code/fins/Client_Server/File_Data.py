@@ -2,13 +2,15 @@ import PyPDF2
 
 
 class File_Data():
-    def __init__(self, file_name):
+    def __init__(self, file_name=''):
         self.file_name = file_name
 
     def Get_File_Name(self):
+        """מחזיר את שם קובץ"""
         return self.file_name
 
     def Set_File_Name(self, file_name):
+        """מתקן את שם הקובץ"""
         self.file_name = file_name
 
     def pdf_file(self):
@@ -49,7 +51,7 @@ class File_Data():
         return data_str
 # לסים את פעולה
 
-    def Read_File(self):
+    def Read_Data(self):
         """
          הפעולה מקבלת שם של קובץ אם סוג שלו ןמחזיר אתה
         את תוכן לפי זה שהיא שולח לפעולה אמתימה
@@ -62,7 +64,7 @@ class File_Data():
             "txt": self.txt_file(),
             "pdf": self.pdf_file()
         }  # סוג קובץ העניין הוא נכון
-        return switcher.get(extension[-1], "")  # אחר מחזר תוכן רק
+        return switcher.get(extension[-1], self.file_name())  # אחר מחזר תוכן רק
 
 
 def main():
@@ -71,7 +73,7 @@ def main():
 
     print("txt file :\n", txt.txt_file())
     print("pdf file :\n", pdf.pdf_file())
-    print(txt.Read_File())
+    print(txt.Read_Data())
 
 
 if __name__ == '__main__':

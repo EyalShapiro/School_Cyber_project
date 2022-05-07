@@ -1,6 +1,7 @@
 import os
 import sys
 from sys import *
+from tracemalloc import start
 
 
 class Info:
@@ -16,7 +17,6 @@ class Info:
         return sysconfig.get_platform()
 
     def Cores_computer():
-
         ''' 
         הפעולה מחזר את מספר המעבדים במערכת. מחזירה ללא אם לא נקבע.
         '''
@@ -53,14 +53,26 @@ class Info:
         """
         return sys.path()
 
+    def Get_Size_File(filename):
+        """
+        הפעולה מקבלת קובץ
+        הפעולה מחזר את גודל קובץ
+        """
+        # open file for reading
+        file = open(filename)
+        # move file cursor to end
+        file.seek(0, os.SEEK_END)
+        return file.tell()
+
 
 def main():
     # info.Pip_Install(input("Enter name for package python\n ->"))
-    print('file install: ', Info.Install_in_File('test.txt'))
-    print('computer Version', Info.Get_Operating_System())
-    print("Quantity cores in computer: ", Info.Cores_computer())
-    print('Python Version: ', Info.Get_Python_Version())
-    print('code_Location: ', Info.This_code_Location())
+    # print('file install: ', Info.Install_in_File('test.txt'))
+    # print('computer Version', Info.Get_Operating_System())
+    # print("Quantity cores in computer: ", Info.Cores_computer())
+    # print('Python Version: ', Info.Get_Python_Version())
+    # print('code_Location: ', Info.This_code_Location())
+    print('Size of file is', Info.Get_Size_File('hello.wav'), 'bytes')
 
 
 if __name__ == '__main__':
