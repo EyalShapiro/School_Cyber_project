@@ -1,1 +1,113 @@
-<mxfile host="app.diagrams.net" modified="2022-05-07T14:07:40.769Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36" version="18.0.1" etag="sBr3XVtlRsORAU1t6sVF" type="github"><diagram id="gxF4ABLNhizDsrgqhxvt">UzV2zq1wL0osyPDNT0nNUTV2VTV2LsrPL4GwciucU3NyVI0MMlNUjV1UjYwMgFjVyA2HrCFY1qAgsSg1rwSLBiADYTaQg2Y1AA==</diagram></mxfile>
+<mxfile host="app.diagrams.net" modified="2022-05-07T19:55:23.633Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.54 Safari/537.36" etag="a7WHSdAJU05t3C56v3H5" version="18.0.1" type="github">
+  <diagram id="gxF4ABLNhizDsrgqhxvt" name="Page-1">
+    <mxGraphModel dx="1303" dy="2178" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="kKDR_bMhgKnwLCP5Jtrn-47" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;fontColor=#0000FF;" edge="1" parent="1" source="kKDR_bMhgKnwLCP5Jtrn-11">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="65" y="-580" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kKDR_bMhgKnwLCP5Jtrn-11" value="" style="fontColor=#0066CC;verticalAlign=top;verticalLabelPosition=bottom;labelPosition=center;align=center;html=1;outlineConnect=0;fillColor=#CCCCCC;strokeColor=#6881B3;gradientColor=none;gradientDirection=north;strokeWidth=2;shape=mxgraph.networks.rack;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="65" y="-570" width="100" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="kKDR_bMhgKnwLCP5Jtrn-13" value="" style="fontColor=#0066CC;verticalAlign=top;verticalLabelPosition=bottom;labelPosition=center;align=center;html=1;outlineConnect=0;fillColor=#CCCCCC;strokeColor=#6881B3;gradientColor=none;gradientDirection=north;strokeWidth=2;shape=mxgraph.networks.server;" vertex="1" parent="1">
+          <mxGeometry x="285" y="-640" width="210" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="kKDR_bMhgKnwLCP5Jtrn-15" value="" style="fontColor=#0066CC;verticalAlign=top;verticalLabelPosition=bottom;labelPosition=center;align=center;html=1;outlineConnect=0;fillColor=#CCCCCC;strokeColor=#6881B3;gradientColor=none;gradientDirection=north;strokeWidth=2;shape=mxgraph.networks.pc;" vertex="1" parent="1">
+          <mxGeometry x="50" y="-300" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="kKDR_bMhgKnwLCP5Jtrn-22" value="" style="shape=singleArrow;whiteSpace=wrap;html=1;arrowWidth=0.4;arrowSize=0.4;verticalAlign=top;fillColor=#CCCCCC;strokeColor=#6881B3;fontColor=#0066CC;gradientColor=none;gradientDirection=north;strokeWidth=2;rotation=-180;" vertex="1" parent="1">
+          <mxGeometry x="175" y="-530" width="85" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="kKDR_bMhgKnwLCP5Jtrn-25" value="" style="shape=singleArrow;whiteSpace=wrap;html=1;arrowWidth=0.4;arrowSize=0.4;verticalAlign=top;fillColor=#CCCCCC;strokeColor=#6881B3;fontColor=#0066CC;gradientColor=none;gradientDirection=north;strokeWidth=2;rotation=-180;direction=west;" vertex="1" parent="1">
+          <mxGeometry x="175" y="-487.5" width="85" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="kKDR_bMhgKnwLCP5Jtrn-26" value="&lt;h2&gt;&lt;b style=&quot;background-color: rgb(255, 255, 255);&quot;&gt;&lt;font color=&quot;#0000ff&quot;&gt;Main_Server&lt;/font&gt;&lt;/b&gt;&lt;/h2&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="330" y="-645" width="120" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="kKDR_bMhgKnwLCP5Jtrn-27" value="&lt;font style=&quot;background-color: rgb(255, 255, 255);&quot; color=&quot;#0000ff&quot;&gt;Server_Client&lt;/font&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="70" y="-560" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="kKDR_bMhgKnwLCP5Jtrn-28" value="&lt;b&gt;שליחת המידע של הקובץ&lt;/b&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;labelBackgroundColor=#FFFFFF;fontColor=#0000FF;" vertex="1" parent="1">
+          <mxGeometry x="155" y="-550" width="140" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="kKDR_bMhgKnwLCP5Jtrn-29" value="שליחת הטקסט" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;labelBackgroundColor=#FFFFFF;fontColor=#0000FF;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="180" y="-462.5" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="kKDR_bMhgKnwLCP5Jtrn-30" value="קבלת הטקסט המוצפן&lt;br&gt;פענוח הטקסט&lt;br&gt;&amp;nbsp;wav יצירת קובץ&amp;nbsp;&lt;br&gt;&amp;nbsp;wav הצפנת קובץ&amp;nbsp;&lt;br&gt;&amp;nbsp;המוצפן&amp;nbsp; wav&amp;nbsp; שליחת קובץ&amp;nbsp;&lt;br&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;labelBackgroundColor=#FFFFFF;fontColor=#0000FF;" vertex="1" parent="1">
+          <mxGeometry x="315" y="-580" width="150" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="kKDR_bMhgKnwLCP5Jtrn-31" value="&lt;b&gt;Html_Client&lt;/b&gt;&lt;br&gt;הכנסת טקסט/קובץ ע&quot;י המשתמש" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;labelBackgroundColor=#FFFFFF;fontColor=#0000FF;" vertex="1" parent="1">
+          <mxGeometry x="65" y="-290" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kKDR_bMhgKnwLCP5Jtrn-40" value="" style="shape=singleArrow;whiteSpace=wrap;html=1;arrowWidth=0.4;arrowSize=0.4;verticalAlign=top;fillColor=#CCCCCC;strokeColor=#6881B3;fontColor=#0066CC;gradientColor=none;gradientDirection=north;strokeWidth=2;rotation=-180;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="102.5" y="-415" width="25" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="kKDR_bMhgKnwLCP5Jtrn-41" value="" style="shape=singleArrow;whiteSpace=wrap;html=1;arrowWidth=0.4;arrowSize=0.4;verticalAlign=top;fillColor=#CCCCCC;strokeColor=#6881B3;fontColor=#0066CC;gradientColor=none;gradientDirection=north;strokeWidth=2;rotation=-180;direction=north;" vertex="1" parent="1">
+          <mxGeometry x="140" y="-415" width="25" height="107.5" as="geometry" />
+        </mxCell>
+        <mxCell id="kKDR_bMhgKnwLCP5Jtrn-43" value="שליחת הטקסט/הקובץ&lt;br&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;labelBackgroundColor=#FFFFFF;fontColor=#0000FF;rotation=90;" vertex="1" parent="1">
+          <mxGeometry x="30" y="-375" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="kKDR_bMhgKnwLCP5Jtrn-44" value="&amp;nbsp;wev שליחת קובץ ה&amp;nbsp;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;labelBackgroundColor=#FFFFFF;fontColor=#0000FF;rotation=90;" vertex="1" parent="1">
+          <mxGeometry x="127.5" y="-375" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="kKDR_bMhgKnwLCP5Jtrn-45" value="wav קבלת קובץ&amp;nbsp;&lt;br&gt;פענוח הקובץ&lt;br&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;labelBackgroundColor=#FFFFFF;fontColor=#0000FF;" vertex="1" parent="1">
+          <mxGeometry x="70" y="-467.5" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kKDR_bMhgKnwLCP5Jtrn-46" value="קבלת הטקסט/הקובץ&lt;br&gt;פענוח המידע&lt;br&gt;הצפנת טקסט&lt;br&gt;שליחת הטקסט" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;labelBackgroundColor=#FFFFFF;fontColor=#0000FF;" vertex="1" parent="1">
+          <mxGeometry x="60" y="-540" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kKDR_bMhgKnwLCP5Jtrn-48" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;fontColor=#0000FF;" edge="1" parent="1" source="kKDR_bMhgKnwLCP5Jtrn-49">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="645" y="-595" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="kKDR_bMhgKnwLCP5Jtrn-49" value="" style="fontColor=#0066CC;verticalAlign=top;verticalLabelPosition=bottom;labelPosition=center;align=center;html=1;outlineConnect=0;fillColor=#CCCCCC;strokeColor=#6881B3;gradientColor=none;gradientDirection=north;strokeWidth=2;shape=mxgraph.networks.rack;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="645" y="-585" width="100" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="kKDR_bMhgKnwLCP5Jtrn-50" value="" style="fontColor=#0066CC;verticalAlign=top;verticalLabelPosition=bottom;labelPosition=center;align=center;html=1;outlineConnect=0;fillColor=#CCCCCC;strokeColor=#6881B3;gradientColor=none;gradientDirection=north;strokeWidth=2;shape=mxgraph.networks.pc;" vertex="1" parent="1">
+          <mxGeometry x="630" y="-315" width="170" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="kKDR_bMhgKnwLCP5Jtrn-51" value="" style="shape=singleArrow;whiteSpace=wrap;html=1;arrowWidth=0.4;arrowSize=0.4;verticalAlign=top;fillColor=#CCCCCC;strokeColor=#6881B3;fontColor=#0066CC;gradientColor=none;gradientDirection=north;strokeWidth=2;rotation=0;" vertex="1" parent="1">
+          <mxGeometry x="525" y="-540" width="85" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="kKDR_bMhgKnwLCP5Jtrn-52" value="" style="shape=singleArrow;whiteSpace=wrap;html=1;arrowWidth=0.4;arrowSize=0.4;verticalAlign=top;fillColor=#CCCCCC;strokeColor=#6881B3;fontColor=#0066CC;gradientColor=none;gradientDirection=north;strokeWidth=2;rotation=0;direction=west;" vertex="1" parent="1">
+          <mxGeometry x="525" y="-487.5" width="85" height="25" as="geometry" />
+        </mxCell>
+        <mxCell id="kKDR_bMhgKnwLCP5Jtrn-53" value="&lt;font style=&quot;background-color: rgb(255, 255, 255);&quot; color=&quot;#0000ff&quot;&gt;Server_Client&lt;/font&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="650" y="-575" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="kKDR_bMhgKnwLCP5Jtrn-54" value="שליחת הטקסט" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;labelBackgroundColor=#FFFFFF;fontColor=#0000FF;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="520" y="-450" width="90" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="kKDR_bMhgKnwLCP5Jtrn-55" value="&lt;b&gt;Html_Client&lt;/b&gt;&lt;br&gt;הכנסת טקסט/קובץ ע&quot;י המשתמש" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;labelBackgroundColor=#FFFFFF;fontColor=#0000FF;" vertex="1" parent="1">
+          <mxGeometry x="645" y="-305" width="170" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kKDR_bMhgKnwLCP5Jtrn-56" value="" style="shape=singleArrow;whiteSpace=wrap;html=1;arrowWidth=0.4;arrowSize=0.4;verticalAlign=top;fillColor=#CCCCCC;strokeColor=#6881B3;fontColor=#0066CC;gradientColor=none;gradientDirection=north;strokeWidth=2;rotation=-180;direction=south;" vertex="1" parent="1">
+          <mxGeometry x="682.5" y="-430" width="25" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="kKDR_bMhgKnwLCP5Jtrn-57" value="" style="shape=singleArrow;whiteSpace=wrap;html=1;arrowWidth=0.4;arrowSize=0.4;verticalAlign=top;fillColor=#CCCCCC;strokeColor=#6881B3;fontColor=#0066CC;gradientColor=none;gradientDirection=north;strokeWidth=2;rotation=-180;direction=north;" vertex="1" parent="1">
+          <mxGeometry x="720" y="-430" width="25" height="107.5" as="geometry" />
+        </mxCell>
+        <mxCell id="kKDR_bMhgKnwLCP5Jtrn-58" value="שליחת הטקסט/הקובץ&lt;br&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;labelBackgroundColor=#FFFFFF;fontColor=#0000FF;rotation=90;" vertex="1" parent="1">
+          <mxGeometry x="610" y="-390" width="120" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="kKDR_bMhgKnwLCP5Jtrn-59" value="&amp;nbsp;wev שליחת קובץ ה&amp;nbsp;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;labelBackgroundColor=#FFFFFF;fontColor=#0000FF;rotation=90;" vertex="1" parent="1">
+          <mxGeometry x="707.5" y="-390" width="110" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="kKDR_bMhgKnwLCP5Jtrn-60" value="wav קבלת קובץ&amp;nbsp;&lt;br&gt;פענוח הקובץ&lt;br&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;labelBackgroundColor=#FFFFFF;fontColor=#0000FF;" vertex="1" parent="1">
+          <mxGeometry x="650" y="-482.5" width="90" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="kKDR_bMhgKnwLCP5Jtrn-61" value="קבלת הטקסט/הקובץ&lt;br&gt;פענוח המידע&lt;br&gt;הצפנת טקסט&lt;br&gt;שליחת הטקסט" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;labelBackgroundColor=#FFFFFF;fontColor=#0000FF;" vertex="1" parent="1">
+          <mxGeometry x="640" y="-555" width="110" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="kKDR_bMhgKnwLCP5Jtrn-62" value="&lt;b&gt;שליחת המידע של הקובץ&lt;/b&gt;" style="text;html=1;resizable=0;autosize=1;align=center;verticalAlign=middle;points=[];fillColor=none;strokeColor=none;rounded=0;labelBackgroundColor=#FFFFFF;fontColor=#0000FF;" vertex="1" parent="1">
+          <mxGeometry x="505" y="-575" width="140" height="20" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
