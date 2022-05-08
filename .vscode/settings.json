@@ -34,5 +34,9 @@
     "פענוך",
     "תוכי"
   ],
+<<<<<<< HEAD
   "livePreview.defaultPreviewPath": "/t.html"
+=======
+  "livePreview.defaultPreviewPath": "/code/fins/http/index.html"
+>>>>>>> parent of 41b923c (1)
 }
