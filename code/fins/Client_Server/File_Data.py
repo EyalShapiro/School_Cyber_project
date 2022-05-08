@@ -32,7 +32,6 @@ class File_Data():
         for i in range(pdfReader.numPages):
             pageObj = pdfReader.getPage(i)
             # extracting text from page
-            # print(pageObj.extractText())
             data_str += str(pageObj.extractText())+'\n'
         pdfFileObj.close()
         return data_str

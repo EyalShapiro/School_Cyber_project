@@ -11,7 +11,6 @@ send_data = File_Data()
 print('Waiting for connection')
 try:
     ClientSocket.connect((host, port))
-    
 except socket.error as e:
     print(str(e))
 ###########################################
@@ -37,7 +36,7 @@ def main():
         send_message = 'test.txt'
         send_data.Set_File_Name(send_message)  # מתקן את שם קובץ
         send_message = send_data.Read_Data()  # מקבל את מאידה של קובץ או את טקסט
-        send_message = client_encryption.Encrypt_text(send_message)
+        # send_message = client_encryption.Encrypt_text(send_message)
         ClientSocket.send(str.encode(send_message))
         Response = ClientSocket.recv(1024)
         res = Response.decode()

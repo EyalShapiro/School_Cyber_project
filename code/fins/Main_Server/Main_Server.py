@@ -2,7 +2,6 @@ import socket
 import os
 from _thread import *
 from threading import *
-
 from Main_Server_Encryption import *
 from Info import *
 from Text_To_Speech import *
@@ -10,7 +9,7 @@ from Text_To_Speech import *
 ###########################################
 # Info.Install_in_File('code/fins/Main_Server/requirements.txt')
 server_encryption = Main_Server_Encryption()
-text_to_speech = Text_To_Speech('text')
+text_to_speech = Text_To_Speech('text', location='code/fins/Main_Server/')
 ServerSocket = socket.socket()
 host = '127.0.0.1'
 port = 5001
@@ -39,14 +38,14 @@ ServerSocket.listen(4)
 def threaded_client(connection):
     """העפעולה מקבלת משתמש
     בתליכים למשתמשים
-    שולחת לו את מעידה של קובץ 
+    שולחת לו את מעידה של קובץ
     """
     global server_encryption
     connection.send(str.encode('Welcome to the Servern'))
     while True:
         data = connection.recv(1024)
         data = data.decode('utf-8')
-        data = server_encryption.Decrypt_text(data)
+        # data = server_encryption.Decrypt_text(data)
         print('get client text ', data)
         text_to_speech.Set_text(data)
         if text_to_speech.Save_Speech():
@@ -65,7 +64,6 @@ def main():
         ThreadCount += 1
         print('Thread Number: ' + str(ThreadCount))
     ServerSocket.close()
-
 
 if __name__ == "__main__":
     main()

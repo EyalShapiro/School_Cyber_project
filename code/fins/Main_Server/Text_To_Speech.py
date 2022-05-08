@@ -45,12 +45,13 @@ class Text_To_Speech:
 
     def Get_File_Name(self):  # מחזיר את שם הקובץ
         return self.file_name
-    def Set_Language(self, language):#עדקן 
+
+    def Set_Location(self, language):  # עדקן מיקום הקובץ
         self.language = language
 
     def Set_text(self, text):  # העדכון טקסט
         self.text = text
-        self.language = Text_To_Speech.Identifies_Languages(text)
+        self.language = Identifies_Languages(text)
 
     def Get_text(self):  # החזרת טקסט
         return self.text
@@ -71,6 +72,9 @@ class Text_To_Speech:
             return False
 
     def Open_Sound(self):
+        """
+        פותח את קובץ 
+        """
         os.system(self.location+self.file_name)
 
     def Find_Language_key(self, name_language):
