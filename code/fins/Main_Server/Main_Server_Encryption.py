@@ -19,14 +19,22 @@ class Main_Server_Encryption:
     def Set_Locate(self, location):  # מדקן  את מיקום הקובץ
         self.locate = location
 
-    def load_key():
+    def Get_Load_Key(self):
         """
-        טוען את המפתח מהספרייה הנוכחית בשם 'key.key'
+        קורא את המפתח מהספרייה הנוכחית בשם 'key.key'
+        ומחזיר את מפתח 
         """
-        return open("key.key", "rb").read()
+        with open(self.locate+self.file_key, 'rb+') as filekey:
+            key = filekey.read()
+        return key
+
 
     def Decrypt_text(self, text, key):  # str
-        # פענוך הצפנה של טקסט
+        """        # פענוך הצפנה של טקסט
+        הפעולה מקבלת שם ומתחה
+        פענוך את הצפנה של טקסט
+        לפי מתחה
+        """
         decrypt_text = key.decrypt(bytes(text, "UTF-8"))
         return decrypt_text.decode()
 
@@ -75,8 +83,3 @@ class Main_Server_Encryption:
         with open(locate+"encrypted_"+file_name, 'wb') as encrypted_file:
             encrypted_file.write(encrypt_file)
         return encrypt_file  # קורא את כל עמידע של קובץ
-    # def Get_key(self):
-
-    def GenerateKey(self):
-        Key = Fernet.generate_key()
-        return Key

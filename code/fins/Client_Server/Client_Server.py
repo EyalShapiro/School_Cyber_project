@@ -35,7 +35,8 @@ def main():
     Response = ClientSocket.recv(1024)
     while True:
         # send_message משתנה השולח מידע html
-        send_message = 'School_Cyber_project/code/fins/test.docx'
+        # send_message = 'School_Cyber_project/code/fins/test.docx'
+        send_message = 'test.txt'
         send_data.Set_File_Name(send_message)  # מתקן את שם קובץ
         send_message = send_data.Read_Data()  # מקבל את מאידה של קובץ או את טקסט
         send_message = client_encryption.Encrypt_text(send_message)
@@ -43,6 +44,7 @@ def main():
         Response = ClientSocket.recv(1024)
         res = Response.decode()
         print("file 'wav' name received", Receiving_wav(res))
+
 
 if __name__ == "__main__":
     main()

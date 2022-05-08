@@ -40,7 +40,6 @@ class Text_To_Speech:
         self.file_name = file_name
         if location[-1] != "\\":
             location += '\\'
-            print(location)
         self.location = location
         self.language = Identifies_Languages(text)
 

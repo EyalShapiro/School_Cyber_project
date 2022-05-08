@@ -12,11 +12,14 @@ class Client_Server_Encryption:
         self.file_key = "file_key.key"
         self.locate = locate
 
-    def load_key():
+    def Get_Load_Key(self):
         """
-         טוען את המפתח מהספרייה הנוכחית בשם 'key.key'
+        קורא את המפתח מהספרייה הנוכחית בשם 'key.key'
+        ומחזיר את מפתח
         """
-        return open("key.key", "rb").read()
+        with open(self.locate+self.file_key, 'rb+') as filekey:
+            key = filekey.read()
+        return key
 
     def Get_Locate(self):  # מחזרית את מיקום הקובץ
         return self.locate
@@ -25,12 +28,20 @@ class Client_Server_Encryption:
         self.locate = location
 
     def Encrypt_text(self, text):  # str
-        # הצפנה של טקסט
+        """        # הצפנה של טקסט
+        הפעולה מקבלת שם
+        מצפנה את טקסט
+        לפי מתחה הספירה
+        """
         encrypted_text = f.encrypt(bytes(text, "UTF-8"))
         return encrypted_text.decode()
 
     def Encryption_File_Text(self, name_file):  # file txt RSA
-        # מצפין את תןכן הקובץ
+        """        # מצפין את תןכן הקובץ
+        הפעולה מקבלת שם קובץ
+        מצפנה את תןכן הקובץ
+        לפי מתחה הספירה
+          """
         l = name_file.split('.')
         if l[-1] != 'txt':
             return 'This is Not a correct file'
@@ -58,14 +69,13 @@ class Client_Server_Encryption:
         return data_file
 
     def Deciphering_File_wav(self, name_file, file_key):  # file wav RSA
-        # מפענוך את תןכן הקובץ
+          # מפענוך את תןכן הקובץ
         l = name_file.split('.')
         if l[-1] != 'wav':
             return 'This is Not a correct file'
         locate = self.locate
-        file_key = self.file_key
+        # file_key = self.file_key
         key = Fernet.generate_key()  # generate encryption key
-
         # read the key
         with open(locate+file_key, 'rb+') as filekey:
             key = filekey.read()
@@ -83,10 +93,6 @@ class Client_Server_Encryption:
             decrypted_file.write(decrypt_file)
         return decrypt_file  # קורא את כל עמידע של קובץ
 
-    def GenerateKey(self):
-        Key = Fernet.generate_key()
-        return Key
-
 
 k = Client_Server_Encryption()
-print(k.GenerateKey())
+print(k.Get_Load_Key())

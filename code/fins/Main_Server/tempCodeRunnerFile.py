@@ -39,7 +39,6 @@ ServerSocket.listen(4)
 def threaded_client(connection):
     """העפעולה מקבלת משתמש
     בתליכים למשתמשים
-    שולחת לו את מעידה של קובץ 
     """
     global server_encryption
     connection.send(str.encode('Welcome to the Servern'))

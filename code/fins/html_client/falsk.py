@@ -1,10 +1,17 @@
-from flask import *
+from flask import Flask, request, render_template
+import flask
+
 app = Flask(__name__)
 
-if request.method == 'POST':
+
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 
-@app.route('/', methods=['GET', 'POST'])
-request.form['UPLOAD_FOLDER']
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-app.config['input'] = input1
+@app.route('/submit', methods=['POST'])
+def submit():
+    return 'You entered: {}'.format(request.form['text'])
+
+
+print(submit())
