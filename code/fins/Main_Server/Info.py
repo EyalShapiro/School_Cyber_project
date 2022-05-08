@@ -1,3 +1,4 @@
+from fileinput import filename
 import os
 import sys
 from sys import *
@@ -36,16 +37,26 @@ class Info:
         """
         return os.system('pip install '+str(name_package))
 
-    def Install_in_File(filename):
+    # def Pip_Install_File(file_name):
+    #     """
+    #     pip install a python3 packages
+    #     file_name[str]: שם של קובץ
+    #     מוסיף את כל החבילות שני נימצות בקובץ
+    #     הפעולה מחזר טקסט שכל מה שקוא בשורת הפקודה
+
+    #     """
+    #     return os.system('pip install - r / path/to/'+filename)
+
+    def Install_in_File(file_name):
         """
         מקבלת שם קובץ ומוסיפה את כל ספריות בתוכו
         הפעולה מחזר רשימה שכל מה שקוא בשורת הפקודה
-        """
-        data = []
-        with open(filename) as f:
-            data .append(Info.Pip_Install(f.read()))
-        return data
 
+        """
+        file_lines = [x.rstrip() for x in open(file_name)]
+        for i in file_lines:
+            Info.Pip_Install(i)
+        print('fins install')
     # def This_code_Location():
     #     """
     #     הפעולה מחזיר את הנתיב לתוכנית שעכשיו מריצה את הסקריפט
@@ -65,13 +76,14 @@ class Info:
 
 
 def main():
-    
+
     # info.Pip_Install(input("Enter name for package python\n ->"))
     # print('file install: ', Info.Install_in_File('test.txt'))
     # print('computer Version', Info.Get_Operating_System())
     # print("Quantity cores in computer: ", Info.Cores_computer())
     # print('Python Version: ', Info.Get_Python_Version())
     print('Size of file is', Info.Get_Size_File('hello.wav'), 'bytes')
+    Info.Install_in_File('requirements.txt')
 
 
 if __name__ == '__main__':

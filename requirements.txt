@@ -1,0 +1,13 @@
+threading
+socket
+_thread
+os
+sys
+cryptography
+fernet
+flask
+gTTS
+gtts
+googletrans
+docx
+PyPDF2

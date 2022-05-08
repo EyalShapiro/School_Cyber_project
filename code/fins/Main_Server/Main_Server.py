@@ -3,14 +3,14 @@ import os
 from _thread import *
 from threading import *
 
-from grpc import server
 from Main_Server_Encryption import *
 from Info import *
-import Text_To_Speech
+from Text_To_Speech import *
+
 ###########################################
+# Info.Install_in_File('code/fins/Main_Server/requirements.txt')
 server_encryption = Main_Server_Encryption()
 text_to_speech = Text_To_Speech('text')
-
 ServerSocket = socket.socket()
 host = '127.0.0.1'
 port = 5001
@@ -36,15 +36,6 @@ ServerSocket.listen(4)
 ###########################################
 
 
-def Send_Wav(filename):
-    """
-    מחזר קובץ wav
-    מצפן
-    """
-    global server_encryption
-    return server_encryption.Encryption_File_wav(filename)
-
-
 def threaded_client(connection):
     """העפעולה מקבלת משתמש
     בתליכים למשתמשים
@@ -54,26 +45,15 @@ def threaded_client(connection):
     while True:
         data = connection.recv(1024)
         data = data.decode('utf-8')
-        data = server_encryption.Deciphering_String(data)
+        data = server_encryption.Decrypt_text(data)
         print('get client text ', data)
         text_to_speech.Set_Text(data)
         if text_to_speech().Save():
-            f = server_encryption.Encryption_File_wav(
-                text_to_speech.Get_File_Name())
-
-        connection.sendall(f.encode())
+            filename = text_to_speech.Get_File_Name()
+            f = server_encryption.Encryption_File_wav(filename)
+        connection.send(f.encode())
     connection.close()
 
-
-# def Sand_File(filename):
-#     """
-#     הפעולה מקבלת קובץ wav
-#     מחזריה את מהידע שלו מוצפן  wav
-#     """
-#     global server_encryption
-#     # with open(filename, 'rb') as f:
-#     #     file = f.read()
-#     return
 
 def main():
     global ServerSocket, ThreadCount

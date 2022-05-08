@@ -21,15 +21,15 @@ translator = googletrans.Translator()
 # # all available languages along with their IETF tag
 # print(gTTS.lang.tts_langs())
 
+def Identifies_Languages(text):
+    """
+    הפעולה מקבלת טקסט ומחזיר את מפתח השפה 
+    """
+    return googletrans.Translator().detect("hello world!").lang
+
 
 class Text_To_Speech:
-    def Identifies_Languages(text):
-        """
-        הפעולה מקבלת טקסט ומחזיר את מפתח השפה 
-        """
-        return googletrans.Translator().detect("hello world!").lang
-
-    def __init__(self, text, location, file_name='say.wav'):
+    def __init__(self, text, location='code/fins/Main_Server', file_name='say.wav'):
         '''
         location(str): מיקום הקובץ
         text (str): טקס לקריאה
@@ -42,7 +42,7 @@ class Text_To_Speech:
             location += '\\'
             print(location)
         self.location = location
-        self.language = Text_To_Speech.Identifies_Languages(text)
+        self.language = Identifies_Languages(text)
 
     def Get_File_Name(self):  # מחזיר את שם הקובץ
         return self.file_name

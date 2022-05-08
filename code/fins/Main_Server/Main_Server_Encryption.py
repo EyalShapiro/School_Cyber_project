@@ -1,7 +1,7 @@
 from cryptography.fernet import Fernet
 ###########################################
 f = Fernet(Fernet.generate_key())
-f = Fernet(f"N__Ys89Ct7kVKc65IgCly9l1nTXqOuxsotMZkqty4L4=")
+# f = Fernet(f"N__Ys89Ct7kVKc65IgCly9l1nTXqOuxsotMZkqty4L4=")
 
 ###########################################
 
@@ -25,20 +25,17 @@ class Main_Server_Encryption:
         """
         return open("key.key", "rb").read()
 
-    def Decrypt_text(self, text):  # str
+    def Decrypt_text(self, text, key):  # str
         # פענוך הצפנה של טקסט
-        global f
-        decrypt_text = f.decrypt(bytes(text, "UTF-8"))
+        decrypt_text = key.decrypt(bytes(text, "UTF-8"))
         return decrypt_text.decode()
 
-    def Deciphering_File_Text(self, file_name):  # file txt RSA
+    def Deciphering_File_Text(self, file_key, file_name):  # file txt RSA
         # מפענוך את תןכן הקובץ
         l = file_name.split('.')
         if l[-1] != 'txt':
             return 'This is Not a correct file'
-        key = Fernet.generate_key()  # generate encryption key
         locate = self.locate
-        file_key = self.file_key
         # read the key
         with open(locate+file_key, 'rb+') as filekey:
             key = filekey.read()

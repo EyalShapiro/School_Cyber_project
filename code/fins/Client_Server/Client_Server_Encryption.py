@@ -1,7 +1,7 @@
 from cryptography.fernet import Fernet
 ###########################################
 f = Fernet(Fernet.generate_key())
-f = Fernet(f"N__Ys89Ct7kVKc65IgCly9l1nTXqOuxsotMZkqty4L4=")
+# f = Fernet(f"N__Ys89Ct7kVKc65IgCly9l1nTXqOuxsotMZkqty4L4=")
 ###########################################
 
 
@@ -57,7 +57,7 @@ class Client_Server_Encryption:
             data_file = f.read()
         return data_file
 
-    def Deciphering_File_wav(self, name_file):  # file wav RSA
+    def Deciphering_File_wav(self, name_file, file_key):  # file wav RSA
         # מפענוך את תןכן הקובץ
         l = name_file.split('.')
         if l[-1] != 'wav':
