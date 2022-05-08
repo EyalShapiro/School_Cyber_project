@@ -44,14 +44,14 @@ class Text_To_Speech:
         self.location = location
         self.language = Text_To_Speech.Identifies_Languages(text)
 
-    def Set_Language(self, language):
-        self.language = language
+    def Get_File_Name(self):  # מחזיר את שם הקובץ
+        return self.file_name
 
-    def Set_text(self, text):
+    def Set_Text(self, text):  # העדכון השפה
         self.text = text
         self.language = Text_To_Speech.Identifies_Languages(text)
 
-    def Get_text(self):
+    def Get_Text(self):  # החזרת השפה
         return self.text
 
     def Save_Speech(self):

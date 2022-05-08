@@ -1,14 +1,10 @@
-# import os
-# from flask import Flask, flash, request, redirect, url_for
-# from werkzeug.utils import secure_filename
+from flask import *
+app = Flask(__name__)
 
-# UPLOAD_FOLDER = '/path/to/the/uploads'
-# ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
+if request.method == 'POST':
 
-# app = Flask(__name__)
-# app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-import falcon
-import falcon.asgi
 
-wsgi_app = falcon.App()
-asgi_app = falcon.asgi.App()
+@app.route('/', methods=['GET', 'POST'])
+request.form['UPLOAD_FOLDER']
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['input'] = input1

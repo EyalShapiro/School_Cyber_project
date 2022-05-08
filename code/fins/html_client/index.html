@@ -40,19 +40,22 @@
     </div>
 
     <div id="form">
-        <form id="f1">
+        <form action="vois.html" method="post">
+
             <!-- <label>שפה: </label>
             <select name="gender" id="gender">
                 <option value="en">name</option>
                 <label>Enter text:</label> -->
             <label for="avatar">תרשום תביעה או בחר קובץ טקסט</label>
-            <input action="input" method="post" type="file" id="avatar" name="avatar" accept=".doc,.docx,.txt,pdf">
+            <input action="UPLOAD_FOLDER" method="post" type="file" id="avatar" name="avatar" accept=".doc,.docx,.txt,pdf">
             <!-- הלעת קבצים סוג רק טקסט  -->
             <textarea action="input" method="post" name="text" cols="100" rows="15">הקלד כאן את טקסט </textarea>
             <!--תביעה לרשם  -->
             </p>
             <p>
-                <a type="button" href="vois.html" title="קראה"><input type='button' value="הקראה "></a>
+                <input type="submit" value="הקראה" />
+
+                <!-- <a type="button" title="קראה"><input type='button' value="הקראה "></a> -->
                 <!-- <input id="audioFileChooser" type="file" value="הקראה" accept="audio" onchange="readFile(this.files);"> -->
                 <input type="button" name="reset" id="reset all" value="איפוס">
             </p>

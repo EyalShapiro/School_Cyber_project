@@ -44,28 +44,37 @@ def Send_Wav(filename):
     global server_encryption
     return server_encryption.Encryption_File_wav(filename)
 
+
 def threaded_client(connection):
+    """העפעולה מקבלת משתמש
+    בתליכים למשתמשים
+    """
     global server_encryption
     connection.send(str.encode('Welcome to the Servern'))
     while True:
-        data = connection.recv(2048)
-        data=data.decode('utf-8')
+        data = connection.recv(1024)
+        data = data.decode('utf-8')
         data = server_encryption.Deciphering_String(data)
-        reply = 'Server Says: ' + data
-        # print(reply)
-        if not data:
-            break
-        connection.sendall(str.encode(reply))
+        print('get client text ', data)
+        text_to_speech.Set_Text(data)
+        if text_to_speech().Save():
+            f = server_encryption.Encryption_File_wav(
+                text_to_speech.Get_File_Name())
+
+        connection.sendall(f.encode())
     connection.close()
-def Sand_File(filename):
-    """
-    הפעולה מקבלת קובץ wav
-    שולח את קובץ wav
-    """
-    
-    with open(filename, 'rb') as f:
-        file = f.read()
-    return file
+
+
+# def Sand_File(filename):
+#     """
+#     הפעולה מקבלת קובץ wav
+#     מחזריה את מהידע שלו מוצפן  wav
+#     """
+#     global server_encryption
+#     # with open(filename, 'rb') as f:
+#     #     file = f.read()
+#     return
+
 def main():
     global ServerSocket, ThreadCount
     while True:
@@ -75,6 +84,7 @@ def main():
         ThreadCount += 1
         print('Thread Number: ' + str(ThreadCount))
     ServerSocket.close()
+
 
 if __name__ == "__main__":
     main()
