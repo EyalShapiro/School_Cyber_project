@@ -21,18 +21,11 @@ def Receiving_wav(data, filename):
     """
     שומר את מדעיה מתקבל בקובץ wav
     """
-<<<<<<< HEAD
     global client_encryption, file_name
     with open(client_encryption.Get_Locate()+file_name, 'wb+') as file:
         file.write(f)
     print(file)
     return
-=======
-    global client_encryption
-    with open(client_encryption.Get_Locate()+filename, 'wb') as file:
-        file.write()
-    return file
->>>>>>> parent of 41b923c (1)
 
 
 def main():
@@ -47,12 +40,8 @@ def main():
         send_message = client_encryption.Encrypt_text(send_message)
         ClientSocket.send(str.encode(send_message))
         Response = ClientSocket.recv(1024)
-<<<<<<< HEAD
         res = Response.decode()
         print("file 'wav' name received", Receiving_wav(res))
-=======
-        print(Response.decode('utf-8'))
->>>>>>> parent of 41b923c (1)
 
 
 if __name__ == "__main__":

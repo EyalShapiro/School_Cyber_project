@@ -43,14 +43,16 @@ class Text_To_Speech:
         self.location = location
         self.language = Identifies_Languages(text)
 
-    def Set_Language(self, language):
+    def Get_File_Name(self):  # מחזיר את שם הקובץ
+        return self.file_name
+    def Set_Language(self, language):#עדקן 
         self.language = language
 
-    def Set_text(self, text):
+    def Set_text(self, text):  # העדכון טקסט
         self.text = text
         self.language = Text_To_Speech.Identifies_Languages(text)
 
-    def Get_text(self):
+    def Get_text(self):  # החזרת טקסט
         return self.text
 
     def Save_Speech(self):
@@ -100,7 +102,7 @@ class Text_To_Speech:
 
     def Get_Num_Languages(self):
         """
-        מחזירה את מספר השפות
+          הפעולה מחזירה את מספר השפות שיש בספירה 
         """
         global dict_language
         return len(dict_language)

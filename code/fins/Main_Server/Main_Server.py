@@ -36,7 +36,6 @@ ServerSocket.listen(4)
 ###########################################
 
 
-<<<<<<< HEAD
 def threaded_client(connection):
     """העפעולה מקבלת משתמש
     בתליכים למשתמשים
@@ -49,46 +48,14 @@ def threaded_client(connection):
         data = data.decode('utf-8')
         data = server_encryption.Decrypt_text(data)
         print('get client text ', data)
-        text_to_speech.Set_Text(data)
-        if text_to_speech().Save():
+        text_to_speech.Set_text(data)
+        if text_to_speech.Save_Speech():
             filename = text_to_speech.Get_File_Name()
             f = server_encryption.Encryption_File_wav(filename)
         connection.send(f.encode())
     connection.close()
 
 
-=======
-def Send_Wav(filename):
-    """
-    מחזר קובץ wav
-    מצפן
-    """
-    global server_encryption
-    return server_encryption.Encryption_File_wav(filename)
-
-def threaded_client(connection):
-    global server_encryption
-    connection.send(str.encode('Welcome to the Servern'))
-    while True:
-        data = connection.recv(2048)
-        data=data.decode('utf-8')
-        data = server_encryption.Deciphering_String(data)
-        reply = 'Server Says: ' + data
-        # print(reply)
-        if not data:
-            break
-        connection.sendall(str.encode(reply))
-    connection.close()
-def Sand_File(filename):
-    """
-    הפעולה מקבלת קובץ wav
-    שולח את קובץ wav
-    """
-    
-    with open(filename, 'rb') as f:
-        file = f.read()
-    return file
->>>>>>> parent of 41b923c (1)
 def main():
     global ServerSocket, ThreadCount
     while True:
@@ -98,6 +65,7 @@ def main():
         ThreadCount += 1
         print('Thread Number: ' + str(ThreadCount))
     ServerSocket.close()
+
 
 if __name__ == "__main__":
     main()
