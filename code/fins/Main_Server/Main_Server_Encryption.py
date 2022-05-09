@@ -8,6 +8,9 @@ f = Fernet(Fernet.generate_key())
 
 class Main_Server_Encryption:
     def __init__(self, locate="code/fins/"):
+        """
+        locate(str): מיקום הקובץ
+        """
         global f
         self.fernet = f
         self.file_key = "file_key.key"
@@ -16,17 +19,10 @@ class Main_Server_Encryption:
     def Get_Locate(self):  # מחזרית את מיקום הקובץ
         return self.locate
 
-    def Set_Locate(self, location):  # מדקן  את מיקום הקובץ
-        self.locate = location
+    def Set_Locate(self, location):
+        """ הפעולה מקלת שפה או מפתח שפה ועדקן מיקום הקובץ"""
 
-    def Get_Load_Key(self):
-        """
-        קורא את המפתח מהספרייה הנוכחית בשם 'key.key'
-        ומחזיר את מפתח 
-        """
-        with open(self.locate+self.file_key, 'rb+') as filekey:
-            key = filekey.read()
-        return key
+        self.locate = location
 
     def Decrypt_text(self, text, key):  # str
         """        # פענוך הצפנה של טקסט
@@ -39,6 +35,11 @@ class Main_Server_Encryption:
 
     def Encryption_File_wav(self, file_name):  # file wav RSA
         # מצפין את תןכן הקובץ
+        """         מצפין את תןכן הקובץ
+         הפעולה מקבלת שם קובץ
+         מצפנה את תןכן הקובץ
+         לפי מתחה הספירה
+         """
         l = file_name.split('.')
         if l[-1] != 'wav':
             return 'This is Not a correct file'
@@ -66,7 +67,7 @@ class Main_Server_Encryption:
     #     מצפנה את תןכן הקובץ
     #     לפי מתחה הספירה
     #       """
-    #     l = name_file.split('.')
+    #     l = name_file.split('.')312
     #     if l[-1] != 'txt':
     #         return 'This is Not a correct file'
     #     locate = self.locate

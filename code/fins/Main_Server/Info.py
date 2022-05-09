@@ -4,7 +4,7 @@ import sys
 from sys import *
 
 
-class Info:
+class Info:  # אין פעולה בונה
     def Get_Operating_System():
         """
         הפעולה מחזירה את סוג מרחת הפעלה
@@ -13,6 +13,9 @@ class Info:
         return os.cpu_count()
 
     def Get_Platform_PC():
+        """
+                הפעולה מחזירה את סוג מערכת הפעלה 
+        """
         import sysconfig
         return sysconfig.get_platform()
 
@@ -83,7 +86,8 @@ def main():
     # print("Quantity cores in computer: ", Info.Cores_computer())
     # print('Python Version: ', Info.Get_Python_Version())
     print('Size of file is', Info.Get_Size_File('hello.wav'), 'bytes')
-    Info.Install_in_File('requirements.txt')
+    # Info.Install_in_File('requirements.txt')
+    # print(Info.Get_Platform_PC())
 
 
 if __name__ == '__main__':

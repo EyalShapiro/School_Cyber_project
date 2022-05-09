@@ -18,6 +18,7 @@ except socket.error as e:
 
 def Receiving_wav(data, filename):
     """
+    הפעולה מקלת מעדעי של קובץ ואת שם שלו
     שומר את מדעיה מתקבל בקובץ wav
     """
     global client_encryption, file_name

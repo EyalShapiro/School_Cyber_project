@@ -1,9 +1,12 @@
 import PyPDF2
 import docx
 
-
+#################################################
 class File_Data():
     def __init__(self, file_name=''):
+        """        
+        file_name(str): שם הקובץ
+        """
         self.file_name = file_name
 
     def Get_File_Name(self):
@@ -40,7 +43,7 @@ class File_Data():
         """
         מקבלת את שם הקובץ עם הסיומת
         txt הפעולה קורא את המידע של הקובץ
-        str  ומחזריה אותו בתור 
+        str  ומחזריה אותו בתור
         """
         data_str = ''
         extension = self.file_name.split('.')
@@ -85,12 +88,12 @@ class File_Data():
         }  # סוג קובץ העניין הוא נכון
         # אחר מחזר תוכן רק
         return switcher.get(extension[-1], self.Get_File_Name())
+#################################################
 
 
 def main():
     txt = File_Data('code/fins/test.txt')
     pdf = File_Data('code/fins/test.pdf')
-
     doc = File_Data('code/fins/test.doc')
     docx = File_Data('code/fins/test.docx')
     text = File_Data('text')
