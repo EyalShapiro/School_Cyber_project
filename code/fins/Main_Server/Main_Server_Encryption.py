@@ -14,7 +14,22 @@ class Main_Server_Encryption:
         global f
         self.fernet = f
         self.file_key = "file_key.key"
+        self.generate_key()
         self.locate = locate
+
+    def generate_key(self):
+        """
+    יוצר מפתח ושומר אותו בקובץ
+        """
+        key = Fernet.generate_key()
+        with open(self.locate+self.file_key, "wb") as key_file:
+            key_file.write(key)
+
+    def load_key(self):
+        """
+    טען את המפתח שנוצר קודם לכן
+        """
+        return open(self.locate+self.file_key, "rb").read()
 
     def Get_Locate(self):  # מחזרית את מיקום הקובץ
         return self.locate
@@ -45,7 +60,7 @@ class Main_Server_Encryption:
             return 'This is Not a correct file'
         locate = self.locate
         file_key = self.file_key
-        key = Fernet.generate_key()  # generate encryption key
+        key = self.load_key()  # generate encryption key
         # write the key in a file of .key extension
         with open(locate+file_key, 'wb') as filekey:
             filekey.write(key)
@@ -67,18 +82,16 @@ class Main_Server_Encryption:
     #     מצפנה את תןכן הקובץ
     #     לפי מתחה הספירה
     #       """
-    #     l = name_file.split('.')312
+    #     l = name_file.split('.')
     #     if l[-1] != 'txt':
     #         return 'This is Not a correct file'
     #     locate = self.locate
     #     file_key = self.file_key
-
     #     key = Fernet.generate_key()  # generate encryption key
     #     # write the key in a file of .key extension
     #     with open(locate+file_key, 'wb') as filekey:
     #         filekey.write(key)
     #     # crate instance of Fernet    # and load generated key
-
     #     fernet = Fernet(key)
     #     # read the file to encrypt
     #     with open(locate+name_file, 'rb') as f:
