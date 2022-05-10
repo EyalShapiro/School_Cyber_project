@@ -7,14 +7,13 @@ f = Fernet(Fernet.generate_key())
 
 
 class Main_Server_Encryption:
-    def __init__(self, locate="code/fins/"):
+    def __init__(self, locate="code/fins/Main_Server/"):
         """
         locate(str): מיקום הקובץ
         """
         global f
         self.fernet = f
         self.file_key = "file_key.key"
-        self.generate_key()
         self.locate = locate
 
     def generate_key(self):
@@ -72,7 +71,7 @@ class Main_Server_Encryption:
         # encrypt the file
         encrypt_file = fernet.encrypt(file)
         # open the file and wite the encryption data
-        with open(locate+"encrypted_"+file_name, 'wb') as encrypted_file:
+        with open(locate+file_name, 'wb') as encrypted_file:
             encrypted_file.write(encrypt_file)
         return encrypt_file  # קורא את כל עמידע של קובץ
 

@@ -12,7 +12,8 @@ server_encryption = Main_Server_Encryption()
 text_to_speech = Text_To_Speech('text', location='code/fins/Main_Server/')
 ServerSocket = socket.socket()
 host = '127.0.0.1'
-port = 5001
+port = 21
+size = 9000000
 ThreadCount = 0
 try:
     ServerSocket.bind((host, port))
@@ -40,10 +41,10 @@ def threaded_client(connection):
     בתליכים למשתמשים
     שולחת לו את מעידה של קובץ
     """
-    global server_encryption
+    global server_encryption, ThreadCount
     connection.send(str.encode('Welcome to the Servern'))
     while True:
-        data = connection.recv(1024)
+        data = connection.recv(size)
         data = data.decode('utf-8')
         # data = server_encryption.Decrypt_text(data)
         print('get client text ', data)
@@ -51,7 +52,10 @@ def threaded_client(connection):
         if text_to_speech.Save_Speech():
             filename = text_to_speech.Get_File_Name()
             f = server_encryption.Encryption_File_wav(filename)
-        connection.send(f.encode())
+            print(f)
+            connection.send(f)
+            ThreadCount -= 1
+
     connection.close()
 
 
@@ -62,8 +66,10 @@ def main():
         print('Connected to: ' + address[0] + ':' + str(address[1]))
         start_new_thread(threaded_client, (Client, ))
         ThreadCount += 1
+
         print('Thread Number: ' + str(ThreadCount))
     ServerSocket.close()
+
 
 if __name__ == "__main__":
     main()

@@ -6,7 +6,7 @@ f = Fernet(Fernet.generate_key())
 
 
 class Client_Server_Encryption:
-    def __init__(self, locate="code/fins/"):
+    def __init__(self, locate="code/fins/Client_Server/"):
         """
         locate(str): מיקום הקובץ
 
@@ -14,7 +14,6 @@ class Client_Server_Encryption:
         global f
         self.fernet = f
         self.file_key = "file_key.key"
-        self.generate_key()
         self.locate = locate
 
     def generate_key(self):
@@ -70,7 +69,7 @@ class Client_Server_Encryption:
         # with encryption key
         fernet = Fernet(key)
         # read the file to decrypt
-        with open(locate+"encrypted_"+name_file, 'rb') as f:
+        with open(locate+name_file, 'rb') as f:
             file = f.read()
         # decrypt the file
         decrypt_file = fernet.decrypt(file)

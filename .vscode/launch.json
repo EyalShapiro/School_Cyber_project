@@ -6,6 +6,14 @@
       "type": "python",
       "request": "launch",
       "program": "${file}",
+      "console": "integratedTerminal",
+      "justMyCode": true
+    },
+    {
+      "name": "Python: Current File",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
       "console": "integratedTerminal"
     },
     {
@@ -48,6 +56,12 @@
           "ignoreFailures": true
         }
       ]
+    },
+    {
+      "type": "pwa-chrome",
+      "name": "http://127.0.0.1:3002/code/fins/html_client/index.html",
+      "request": "launch",
+      "url": "http://127.0.0.1:3002/code/fins/html_client/index.html"
     }
   ]
 }

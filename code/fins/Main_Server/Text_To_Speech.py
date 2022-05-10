@@ -30,7 +30,7 @@ def Identifies_Languages(text):
 
 
 class Text_To_Speech:
-    def __init__(self, text, location='code/fins/Main_Server', file_name='say.wav'):
+    def __init__(self, text, location='code/fins/Main_Server/', file_name='say.wav'):
         '''
         location(str): מיקום הקובץ
         text (str): טקס לקריאה
@@ -68,7 +68,7 @@ class Text_To_Speech:
         False :לא הצליח לשמור
          (שם הקובץ שגוי או סוג שלו )
         '''
-        obj = gTTS(text=self.text, lang=self.language, slow=False)
+        obj = gTTS(text=self.text, lang=self.language)
         try:
             obj.save(self.location+self.file_name)
             return True
@@ -81,7 +81,7 @@ class Text_To_Speech:
          פותח את קובץ אשמה בתוכנת ברירת מחדל
         """
         f = self.location+self.file_name
-        os.system('start '+ f)
+        os.system('start ' + f)
 
     def Find_Language_key(self, name_language):
         global dict_language  # מילון הם כל השפות
@@ -133,7 +133,7 @@ class Text_To_Speech:
 def main():
     loc = 'code/fins/Main_Server/'
     s = Text_To_Speech('text', loc)
-    s.Save_Speech()
+    print(s.Save_Speech())
     print(s.Translator_Text('he'))
     s.Open_Sound()
     print(s.Find_Language_key('hebrew'))
