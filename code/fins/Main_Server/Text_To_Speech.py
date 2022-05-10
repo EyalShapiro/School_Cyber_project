@@ -39,8 +39,6 @@ class Text_To_Speech:
         '''
         self.text = text
         self.file_name = file_name
-        if location[-1] != "\\":
-            location += '\\'
         self.location = location
         self.language = Identifies_Languages(text)
 
