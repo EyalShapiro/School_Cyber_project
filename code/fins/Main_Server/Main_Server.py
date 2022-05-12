@@ -49,12 +49,12 @@ def threaded_client(connection):
         # data = server_encryption.Decrypt_text(data)
         print('get client text ', data)
         text_to_speech.Set_text(data)
-        if text_to_speech.Save_Speech():
-            filename = text_to_speech.Get_File_Name()
-            f = server_encryption.Encryption_File_wav(filename)
-            print(f)
-            connection.send(f)
-            ThreadCount -= 1
+        text_to_speech.Save_Speech()
+        filename = text_to_speech.Get_File_Name()
+        f = server_encryption.Encryption_File_wav(filename)
+        print(f)
+        connection.send(f)
+        ThreadCount -= 1
 
     connection.close()
 

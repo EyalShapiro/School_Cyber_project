@@ -28,9 +28,9 @@ class Client_Server_Encryption:
         """
     טען את המפתח שנוצר קודם לכן
         """
-        with open(self.locate+self.file_key, "wb") as key_file:
-            key_file.read()
-        return key_file
+        with open(self.locate+self.file_key, 'r+') as filekey:
+            key = filekey.read()
+        return key
 
     def Get_Locate(self):  # מחזרית את מיקום הקובץ
         return self.locate
@@ -101,3 +101,5 @@ class Client_Server_Encryption:
     #     with open(locate+name_file, 'wb+') as decrypted_file:
     #         decrypted_file.write(decrypt_file)
     #     return decrypt_file  # קורא את כל עמידע של קובץ
+client_encryption = Client_Server_Encryption()
+print(client_encryption.load_key())

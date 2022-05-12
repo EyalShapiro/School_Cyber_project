@@ -16,16 +16,16 @@ except socket.error as e:
 ###########################################
 
 
-def Receiving_wav(data, filename):
+def Receiving_wav(data, filename='say.wav'):
     """
-    הפעולה מקלת מעדעי של קובץ ואת שם שלו
+    הפעולה מקלת מעדעי של קובץ ואת שם שלו    
     שומר את מדעיה מתקבל בקובץ wav
     """
     global client_encryption
-    with open(client_encryption.locate+filename, 'wb +') as file:
+    with open(client_encryption.locate+filename, 'wb+') as file:
         file.write(data)
-    decryption = client_encryption.Deciphering_File_wav(data)
-
+    decryption = client_encryption.Deciphering_File_wav(
+        client_encryption.locate+filename)
     return decryption
 
 
@@ -46,7 +46,7 @@ def main():
             Response = ClientSocket.recv(size)
             print(Response)
             print("file 'wav' name received",
-                  Receiving_wav(Response, 'say.wav'))
+                  Receiving_wav(Response))
             send_message = ''
 
 
