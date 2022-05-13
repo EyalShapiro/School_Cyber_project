@@ -74,7 +74,7 @@ class Client_Server_Encryption:
         # decrypt the file
         decrypt_file = fernet.decrypt(file)
         # open the file and wite the encrypted data
-        with open(locate+name_file, 'wb+') as decrypted_file:
+        with open(locate+'static/'+name_file, 'wb+') as decrypted_file:
             decrypted_file.write(decrypt_file)
         return decrypt_file  # קורא את כל עמידע של קובץ
 
