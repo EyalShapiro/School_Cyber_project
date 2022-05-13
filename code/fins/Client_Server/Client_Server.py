@@ -1,7 +1,8 @@
 import socket
 from Client_Server_Encryption import *
 from File_Data import *
-
+from http import *
+from threading import *
 ###########################################
 client_encryption = Client_Server_Encryption()
 ClientSocket = socket.socket()
@@ -18,7 +19,7 @@ except socket.error as e:
 
 def Receiving_wav(data, filename='say.wav'):
     """
-    הפעולה מקלת מעדעי של קובץ ואת שם שלו    
+    הפעולה מקלת מעדעי של קובץ ואת שם שלו
     שומר את מדעיה מתקבל בקובץ wav
     """
     global client_encryption

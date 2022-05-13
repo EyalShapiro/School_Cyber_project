@@ -6,18 +6,8 @@
 
     }
 </style>
-<script>
 
-    function myFunction() {
-    var x = document.getElementById("myInput");
-    if (x.type === "password") {
-    x.type = "text";
-    } else {
-    x.type = "password";
-    }
-}
-</script>
-<a href="say.wav"><img src="download.png" width="60" height="50 title="download file" alt="download"></a>
+<a href="say.wav"><img src="download.png" width="60" height="50" title="download" alt="download"></a>
 
 <input type="range" list="tickmarks">
 <datalist id="tickmarks">
@@ -35,9 +25,8 @@
 </datalist>
 <a type="button" href="index.html"><input type='button' value="חזרה  "></a>
 <audio controls>
-    <source src="horse.ogg" type="audio/ogg">
-    <source src="horse.mp3" type="audio/mpeg">
+    <source src="say.wav" type="audio/wav">
 </audio>
-<p></p>
+<p>{{data}}</p>
 
 

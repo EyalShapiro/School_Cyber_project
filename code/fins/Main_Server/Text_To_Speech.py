@@ -26,7 +26,7 @@ def Identifies_Languages(text):
     הפעולה מקבלת טקסט ומחזיר את מפתח השפה
     (מזהה את סוג השפה)
     """
-    return googletrans.Translator().detect("hello world!").lang
+    return googletrans.Translator().detect(text).lang
 
 
 class Text_To_Speech:
