@@ -1,7 +1,8 @@
-from fileinput import filename
 import os
 import sys
 from sys import *
+
+from platform import python_version
 
 
 class Info:  # אין פעולה בונה
@@ -27,9 +28,32 @@ class Info:  # אין פעולה בונה
 
     def Get_Python_Version():
         """
-        הפעולה מחזירה את גרסת פייתון שאת משתמש
+        הפעולה מחזירה את גרסת פייתון שאת משתמש 
+        (3.7.4)בצורה הבאה
         """
-        return os.system("Python --version")
+        # this_py = sys.version_info
+        this_py = sys.version_info.major, sys.version_info.minor, sys.version_info.micro
+        return this_py
+
+    def Check_Python_Version(py_version):
+        """
+        פעןלה מקבלת גרסת פייתון מסוגה
+        ("3.7")בצורה הבעה str 
+                ובדוקת בעזרת פייתון את גירסת פייתון 
+       True האם  גדולה יותר מגרסה שקיבלנו היא מחזר 
+        False  אחרת 
+        """
+        version = py_version.split('.')  # הגרסה שקיבלנו
+        this_py = Info.Get_Python_Version()  # הגרסה שך המחשב
+
+        if int(version[0]) > int(this_py[0]):
+            return True
+        elif int(version[0]) == int(this_py[0]) and int(version[1]) > int(this_py[1]):
+            return True
+        elif int(version[0]) == int(this_py[0]) and int(version[1]) == int(this_py[1]) and int(version[2]) >= int(this_py[2]):
+            return True
+        else:
+            return False
 
     def Pip_Install(name_package):
         """
@@ -39,16 +63,6 @@ class Info:  # אין פעולה בונה
 
         """
         return os.system('pip install '+str(name_package))
-
-    # def Pip_Install_File(file_name):
-    #     """
-    #     pip install a python3 packages
-    #     file_name[str]: שם של קובץ
-    #     מוסיף את כל החבילות שני נימצות בקובץ
-    #     הפעולה מחזר טקסט שכל מה שקוא בשורת הפקודה
-
-    #     """
-    #     return os.system('pip install - r / path/to/'+filename)
 
     def Install_in_File(file_name):
         """
@@ -68,7 +82,7 @@ class Info:  # אין פעולה בונה
 
     def Get_Size_File(filename):
         """
-        הפעולה מקבלת קובץ
+        הפעולה מקבלת קובץ   
         הפעולה מחזר את גודל קובץ
         """
         # open file for reading
@@ -79,13 +93,15 @@ class Info:  # אין פעולה בונה
 
 
 def main():
-
+    pass
     # info.Pip_Install(input("Enter name for package python\n ->"))
     # print('file install: ', Info.Install_in_File('test.txt'))
     # print('computer Version', Info.Get_Operating_System())
     # print("Quantity cores in computer: ", Info.Cores_computer())
     # print('Python Version: ', Info.Get_Python_Version())
-    print('Size of file is', Info.Get_Size_File('hello.wav'), 'bytes')
+    # print('Size of file is', Info.Get_Size_File('hello.wav'), 'bytes')
+    # print(Info.Check_Python_Version('3.7.4'))
+
     # Info.Install_in_File('requirements.txt')
     # print(Info.Get_Platform_PC())
 

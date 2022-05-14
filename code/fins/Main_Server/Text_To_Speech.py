@@ -10,21 +10,11 @@ translator = googletrans.Translator()
 ###########################################
 
 
-# # הגש בקשה לגוגל כדי לקבל סינתזה
-# tts = gtts.gTTS("Hello world")
-# # שמור את קובץ השמע
-# tts.save("hello.wav")
-# # הפעל את קובץ האודיו
-# playsound("hello.wav")
-
-
-# # all available languages along with their IETF tag
-# print(gTTS.lang.tts_langs())
-
 def Identifies_Languages(text):
     """
-    הפעולה מקבלת טקסט ומחזיר את מפתח השפה
-    (מזהה את סוג השפה)
+    הפעולה מקבלת טקסט
+    מזהה את השפה הדיבור שבה הטקסט רשום
+    ומחזיר את מפתח השפה
     """
     detected_language = googletrans.Translator().detect(text).lang
     print(detected_language)
@@ -52,12 +42,12 @@ class Text_To_Speech:
         self.language = language
 
     def Set_text(self, text):  # העדכון טקסט
-        """ הפעולה מקלת טקסט  ועדקן את טקסט"""
-
+        """ text הפעולה מקלת טקסט  ומעדכנת את """
         self.text = text
         self.language = Identifies_Languages(text)
 
-    def Get_text(self):  # החזרת טקסט
+    def Get_text(self):  # text מהחזרת
+
         return self.text
 
     def Save_Speech(self):

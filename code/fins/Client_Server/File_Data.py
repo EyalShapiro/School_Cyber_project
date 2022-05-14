@@ -2,6 +2,8 @@ import PyPDF2
 import docx
 
 #################################################
+
+
 class File_Data():
     def __init__(self, file_name=''):
         """        

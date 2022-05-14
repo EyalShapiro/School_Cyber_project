@@ -1,13 +1,18 @@
+# ספריות חיצוניות
 import socket
-import os
 from _thread import *
 from threading import *
+# קבצים שלי
+
 from Main_Server_Encryption import *
 from Info import *
 from Text_To_Speech import *
 
 ###########################################
 # Info.Install_in_File('code/fins/Main_Server/requirements.txt')
+if Info.Check_Python_Version('3.7.0'):
+    print('The Python version could not run the project\n Replace the Python version')
+    sys.exit()
 server_encryption = Main_Server_Encryption()
 text_to_speech = Text_To_Speech('text', location='code/fins/Main_Server/')
 ServerSocket = socket.socket()
@@ -31,7 +36,7 @@ socket.listen([backlog]):
 הוא מציין את מספר החיבורים הלא מקובלים שהמערכת תאפשר לפני שתסרב לחיבורים חדשים.
 """
 # ServerSocket.listen(Info.Cores_computer())
-ServerSocket.listen(4)
+ServerSocket.listen(Info.Cores_computer())
 
 ###########################################
 
@@ -46,7 +51,7 @@ def threaded_client(connection):
     while True:
         data = connection.recv(size)
         data = data.decode('utf-8')
-        # data = server_encryption.Decrypt_text(data)
+        # data = server_encryption.Decrypt_text(data)#פענוך טקסט
         print('get client text ', data)
         text_to_speech.Set_text(data)
         text_to_speech.Save_Speech()
@@ -73,5 +78,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-6

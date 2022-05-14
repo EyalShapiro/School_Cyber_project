@@ -10,20 +10,6 @@
         color: hsl(200, 20%, 90%);
     }
 </style>
-<script>
-
-    function upload() {
-        var text = document.getElementById("ta").value;
-
-        var xhr = new XMLHttpRequest();
-        xhr.open("POST", "localhost:", true);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.send( JSON.stringify({
-            value: text
-        }));
-    }
-</script>
-
 <head>
     <title>מקריא טקסטים </title>
 </head>
@@ -31,32 +17,20 @@
     <h1>מקריא טקסטים</h1>
         <!-- C:\Eyal\School_Cyber_project\code\fins\html_client\m.jpg -->
     <img src="/static/m.jpg" alt="tuki" width="350" height="200" />
-    <form action="/vois"  method="post" enctype="multipart/form-data">
+    <form action="/vois"  method="post" enctype="multipart  /form-data">
 
         <!-- <label>שפה: </label>
             <select name="gender" id="gender">
                 <option value="en">name</option>
                 <label>Enter text:</label> -->
-        <label for="T">תרשום תביעה או בחר קובץ טקסט</label>
-        <textarea id="T" name="text" method="post" cols="100" rows="15">הקלד כאן את טקסט </textarea>
+        <label for="T">(.doc,.docx,.txt,.pdf) בתביעה את טקסט או בחר קובץ מסוגיעים הבאים </label><br><br>
         <input name="upload" type="file" id="text" accept=".doc,.docx,.txt,.pdf"><br><br>
+        <textarea id="T" name="text" method="post" cols="100" rows="15"> </textarea>
         <!--תביעה לרשם  -->
         <p>
             <p><input type="submit" value="הקראה" /></p>
-            <!-- <a type="submit" href="/vois" title="קראה" ><input type='button' value="הקראה "></a> -->
-            <!-- <input id="audioFileChooser" type="file" value="הקראה" accept="audio" onchange="readFile(this.files);"> -->
             <input type="button" name="reset" id="reset all" value="איפוס">
         </p>
-        <!-- <form action="vois.html" method="post" enctype="multipart/form-data">
-                <p>
-                    <input method="post" name="upload" type="file" id="text" name="text" accept=".doc,.docx,.txt,pdf"><br><br>
-                    <a type="button" href="vois.html" title="קראה" onclick=upload()><input type='button' value="הקראה "></a>
-                    <input id="audioFileChooser" type="file" value="הקראה" accept="audio" onchange="readFile(this.files);"> -->
-                    <!-- <input type="button" name="reset" id="reset all" value="איפוס"> -->
-                        <!-- הלעת קבצים סוג רק טקסט  -->
-                <!-- </p>
-        </form> -->
-
     </form>
 </body>
 
