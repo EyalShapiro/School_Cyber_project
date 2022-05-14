@@ -50,7 +50,7 @@ def form():
     send_message = text
     # send_message = client_encryption.Encrypt_text(text) #הצפנת הטקסט
 
-    sleep(8)  # מהשעה את הביצוע למשך מספר 8 השניות
+    sleep(5)  # מהשעה את הביצוע למשך מספר 5 השניות
 
     return render_template('vois.html', data=text)
 
@@ -80,7 +80,7 @@ def main():
     global ClientSocket, client_encryption, size, send_message
     print('The html running from flask now :)')
     start_new_thread(Thread_App)
-    sleep(5)  # מהשעה את הביצוע למשך מספר 5 השניות
+    # sleep(5)  # מהשעה את הביצוע למשך מספר 5 השניות
     print('Waiting for connection ;)')
     while True:
         # send_message משתנה השולח מידע html
@@ -90,8 +90,7 @@ def main():
             ClientSocket.send(str.encode(send_message))
             Response = ClientSocket.recv(size)
             print(Response)
-            print("file 'wav' name received",
-                  Receiving_wav(Response))
+            print("file 'wav' name received", Receiving_wav(Response))
             send_message = ''
 
 

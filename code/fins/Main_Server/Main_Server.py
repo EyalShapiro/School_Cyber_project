@@ -56,6 +56,7 @@ def threaded_client(connection):
         text_to_speech.Set_text(data)
         text_to_speech.Save_Speech()
         filename = text_to_speech.Get_File_Name()
+        print(filename)
         f = server_encryption.Encryption_File_wav(filename)
         print(f)
         connection.send(f)

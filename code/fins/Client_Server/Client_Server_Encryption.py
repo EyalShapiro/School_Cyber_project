@@ -1,4 +1,3 @@
-from xmlrpc import client
 from cryptography.fernet import Fernet
 ###########################################
 f = Fernet(Fernet.generate_key())
@@ -53,7 +52,7 @@ class Client_Server_Encryption:
         encrypted_text = f.encrypt(bytes(text, "UTF-8"))
         return encrypted_text.decode()
 
-    def Deciphering_File_wav(self, name_file):  # file wav RSA
+    def Deciphering_File_wav(self, name_file):  # file wav
         """
         wav הפעולה מקבלת שם של קובץ
         מפענוך את תןכן הקובץ

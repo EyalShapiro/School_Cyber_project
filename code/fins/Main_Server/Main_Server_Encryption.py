@@ -28,9 +28,10 @@ class Main_Server_Encryption:
         """
          הפעולה קאורת את המפתח ומחזרה אותו
         """
-        with open(self.locate+self.file_key, 'r+') as filekey:
-            key = filekey.read()
-        return key
+        # with open(self.locate+self.file_key, 'r+') as filekey:
+        #     key = filekey.read()
+        # return key
+        return open(self.locate+self.file_key, "rb").read()
 
     def Get_Locate(self):  # מחזרית את מיקום הקובץ
         return self.locate
