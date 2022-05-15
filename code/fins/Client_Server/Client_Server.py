@@ -79,7 +79,7 @@ def Receiving_wav(data, filename='say.wav'):
 def main():
     global ClientSocket, client_encryption, size, send_message
     print('The html running from flask now :)')
-    start_new_thread(Thread_App)
+    start_new_thread(Thread_App, ())
     # sleep(5)  # מהשעה את הביצוע למשך מספר 5 השניות
     print('Waiting for connection ;)')
     while True:
