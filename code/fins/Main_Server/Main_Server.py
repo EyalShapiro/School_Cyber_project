@@ -3,10 +3,10 @@ import socket
 from _thread import *
 from threading import *
 # קבצים שלי
-
-from Main_Server_Encryption import *
 from Info import *
+from Main_Server_Encryption import *
 from Text_To_Speech import *
+
 
 ###########################################
 # Info.Install_in_File('code/fins/Main_Server/requirements.txt')
@@ -26,16 +26,6 @@ except socket.error as e:
     print(str(e))
 
 print('Waitiing for a Connection..')
-"""threading.get_native_id()= New in version 3.8.
-
-החזר את ה-Thread ID
-האינטגרלי המקורי של השרשור הנוכחי שהוקצה על ידי הליבה.
-⇐======================================================⇒
-socket.listen([backlog]):
-אפשר לשרת לקבל חיבורים. אם צוין צבר, הוא חייב להיות לפחות 0 (אם הוא נמוך יותר, הוא מוגדר ל-0);
-הוא מציין את מספר החיבורים הלא מקובלים שהמערכת תאפשר לפני שתסרב לחיבורים חדשים.
-"""
-# ServerSocket.listen(Info.Cores_computer())
 ServerSocket.listen(Info.Cores_computer())
 
 ###########################################
@@ -49,9 +39,8 @@ def threaded_client(connection):
     global server_encryption, ThreadCount
     connection.send(str.encode('Welcome to the Servern'))
     while True:
-        data = connection.recv(size)
-        data = data.decode('utf-8')
-        # data = server_encryption.Decrypt_text(data)#פענוך טקסט
+        data = connection.recv(size).decode()
+        # data = server_encryption.Decrypt_text(data)  # פענוך טקסט
         print('get client text ', data)
         text_to_speech.Set_text(data)
         text_to_speech.Save_Speech()

@@ -1,3 +1,4 @@
+# Client_Server_Encryption.py
 from cryptography.fernet import Fernet
 ###########################################
 f = Fernet(Fernet.generate_key())
@@ -25,13 +26,11 @@ class Client_Server_Encryption:
         with open(self.locate+self.file_key, "wb") as key_file:
             key_file.write(key)
 
-    def load_key(self):
+    def Load_Key(self):
         """
          הפעולה קאורת את המפתח ומחזרה אותו
         """
-        with open(self.locate+self.file_key, 'r+') as filekey:
-            key = filekey.read()
-        return key
+        return open(self.locate+self.file_key, "rb").read()
 
     def Get_Locate(self):  # מחזרית את מיקום הקובץ
         return self.locate
@@ -48,7 +47,7 @@ class Client_Server_Encryption:
         לפי מפתחה הספירה
         ומחזר את טקסט מוצפן
         """
-        f = Fernet(self.load_key())
+        f = Fernet(self.Load_Key())
         encrypted_text = f.encrypt(bytes(text, "UTF-8"))
         return encrypted_text.decode()
 
@@ -64,19 +63,13 @@ class Client_Server_Encryption:
             return 'This is Not a correct file'
         locate = self.locate
         file_key = self.file_key
-        key = self.load_key()  # generate encryption key
-        # read the key
+        key = self.Load_Key()
         with open(locate+file_key, 'rb+') as filekey:
             key = filekey.read()
-        # crate instance of Fernet
-        # with encryption key
         fernet = Fernet(key)
-        # read the file to decrypt
         with open(locate+name_file, 'rb') as f:
             file = f.read()
-        # decrypt the file
         decrypt_file = fernet.decrypt(file)
-        # open the file and wite the encrypted data
         with open(locate+'static/'+name_file, 'wb+') as decrypted_file:
             decrypted_file.write(decrypt_file)
         return decrypt_file  # קורא את כל עמידע של קובץ

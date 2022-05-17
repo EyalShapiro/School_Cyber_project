@@ -1,14 +1,15 @@
 # ספריות חיצוניות
-import flask
-from flask import Flask, render_template, request, redirect, url_for
 import socket
-from threading import *
 from _thread import *
+from threading import *
 from time import sleep
+import flask
+from flask import Flask, redirect, render_template, request, url_for
 # קבצים שלי
-
 from Client_Server_Encryption import *
 from File_Data import *
+
+
 ###########################################
 client_encryption = Client_Server_Encryption()
 ClientSocket = socket.socket()
@@ -48,9 +49,8 @@ def form():
         file = File_Data(data['upload'].filename)
         text = file.Read_Data()
     send_message = text
-    # send_message = client_encryption.Encrypt_text(text) #הצפנת הטקסט
-
-    sleep(5)  # מהשעה את הביצוע למשך מספר 5 השניות
+    send_message = client_encryption.Encrypt_text(text)  # הצפנת הטקסט
+    sleep(10)  # מהשעה את הביצוע למשך מספר 10 השניות
 
     return render_template('vois.html', data=text)
 
@@ -87,7 +87,7 @@ def main():
         if send_message != '':
             print('Sending message')
             Response = ClientSocket.recv(size)
-            ClientSocket.send(str.encode(send_message))
+            ClientSocket.send(send_message.encode())
             Response = ClientSocket.recv(size)
             print(Response)
             print("file 'wav' name received", Receiving_wav(Response))
