@@ -2,8 +2,6 @@ import os
 import sys
 from sys import *
 
-from platform import python_version
-
 
 class Info:  # אין פעולה בונה
     def Get_Operating_System():
@@ -74,11 +72,6 @@ class Info:  # אין פעולה בונה
         for i in file_lines:
             Info.Pip_Install(i)
         print('fins install')
-    # def This_code_Location():
-    #     """
-    #     הפעולה מחזיר את הנתיב לתוכנית שעכשיו מריצה את הסקריפט
-    #     """
-    #     return sys.path()
 
     def Get_Size_File(filename):
         """

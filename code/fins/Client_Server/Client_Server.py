@@ -34,10 +34,10 @@ def home():
 
 @app.route('/vois', methods=["POST", "GET"])
 def form():
-    """הפעולה עושה 
+    """הפעולה עושה
     POST and get
     כדי לקבל את מעדי מי אתר
-    ולעכלית איזה סוג היא לוקחת 
+    ולעכלית איזה סוג היא לוקחת
     ןמעבר לאתר מעמוד בא באתר
     """
     global send_message, client_encryption
