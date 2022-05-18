@@ -78,7 +78,7 @@ class File_Data():
          הפעולה מקבלת שם של קובץ אם סוג שלו ןמחזיר אתה
         את תוכן לפי זה שהיא שולח לפעולה אמתימה
          """
-        extension = self.file_name.split('.')
+        type_file = self.file_name.split('.')
         """   switch עובד קמועה
          c/c++(Cpp) ב
         ⇊⇊"""
@@ -89,22 +89,24 @@ class File_Data():
             "docx": self.Docx_File()
         }  # סוג קובץ העניין הוא נכון
         # אחר מחזר תוכן רק
-        return switcher.get(extension[-1], self.Get_File_Name())
+        return switcher.get(type_file[-1], self.Get_File_Name())
 #################################################
 
 
 def main():
-    txt = File_Data('code/fins/test.txt')
+    # txt = File_Data('code/fins/test.txt')
     pdf = File_Data('code/fins/test.pdf')
-    doc = File_Data('code/fins/test.doc')
+    # doc = File_Data('code/fins/test.doc')
     docx = File_Data('code/fins/test.docx')
     text = File_Data('text')
-    print("txt file :\n", txt.Txt_File())
+    # print("txt file :\n", txt.Txt_File())
     print("pdf file :\n", pdf.Pdf_File())
-    print("doc file :\n", doc.Docx_File())
+    # print("doc file :\n", doc.Docx_File())
     print("docx file :\n", docx.Docx_File())
 
     print(text.Read_Data())
+    print(pdf.Read_Data())
+    print(docx.Read_Data())
 
 
 if __name__ == '__main__':

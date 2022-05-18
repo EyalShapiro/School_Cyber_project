@@ -17,7 +17,6 @@ def Identifies_Languages(text):
     ומחזיר את מפתח השפה
     """
     detected_language = googletrans.Translator().detect(text).lang
-    print(detected_language)
     return detected_language
 
 
@@ -120,14 +119,15 @@ class Text_To_Speech:
 #################################################
 
 
-def main():
-    loc = 'code/fins/Main_Server/'
-    s = Text_To_Speech('text', loc)
-    print(s.Save_Speech())
-    print(s.Translator_Text('he'))
-    s.Open_Sound()
-    print(s.Find_Language_key('hebrew'))
+# def main():
+
+#     # loc = 'code/fins/Main_Server/'
+#     # s = Text_To_Speech('text', loc)
+#     # print(s.Save_Speech())
+#     # print(s.Translator_Text('he'))
+#     # s.Open_Sound()
+#     # print(s.Find_Language_key('hebrew'))
 
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()

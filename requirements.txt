@@ -1,6 +1,6 @@
-threading
 socket
-_thread
+threading
+thread
 os
 sys
 cryptography

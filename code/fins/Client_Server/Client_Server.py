@@ -18,7 +18,7 @@ port = 21
 size = 9000000
 send_message = ''
 app = Flask(__name__)
-
+file_text = File_Data('')
 try:  # soket בדיקה של
     ClientSocket.connect((host, port))
 except socket.error as e:
@@ -27,29 +27,31 @@ except socket.error as e:
 
 
 @app.route('/')
-def home():
+def Home():
     """הפעולה מעריץ את אתר"""
     return render_template('index.html')
 
 
 @app.route('/vois', methods=["POST", "GET"])
-def form():
+def Form():
     """הפעולה עושה
     POST and get
     כדי לקבל את מעדי מי אתר
     ולעכלית איזה סוג היא לוקחת
     ןמעבר לאתר מעמוד בא באתר
     """
-    global send_message, client_encryption
+    global send_message, client_encryption, file_text
     data = request.form
     if data['text'] != '':
         text = data['text']
     else:
         data = request.files
-        file = File_Data(data['upload'].filename)
-        text = file.Read_Data()
-    send_message = text
-    send_message = client_encryption.Encrypt_text(text)  # הצפנת הטקסט
+        text = data['upload'].filename
+    file_text.Set_File_Name(text)
+    send_message = file_text.Read_Data()
+
+    print('send_message:', send_message)
+    # send_message = client_encryption.Encrypt_text(text)  # הצפנת הטקסט
     sleep(10)  # מהשעה את הביצוע למשך מספר 10 השניות
 
     return render_template('vois.html', data=text)
@@ -62,6 +64,7 @@ def Thread_App():
     """
     global app
     app.run(debug=False)
+###################################
 
 
 def Receiving_wav(data, filename='say.wav'):
