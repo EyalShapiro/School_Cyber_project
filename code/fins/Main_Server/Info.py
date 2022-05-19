@@ -4,12 +4,6 @@ from sys import *
 
 
 class Info:  # אין פעולה בונה
-    def Get_Operating_System():
-        """
-        הפעולה מחזירה את סוג מרחת הפעלה
-        וגרסה של מרחת הפעלה שאת משתמש
-        """
-        return os.cpu_count()
 
     def Get_Platform_PC():
         """
