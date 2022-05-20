@@ -9,12 +9,13 @@ from Text_To_Speech import *
 
 
 ###########################################
-Info.Install_in_File('code/fins/Main_Server/requirements.txt')
+# Info.Install_in_File('code/fins/Main_Server/requirements.txt')
+print("Installing")
 if Info.Check_Python_Version('3.7.0'):
     print('The Python version could not run the project\n Replace the Python version')
     sys.exit()
 server_encryption = Main_Server_Encryption()
-text_to_speech = Text_To_Speech('text', location='code/fins/Main_Server/')
+text_to_speech = Text_To_Speech('text', location='fins/Main_Server/')
 ServerSocket = socket.socket()
 host = '127.0.0.1'
 port = 21
@@ -40,7 +41,8 @@ def threaded_client(connection):
     connection.send(str.encode('Welcome to the Servern'))
     while True:
         data = connection.recv(size).decode()
-        # data = server_encryption.Decrypt_text(data)  # פענוך טקסט
+        print('get client text ', data)
+        data = server_encryption.Decrypt_text(data)  # פענוך טקסט
         print('get client text ', data)
         text_to_speech.Set_text(data)
         text_to_speech.Save_Speech()
@@ -49,6 +51,7 @@ def threaded_client(connection):
         f = server_encryption.Encryption_File_wav(filename)
         print(f)
         connection.send(f)
+        print("File wav data to sanding")
         ThreadCount -= 1
 
     connection.close()

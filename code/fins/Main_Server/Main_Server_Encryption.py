@@ -1,4 +1,4 @@
-#Main_Server_Encryption.py
+# Main_Server_Encryption.py
 from cryptography.fernet import Fernet
 ###########################################
 f = Fernet(Fernet.generate_key())
@@ -7,7 +7,7 @@ f = Fernet(Fernet.generate_key())
 
 
 class Main_Server_Encryption:
-    def __init__(self, locate="code/fins/Main_Server/"):
+    def __init__(self, locate="fins/Main_Server/"):
         """
         locate(str): מיקום הקובץ
         """

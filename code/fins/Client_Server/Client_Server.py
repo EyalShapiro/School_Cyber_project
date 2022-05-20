@@ -19,7 +19,7 @@ size = 9000000
 send_message = ''
 app = Flask(__name__)
 file_text = File_Data('')
-try:  # soket בדיקה של
+try:  # socket בדיקה של
     ClientSocket.connect((host, port))
 except socket.error as e:
     print(str(e))
@@ -41,17 +41,20 @@ def Form():
     ןמעבר לאתר מעמוד בא באתר
     """
     global send_message, client_encryption, file_text
-    data = request.form
-    if data['text'] != '':
-        text = data['text']
-    else:
-        data = request.files
-        text = data['upload'].filename
-    file_text.Set_File_Name(text)
-    send_message = file_text.Read_Data()
-
-    print('send_message:', send_message)
-    # send_message = client_encryption.Encrypt_text(text)  # הצפנת הטקסט
+    try:
+        data = request.form
+        if data['text'] != '':  # כתיבת טקסט
+            text = data['text']
+        else:  # העלאת קובץ
+            data = request.files
+            text = data['upload'].filename
+        file_text.Set_File_Name(text)
+        message = file_text.Read_Data()
+        print('send_message:', message)
+        send_message = client_encryption.Encrypt_text(message)  # הצפנת הטקסט
+        print('send_message:', send_message)
+    except:
+        return Home()
     sleep(10)  # מהשעה את הביצוע למשך מספר 10 השניות
 
     return render_template('vois.html', data=text)
@@ -81,9 +84,9 @@ def Receiving_wav(data, filename='say.wav'):
 
 def main():
     global ClientSocket, client_encryption, size, send_message
-    print('The html running from flask now :)')
     start_new_thread(Thread_App, ())
-    # sleep(5)  # מהשעה את הביצוע למשך מספר 5 השניות
+    sleep(1)  # מהשעה את הביצוע למשך 1 שניות
+    print('The html running from flask now :)')
     print('Waiting for connection ;)')
     while True:
         # send_message משתנה השולח מידע html

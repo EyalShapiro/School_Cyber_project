@@ -21,7 +21,7 @@ def Identifies_Languages(text):
 
 
 class Text_To_Speech:
-    def __init__(self, text, location='code/fins/Main_Server/', file_name='say.wav'):
+    def __init__(self, text, location='fins/Main_Server/', file_name='say.wav'):
         '''
         location(str): מיקום הקובץ
         text (str): טקס לקריאה

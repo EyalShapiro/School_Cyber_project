@@ -7,7 +7,7 @@ f = Fernet(Fernet.generate_key())
 
 
 class Client_Server_Encryption:
-    def __init__(self, locate="code/fins/Client_Server/"):
+    def __init__(self, locate="fins/Client_Server/"):
         """
         locate(str): מיקום הקובץ
 
