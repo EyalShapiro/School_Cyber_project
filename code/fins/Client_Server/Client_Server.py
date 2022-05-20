@@ -48,13 +48,14 @@ def Form():
         else:  # העלאת קובץ
             data = request.files
             text = data['upload'].filename
-        file_text.Set_File_Name(text)
+            file_text.Set_File_Name(text)
         message = file_text.Read_Data()
         print('send_message:', message)
         send_message = client_encryption.Encrypt_text(message)  # הצפנת הטקסט
         print('send_message:', send_message)
     except:
-        return Home()
+        print('refresh page')
+        return Home()  # מרענן את אתר
     sleep(10)  # מהשעה את הביצוע למשך מספר 10 השניות
 
     return render_template('vois.html', data=text)
@@ -86,8 +87,7 @@ def main():
     global ClientSocket, client_encryption, size, send_message
     start_new_thread(Thread_App, ())
     sleep(1)  # מהשעה את הביצוע למשך 1 שניות
-    print('The html running from flask now :)')
-    print('Waiting for connection ;)')
+    print("The html running from flask now :)\n Waiting for connection; )")
     while True:
         # send_message משתנה השולח מידע html
         if send_message != '':
@@ -98,6 +98,7 @@ def main():
             print(Response)
             print("file 'wav' name received", Receiving_wav(Response))
             send_message = ''
+    connection.close()
 
 
 if __name__ == "__main__":

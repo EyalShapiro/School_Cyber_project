@@ -42,9 +42,9 @@ def threaded_client(connection):
     while True:
         data = connection.recv(size).decode()
         print('get client text ', data)
-        data = server_encryption.Decrypt_text(data)  # פענוך טקסט
-        print('get client text ', data)
-        text_to_speech.Set_text(data)
+        text = server_encryption.Decrypt_text(data)  # פענוך טקסט
+        print('get client decrypt text  ', text)
+        text_to_speech.Set_text(text)
         text_to_speech.Save_Speech()
         filename = text_to_speech.Get_File_Name()
         print(filename)
