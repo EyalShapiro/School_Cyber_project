@@ -1,112 +1,155 @@
-<mxfile host="app.diagrams.net" modified="2022-05-21T17:13:31.655Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36" etag="dJpoz_kgjQOFUdhTgn0g" version="17.5.1" type="github">
+<mxfile host="app.diagrams.net" modified="2022-05-21T19:25:50.061Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/101.0.4951.67 Safari/537.36" etag="qNb8SrEjFiWj1u_H8mrZ" version="17.5.1" type="github" pages="2">
   <diagram id="Z9QZm6c8eoxHo2ETA0aJ" name="Page-1">
-    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="1">
+    <mxGraphModel dx="2500" dy="896" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="none" math="0" shadow="1">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
-        <mxCell id="uZUBSTvquDvs18WI79-K-3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#f8cecc;strokeColor=#b85450;shape=flexArrow;" parent="1" source="uZUBSTvquDvs18WI79-K-1" target="uZUBSTvquDvs18WI79-K-2" edge="1">
+        <mxCell id="uZUBSTvquDvs18WI79-K-3" value="טקסט או קובץ &lt;br&gt;נשלח" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#fff2cc;strokeColor=#d6b656;shape=flexArrow;" parent="1" source="uZUBSTvquDvs18WI79-K-1" target="uZUBSTvquDvs18WI79-K-2" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="uZUBSTvquDvs18WI79-K-1" value="אתר(HTML)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;horizontal=1;verticalAlign=middle;" parent="1" vertex="1">
-          <mxGeometry x="260" y="10" width="120" height="60" as="geometry" />
+          <mxGeometry x="-310" y="10" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uZUBSTvquDvs18WI79-K-5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;shape=flexArrow;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" source="uZUBSTvquDvs18WI79-K-2" target="uZUBSTvquDvs18WI79-K-4" edge="1">
+        <mxCell id="uZUBSTvquDvs18WI79-K-5" value="טקסט או קובץ" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;shape=flexArrow;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" source="uZUBSTvquDvs18WI79-K-2" target="uZUBSTvquDvs18WI79-K-4" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="uZUBSTvquDvs18WI79-K-2" value="Client_Server" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
           <mxGeometry x="260" y="140" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uZUBSTvquDvs18WI79-K-44" value="" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#d5e8d4;strokeColor=#82b366;shape=flexArrow;" parent="1" source="uZUBSTvquDvs18WI79-K-4" target="uZUBSTvquDvs18WI79-K-43" edge="1">
+        <mxCell id="uZUBSTvquDvs18WI79-K-44" value="טקסט" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#d5e8d4;strokeColor=#82b366;shape=flexArrow;" parent="1" source="uZUBSTvquDvs18WI79-K-4" target="uZUBSTvquDvs18WI79-K-43" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="nFe4-SsjxK17j_JVTDlZ-9" value="" style="edgeStyle=none;shape=flexArrow;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0;entryDx=0;entryDy=0;fillColor=#d5e8d4;strokeColor=#82b366;exitX=0;exitY=0.75;exitDx=0;exitDy=0;" edge="1" parent="1" source="uZUBSTvquDvs18WI79-K-4" target="uZUBSTvquDvs18WI79-K-67">
+        <mxCell id="zZxulAo1ZBuXIrjNWbr3-2" value="טקסט" style="edgeStyle=none;shape=flexArrow;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;fillColor=#fff2cc;strokeColor=#d6b656;" edge="1" parent="1" source="uZUBSTvquDvs18WI79-K-4" target="uZUBSTvquDvs18WI79-K-67">
           <mxGeometry relative="1" as="geometry">
-            <mxPoint x="60" y="210" as="sourcePoint" />
-            <mxPoint x="70" y="750" as="targetPoint" />
+            <mxPoint x="80" y="250" as="sourcePoint" />
+            <mxPoint x="-40" y="170" as="targetPoint" />
             <Array as="points">
-              <mxPoint x="50" y="210" />
-              <mxPoint x="30" y="250" />
-              <mxPoint x="40" y="460" />
-              <mxPoint x="40" y="710" />
+              <mxPoint x="-320" y="160" />
+              <mxPoint x="-320" y="490" />
             </Array>
           </mxGeometry>
         </mxCell>
         <mxCell id="uZUBSTvquDvs18WI79-K-4" value="File_Data" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="50" y="140" width="120" height="60" as="geometry" />
+          <mxGeometry x="60" y="140" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uZUBSTvquDvs18WI79-K-46" value="" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;shape=flexArrow;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" source="uZUBSTvquDvs18WI79-K-43" target="uZUBSTvquDvs18WI79-K-45" edge="1">
+        <mxCell id="uZUBSTvquDvs18WI79-K-46" value="טקסט מוצפן" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;shape=flexArrow;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" source="uZUBSTvquDvs18WI79-K-43" target="uZUBSTvquDvs18WI79-K-45" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="uZUBSTvquDvs18WI79-K-43" value="Client_Server_Encryption" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="50" y="260" width="120" height="60" as="geometry" />
+          <mxGeometry x="50" y="250" width="140" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uZUBSTvquDvs18WI79-K-48" value="" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#d5e8d4;strokeColor=#82b366;shape=flexArrow;" parent="1" source="uZUBSTvquDvs18WI79-K-45" target="uZUBSTvquDvs18WI79-K-47" edge="1">
+        <mxCell id="zZxulAo1ZBuXIrjNWbr3-24" value="&lt;span style=&quot;color: rgb(0 , 0 , 0) ; font-family: &amp;#34;helvetica&amp;#34; ; font-size: 11px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(255 , 255 , 255) ; display: inline ; float: none&quot;&gt;טקסט מוצפן&lt;/span&gt;&lt;br style=&quot;color: rgb(0 , 0 , 0) ; font-family: &amp;#34;helvetica&amp;#34; ; font-size: 11px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px&quot;&gt;&lt;span style=&quot;color: rgb(0 , 0 , 0) ; font-family: &amp;#34;helvetica&amp;#34; ; font-size: 11px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(255 , 255 , 255) ; display: inline ; float: none&quot;&gt;&amp;nbsp;נשלח&lt;/span&gt;" style="edgeStyle=none;shape=flexArrow;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#fff2cc;strokeColor=#d6b656;" edge="1" parent="1" source="uZUBSTvquDvs18WI79-K-45" target="uZUBSTvquDvs18WI79-K-47">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="uZUBSTvquDvs18WI79-K-45" value="Client_Server" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="260" y="260" width="120" height="60" as="geometry" />
+          <mxGeometry x="294" y="260" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uZUBSTvquDvs18WI79-K-50" value="" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;shape=flexArrow;" parent="1" source="uZUBSTvquDvs18WI79-K-47" target="uZUBSTvquDvs18WI79-K-49" edge="1">
+        <mxCell id="uZUBSTvquDvs18WI79-K-50" value="טקסט מפוענח" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;shape=flexArrow;width=14;endSize=9.33;" parent="1" source="uZUBSTvquDvs18WI79-K-47" target="uZUBSTvquDvs18WI79-K-49" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="uZUBSTvquDvs18WI79-K-53" value="" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;shape=flexArrow;" parent="1" source="uZUBSTvquDvs18WI79-K-47" target="uZUBSTvquDvs18WI79-K-51" edge="1">
+        <mxCell id="uZUBSTvquDvs18WI79-K-53" value="טקסט מוצפן" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;shape=flexArrow;" parent="1" source="uZUBSTvquDvs18WI79-K-47" target="uZUBSTvquDvs18WI79-K-51" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="uZUBSTvquDvs18WI79-K-47" value="Main_Server" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="480" y="260" width="120" height="60" as="geometry" />
+          <mxGeometry x="530" y="260" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uZUBSTvquDvs18WI79-K-60" value="" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;shape=flexArrow;" parent="1" source="uZUBSTvquDvs18WI79-K-49" target="uZUBSTvquDvs18WI79-K-59" edge="1">
+        <mxCell id="uZUBSTvquDvs18WI79-K-60" value="wav יוצר קובץ&amp;nbsp;" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;shape=flexArrow;" parent="1" source="uZUBSTvquDvs18WI79-K-49" target="uZUBSTvquDvs18WI79-K-59" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="uZUBSTvquDvs18WI79-K-49" value="Text_To_Speech" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="480" y="370" width="120" height="60" as="geometry" />
+          <mxGeometry x="530" y="370" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="uZUBSTvquDvs18WI79-K-52" value="" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;shape=flexArrow;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" source="uZUBSTvquDvs18WI79-K-51" target="uZUBSTvquDvs18WI79-K-47" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="uZUBSTvquDvs18WI79-K-51" value="Client_Server_Encryption" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="660" y="260" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="uZUBSTvquDvs18WI79-K-56" value="" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;shape=flexArrow;" parent="1" source="uZUBSTvquDvs18WI79-K-59" target="uZUBSTvquDvs18WI79-K-58" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="610" y="455" as="sourcePoint" />
+        <mxCell id="zZxulAo1ZBuXIrjNWbr3-3" value="טקסט מפוענח" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="uZUBSTvquDvs18WI79-K-52">
+          <mxGeometry x="0.3667" y="-8" relative="1" as="geometry">
+            <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="uZUBSTvquDvs18WI79-K-57" value="" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;shape=flexArrow;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" source="uZUBSTvquDvs18WI79-K-58" target="uZUBSTvquDvs18WI79-K-59" edge="1">
-          <mxGeometry relative="1" as="geometry">
-            <mxPoint x="610" y="485" as="targetPoint" />
+        <mxCell id="uZUBSTvquDvs18WI79-K-51" value="Client_Server_Encryption" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
+          <mxGeometry x="717" y="260" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uZUBSTvquDvs18WI79-K-56" value="wav קובץ" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;fillColor=#dae8fc;strokeColor=#6c8ebf;shape=flexArrow;" parent="1" source="uZUBSTvquDvs18WI79-K-59" target="uZUBSTvquDvs18WI79-K-58" edge="1">
+          <mxGeometry x="-0.2503" y="9" relative="1" as="geometry">
+            <mxPoint x="660" y="455" as="sourcePoint" />
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uZUBSTvquDvs18WI79-K-57" value="המידע של הקובץ&lt;br&gt;&amp;nbsp; מוצפן wav&amp;nbsp;" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;entryX=1;entryY=0.75;entryDx=0;entryDy=0;shape=flexArrow;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" source="uZUBSTvquDvs18WI79-K-58" target="uZUBSTvquDvs18WI79-K-59" edge="1">
+          <mxGeometry x="-0.1047" y="20" relative="1" as="geometry">
+            <mxPoint x="660" y="485" as="targetPoint" />
+            <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
         <mxCell id="uZUBSTvquDvs18WI79-K-58" value="&lt;br&gt;&lt;span style=&quot;font-family: &amp;#34;helvetica&amp;#34;&quot;&gt;Client_Server_Encryption&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="670" y="480" width="120" height="60" as="geometry" />
+          <mxGeometry x="740" y="500" width="150" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uZUBSTvquDvs18WI79-K-62" value="" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;shape=flexArrow;" parent="1" source="uZUBSTvquDvs18WI79-K-59" target="uZUBSTvquDvs18WI79-K-61" edge="1">
+        <mxCell id="uZUBSTvquDvs18WI79-K-62" value="המידע המוצפן של הקובץ&lt;br&gt;wav&amp;nbsp;&lt;br&gt;נשלח" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#fff2cc;strokeColor=#d6b656;shape=flexArrow;" parent="1" source="uZUBSTvquDvs18WI79-K-59" target="uZUBSTvquDvs18WI79-K-61" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="uZUBSTvquDvs18WI79-K-59" value="Main_Server" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="1" vertex="1">
-          <mxGeometry x="480" y="480" width="120" height="60" as="geometry" />
+          <mxGeometry x="530" y="500" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uZUBSTvquDvs18WI79-K-64" value="" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;shape=flexArrow;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" source="uZUBSTvquDvs18WI79-K-61" target="uZUBSTvquDvs18WI79-K-63" edge="1">
+        <mxCell id="uZUBSTvquDvs18WI79-K-64" value="המידע המוצפן של הקובץ&lt;br&gt;wav&lt;br&gt;" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;shape=flexArrow;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" source="uZUBSTvquDvs18WI79-K-61" target="uZUBSTvquDvs18WI79-K-63" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="uZUBSTvquDvs18WI79-K-61" value="Client_Server" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="280" y="480" width="120" height="60" as="geometry" />
+          <mxGeometry x="260" y="490" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="uZUBSTvquDvs18WI79-K-66" value="" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;shape=flexArrow;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" source="uZUBSTvquDvs18WI79-K-63" target="uZUBSTvquDvs18WI79-K-65" edge="1">
+        <mxCell id="uZUBSTvquDvs18WI79-K-66" value="המידע המפוענח של קובץ&lt;br&gt;wav" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;shape=flexArrow;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" source="uZUBSTvquDvs18WI79-K-63" target="zZxulAo1ZBuXIrjNWbr3-18" edge="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="70" y="610" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZxulAo1ZBuXIrjNWbr3-11" value="&lt;span style=&quot;color: rgb(0 , 0 , 0) ; font-family: &amp;#34;helvetica&amp;#34; ; font-size: 11px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(255 , 255 , 255) ; display: inline ; float: none&quot;&gt;המידע המוצפן של הקובץ&lt;/span&gt;&lt;br style=&quot;color: rgb(0 , 0 , 0) ; font-family: &amp;#34;helvetica&amp;#34; ; font-size: 11px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px&quot;&gt;&lt;span style=&quot;color: rgb(0 , 0 , 0) ; font-family: &amp;#34;helvetica&amp;#34; ; font-size: 11px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(255 , 255 , 255) ; display: inline ; float: none&quot;&gt;wav&lt;/span&gt;" style="edgeStyle=none;shape=flexArrow;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;fillColor=#d5e8d4;strokeColor=#82b366;" edge="1" parent="1" source="uZUBSTvquDvs18WI79-K-63" target="zZxulAo1ZBuXIrjNWbr3-10">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-180" y="500" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-100" y="470" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="uZUBSTvquDvs18WI79-K-63" value="Client_Server" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="-10" y="480" width="130" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="uZUBSTvquDvs18WI79-K-68" value="&#39; נשלח wav קובץ&amp;nbsp;" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#fff2cc;strokeColor=#d6b656;shape=flexArrow;entryX=1.025;entryY=0.383;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="uZUBSTvquDvs18WI79-K-65" target="uZUBSTvquDvs18WI79-K-67" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="uZUBSTvquDvs18WI79-K-63" value="&lt;span style=&quot;font-family: &amp;#34;helvetica&amp;#34;&quot;&gt;Client_Server_Encryption&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="90" y="479" width="120" height="60" as="geometry" />
-        </mxCell>
-        <mxCell id="uZUBSTvquDvs18WI79-K-68" value="" style="edgeStyle=none;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#f8cecc;strokeColor=#b85450;shape=flexArrow;" parent="1" source="uZUBSTvquDvs18WI79-K-65" target="uZUBSTvquDvs18WI79-K-67" edge="1">
-          <mxGeometry relative="1" as="geometry" />
-        </mxCell>
-        <mxCell id="uZUBSTvquDvs18WI79-K-65" value="&lt;br style=&quot;color: rgb(0 , 0 , 0) ; font-family: &amp;#34;helvetica&amp;#34; ; font-size: 12px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(248 , 249 , 250)&quot;&gt;&lt;span style=&quot;font-family: &amp;#34;helvetica&amp;#34;&quot;&gt;Client_Server_Encryption&lt;/span&gt;&lt;br style=&quot;font-family: &amp;#34;helvetica&amp;#34;&quot;&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
-          <mxGeometry x="90" y="610" width="120" height="60" as="geometry" />
+        <mxCell id="uZUBSTvquDvs18WI79-K-65" value="&lt;br style=&quot;color: rgb(0 , 0 , 0) ; font-family: &amp;#34;helvetica&amp;#34; ; font-size: 12px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(248 , 249 , 250)&quot;&gt;Client_Server" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="1" vertex="1">
+          <mxGeometry x="-5" y="720" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="uZUBSTvquDvs18WI79-K-67" value="&lt;br&gt;&lt;span style=&quot;font-family: &amp;#34;helvetica&amp;#34;&quot;&gt;אתר(HTML)&lt;/span&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;" parent="1" vertex="1">
-          <mxGeometry x="60" y="760" width="120" height="60" as="geometry" />
+          <mxGeometry x="-380" y="730" width="120" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="zZxulAo1ZBuXIrjNWbr3-8" style="edgeStyle=none;shape=flexArrow;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;" edge="1" parent="1" source="uZUBSTvquDvs18WI79-K-51" target="uZUBSTvquDvs18WI79-K-51">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zZxulAo1ZBuXIrjNWbr3-13" value="המידע המפוענח של קובץ&lt;br&gt;wav" style="edgeStyle=none;shape=flexArrow;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.75;entryDx=0;entryDy=0;exitX=1;exitY=0.75;exitDx=0;exitDy=0;fillColor=#d5e8d4;strokeColor=#82b366;" edge="1" parent="1" source="zZxulAo1ZBuXIrjNWbr3-10" target="uZUBSTvquDvs18WI79-K-63">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-90" y="520" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="-100" y="550" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="zZxulAo1ZBuXIrjNWbr3-10" value="Client_Server_Encryption" style="whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="-250" y="490" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="zZxulAo1ZBuXIrjNWbr3-21" value="wav שומר קובץ" style="edgeStyle=none;shape=flexArrow;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" edge="1" parent="1" source="zZxulAo1ZBuXIrjNWbr3-18" target="uZUBSTvquDvs18WI79-K-65">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="zZxulAo1ZBuXIrjNWbr3-18" value="&lt;br style=&quot;color: rgb(0 , 0 , 0) ; font-family: &amp;#34;helvetica&amp;#34; ; font-size: 12px ; font-style: normal ; font-weight: 400 ; letter-spacing: normal ; text-align: center ; text-indent: 0px ; text-transform: none ; word-spacing: 0px ; background-color: rgb(248 , 249 , 250)&quot;&gt;Client_Server" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="-10" y="600" width="120" height="60" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="kYOZCOMa6sNYej4zV4At" name="Page-2">
+    <mxGraphModel dx="1422" dy="762" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
       </root>
     </mxGraphModel>
   </diagram>
