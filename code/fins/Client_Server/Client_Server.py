@@ -28,17 +28,16 @@ except socket.error as e:
 
 @app.route('/')
 def Home():
-    """הפעולה מעריץ את אתר"""
+    """הפעולה מריצה את אתר"""
     return render_template('index.html')
 
 
 @app.route('/vois', methods=["POST", "GET"])
 def Form():
-    """הפעולה עושה
-    POST and get
-    כדי לקבל את מעדי מי אתר
-    ולעכלית איזה סוג היא לוקחת
-    ןמעבר לאתר מעמוד בא באתר
+    """
+    הפעולה משתמשת ב
+    POST and GET
+    כדי לחלץ את המידע מהאתר
     """
     global send_message, client_encryption, file_text
     try:
@@ -68,13 +67,13 @@ def Thread_App():
     """
     global app
     app.run(debug=False)
-###################################
+######################################################################
 
 
 def Receiving_wav(data, filename='say.wav'):
     """
-    הפעולה מקלת מעדעי של קובץ ואת שם שלו
-    שומר את מדעיה מתקבל בקובץ wav
+    הפעולה מקבלת את המידע של הקובץ ואת השם שלו
+     ושומרת  את המידע  המתקבל בקובץ wav בשל המתקבל
     """
     global client_encryption
     with open(client_encryption.locate+filename, 'wb+') as file:

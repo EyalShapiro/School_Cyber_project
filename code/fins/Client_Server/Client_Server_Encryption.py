@@ -10,7 +10,6 @@ class Client_Server_Encryption:
     def __init__(self, locate="fins/Client_Server/"):
         """
         locate(str): מיקום הקובץ
-
         """
         global f
         self.fernet = f
@@ -20,7 +19,7 @@ class Client_Server_Encryption:
 
     def generate_key(self):
         """
-    יוצר מפתח ושומר אותו בקובץ
+        יוצר מפתח ושומר אותו בקובץ
         """
         key = Fernet.generate_key()
         with open(self.locate+self.file_key, "wb") as key_file:
@@ -28,27 +27,31 @@ class Client_Server_Encryption:
 
     def Load_Key(self):
         """
-         הפעולה קאורת את המפתח ומחזרה אותו
+        טוען את המפתח שנוצר קודם לכן
         """
         # return open(self.locate+self.file_key, "rb").read()
         with open(self.locate+self.file_key, 'rb+') as filekey:
             key = filekey.read()
         return key
 
-    def Get_Locate(self):  # מחזרית את מיקום הקובץ
+    def Get_Locate(self):
+        """
+        מחזיר את מיקום הקובץ
+        """
         return self.locate
 
     def Set_Locate(self, location):
-        """ הפעולה מקלת שפה או מפתח שפה ועדקן מיקום הקובץ"""
+        """ 
+        הפעולה מקבלת מיקום של הקובץ ומעדכנת אותו
+        """
 
         self.locate = location
 
     def Encrypt_text(self, text):  # str
         """        # הצפנה של טקסט
-        הפעולה מקבלת טקסט
-        מצפנה את טקסט
-        לפי מפתחה הספירה
-        ומחזר את טקסט מוצפן
+        הפעולה מקבלת שם של קובץ wav
+        מפענחת את תוכן הקובץ לפי מפתח הספריה 
+        ומחזירה את תוכן הקובץ המפוענח
         """
         f = Fernet(self.Load_Key())
         encrypted_text = f.encrypt(bytes(text, "UTF-8"))
@@ -56,10 +59,9 @@ class Client_Server_Encryption:
 
     def Deciphering_File_wav(self, name_file):  # file wav
         """
-        wav הפעולה מקבלת שם של קובץ
-        מפענוך את תןכן הקובץ
-        לפי מפתחה הספירה
-        ומחזר את תןכן הקובץ מפענוך
+        הפעולה מקבלת שם של קובץ wav
+        מפענחת את תוכן הקובץ לפי מפתח הספריה
+        ומחזירה את תוכן הקובץ המפוענח
         """
         l = name_file.split('.')
         if l[-1] != 'wav':

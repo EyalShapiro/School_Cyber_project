@@ -7,21 +7,23 @@ class Info:  # אין פעולה בונה
 
     def Get_Platform_PC():
         """
-                הפעולה מחזירה את סוג מערכת הפעלה 
+    הפעולה מחזירה את סוג מערכת הפעלה
+    ואת גרסת מערכת הפעלה בשימוש
         """
         import sysconfig
         return sysconfig.get_platform()
 
-    def Cores_computer():
+    def Cores_Computer():
         ''' 
-        הפעולה מחזר את מספר המעבדים במערכת. מחזירה ללא אם לא נקבע.
+        הפעולה מחזירה את מספר המעבדים שבמערכת.
+        מחזירה ללא אם לא נקבע
         '''
         return os.cpu_count()
 
     def Get_Python_Version():
         """
-        הפעולה מחזירה את גרסת פייתון שאת משתמש 
-        (3.7.4)בצורה הבאה
+        הפעולה מחזירה את גרסת פייתון שאתה משתמש 
+        (3.7.4) בצורה הבאה
         """
         # this_py = sys.version_info
         this_py = sys.version_info.major, sys.version_info.minor, sys.version_info.micro
@@ -69,29 +71,11 @@ class Info:  # אין פעולה בונה
 
     def Get_Size_File(filename):
         """
-        הפעולה מקבלת קובץ   
-        הפעולה מחזר את גודל קובץ
+        הפעולה מקבלת קובץ
+        הפעולה מחזירה את גודל קובץ 
         """
         # open file for reading
         file = open(filename)
         # move file cursor to end
         file.seek(0, os.SEEK_END)
         return file.tell()
-
-
-def main():
-    pass
-    # info.Pip_Install(input("Enter name for package python\n ->"))
-    # print('file install: ', Info.Install_in_File('test.txt'))
-    # print('computer Version', Info.Get_Operating_System())
-    # print("Quantity cores in computer: ", Info.Cores_computer())
-    # print('Python Version: ', Info.Get_Python_Version())
-    # print('Size of file is', Info.Get_Size_File('hello.wav'), 'bytes')
-    # print(Info.Check_Python_Version('3.7.4'))
-
-    # Info.Install_in_File('requirements.txt')
-    # print(Info.Get_Platform_PC())
-
-
-if __name__ == '__main__':
-    main()

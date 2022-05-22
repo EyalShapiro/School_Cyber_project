@@ -19,7 +19,7 @@ class Main_Server_Encryption:
 
     def generate_key(self):
         """
-    יוצר מפתח ושומר אותו בקובץ
+        יוצר מפתח ושומר אותו בקובץ
         """
         key = Fernet.generate_key()
         with open(self.locate+self.file_key, "wb") as key_file:
@@ -27,27 +27,32 @@ class Main_Server_Encryption:
 
     def Load_Key(self):
         """
-         הפעולה קאורת את המפתח ומחזרה אותו
+    טוען את המפתח שנוצר קודם לכן 
+
         """
         # return open(self.locate+self.file_key, "rb").read()
         with open(self.locate+self.file_key, 'rb+') as filekey:
             key = filekey.read()
         return key
 
-    def Get_Locate(self):  # מחזרית את מיקום הקובץ
+    def Get_Locate(self):
+        """
+        מחזיר את מיקום הקובץ
+        """
         return self.locate
 
     def Set_Locate(self, location):
-        """ הפעולה מקלת שפה או מפתח שפה ועדקן מיקום הקובץ"""
+        """ 
+        הפעולה מקלת שפה או מפתח שפה ועדקן מיקום הקובץ
+        """
 
         self.locate = location
 
     def Decrypt_text(self, text):  # str
         """        # פענוך הצפנה של טקסט
-       פעולה מקבלת טקסט מוצפן
-        ומצפנה את טקסט
-        לפי מפתחה הספירה
-        ומחזר את טקסט פענוך
+       הפעולה מקבלת טקסט מוצפן
+       ומפענחת את הטקסט המוצפן לפי מפתח הספריה
+       ומחזירה את הטקסט המפוענח
         """
         f = Fernet(self.Load_Key())
         encrypted_text = f.decrypt(bytes(text, "UTF-8"))
@@ -55,11 +60,10 @@ class Main_Server_Encryption:
 
     def Encryption_File_wav(self, file_name):  # file wav RSA
         """
-        wav הפעולה מקבלת שם של קובץ
-        מצפנה את תןכן הקובץ
-        לפי מפתחה הספירה
-    ומחזר את תןכן הקובץ מצפנה
-        """
+        הפעולה מקבלת שם של קובץ wav  
+        מצפינה את תוכן הקובץ לפי מפתח הספריה
+        ומחזירה את תוכן הקובץ מוצפן
+         """
         l = file_name.split('.')
         if l[-1] != 'wav':
             return 'This is Not a correct file'

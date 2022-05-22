@@ -12,16 +12,16 @@ translator = googletrans.Translator()
 
 def Identifies_Languages(text):
     """
-    הפעולה מקבלת טקסט
-    מזהה את השפה הדיבור שבה הטקסט רשום
-    ומחזיר את מפתח השפה
+    הפעולה מקבלת טקסט 
+    מזהה את שפת הדיבור שבה הטקסט רשום
+    ומחזירה את מפתח השפה
     """
     detected_language = googletrans.Translator().detect(text).lang
     return detected_language
 
 
 class Text_To_Speech:
-    def __init__(self, text, location='fins/Main_Server/', file_name='say.wav'):
+    def __init__(self, text, location='/fins/Main_Server/', file_name='say.wav'):
         '''
         location(str): מיקום הקובץ
         text (str): טקס לקריאה
@@ -33,29 +33,38 @@ class Text_To_Speech:
         self.location = location
         self.language = Identifies_Languages(text)
 
-    def Get_File_Name(self):  # מחזיר את שם הקובץ
+    def Get_File_Name(self):
+        """
+        מחזיר את שם הקובץ
+        """
         return self.file_name
 
     def Set_Location(self, language):
-        """ הפעולה מקלת שפה או מפתח שפה ועדקן מיקום הקובץ"""
+        """
+        הפעולה מקבלת מיקום של הקובץ ומעדכנת אותו
+        """
         self.language = language
 
-    def Set_text(self, text):  # העדכון טקסט
-        """ text הפעולה מקלת טקסט  ומעדכנת את """
+    def Set_text(self, text):
+        """
+         מקבלת טקסט ומעדכנת את text ומעדכנת את השפה
+        """
         self.text = text
         self.language = Identifies_Languages(text)
 
-    def Get_text(self):  # text מהחזרת
+    def Get_text(self):
+        """
+        מחזיר את הטקסט
+        """
 
         return self.text
 
     def Save_Speech(self):
         '''
-        הפעולה שמורת את הקובץ לפי  המיקום
-        return
-        True :הקראה נשמרה בהצלחה
-        False :לא הצליח לשמור
-         (שם הקובץ שגוי או סוג שלו )
+            הפעולה שומרת את הקובץ לפי המיקום
+        מחזירה אמת אם הקובץ נשמר בהצלחה  או
+        שקר אם היא לא הצליחה לשמור (שם הקובץ שגוי או הסוג שלו)
+
         '''
         obj = gTTS(text=self.text, lang=self.language)
         try:
@@ -90,10 +99,10 @@ class Text_To_Speech:
             print('not find thi language'+language)
         return kes
 
-    def print_languages_Kes(self):
+    def Print_languages_Kes(self):
         global dict_language  # מילון הם כל השפות
         '''
-        הפעולה מדפיס את כל השפות והפתחות שפה
+        הפעולה מדפיסה את כל השפות ואת כל מפתחות השפה
         '''
         print("Languages:")
         for kes, language in dict_language.items():
@@ -116,18 +125,3 @@ class Text_To_Speech:
         result = translator.translate(self.text, language)
         self.text = result.text
         return self.text
-#################################################
-
-
-# def main():
-
-#     # loc = 'code/fins/Main_Server/'
-#     # s = Text_To_Speech('text', loc)
-#     # print(s.Save_Speech())
-#     # print(s.Translator_Text('he'))
-#     # s.Open_Sound()
-#     # print(s.Find_Language_key('hebrew'))
-
-
-# if __name__ == '__main__':
-#     main()

@@ -6,24 +6,28 @@ import docx
 
 class File_Data():
     def __init__(self, file_name=''):
-        """        
+        """
         file_name(str): שם הקובץ
         """
         self.file_name = file_name
 
     def Get_File_Name(self):
-        """מחזיר את שם קובץ"""
+        """
+        מחזיר את שם קובץ
+        """
         return self.file_name
 
     def Set_File_Name(self, file_name):
-        """מתקן את שם הקובץ"""
+        """הפעולה מקבלת שם קובץ ומעדכנת אותו"""
         self.file_name = file_name
 
     def Pdf_File(self):
         """
-        מקבלת את שם הקובץ עם הסיומת
-            pdf הפעולה קורא את המידע של הקובץ
-        str  ומחזריה אותו בתור
+        הפעולה בודקת את שם הקובץ הנמצא בספריה עם סיומת 
+        pdf
+        הפעולה קוראת את המידע שבקובץ 
+        ומחזירה אותו בתור str
+
         """
         data_str = ''
         extension = self.file_name.split('.')
@@ -43,10 +47,10 @@ class File_Data():
 
     def Txt_File(self):
         """
-        מקבלת את שם הקובץ עם הסיומת
-        txt הפעולה קורא את המידע של הקובץ
-        str  ומחזריה אותו בתור
-        """
+       הפעולה בודקת את שם הקובץ הנמצא בספריה עם סיומת  txt
+        הפעולה קוראת את המידע שבקובץ 
+        ומחזירה אותו בתור str
+         """
         data_str = ''
         extension = self.file_name.split('.')
         if extension[-1] != 'txt':
@@ -57,9 +61,9 @@ class File_Data():
 
     def Docx_File(self):
         """
-        מקבלת את שם הקובץ עם הסיומת
-        doc or docx הפעולה קורא את המידע של הקובץ
-        str  ומחזריה אותו בתור
+        הפעולה בודקת את שם הקובץ הנמצא בספריה עם סיומת  doc או docx
+        הפעולה קוראת את המידע שבקובץ
+       str ומחזירה אותו בתור
         """
         data_str = ''
         extension = self.file_name.split('.')
@@ -75,8 +79,9 @@ class File_Data():
 
     def Read_Data(self):
         """
-         הפעולה מקבלת שם של קובץ אם סוג שלו ןמחזיר אתה
-        את תוכן לפי זה שהיא שולח לפעולה אמתימה
+        הפעולה בודקת את שם של קובץ
+        שנמצא בספריה עם הסיומת שלו ןמחזירה את
+        התוכן לפי זה שהיא שולח לפעולה המתאימה
          """
         type_file = self.file_name.split('.')
         """   switch עובד קמועה

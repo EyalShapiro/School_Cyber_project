@@ -33,9 +33,9 @@ ServerSocket.listen(Info.Cores_computer())
 
 
 def threaded_client(connection):
-    """העפעולה מקבלת משתמש
-    בתליכים למשתמשים
-    שולחת לו את מעידה של קובץ
+    """
+    הפעולה מקבלת משתמש ויוצרת תהליך למשתמשים
+    שולחת לו את המידע של קובץ
     """
     global server_encryption, ThreadCount
     connection.send(str.encode('Welcome to the Servern'))
@@ -53,7 +53,6 @@ def threaded_client(connection):
         connection.send(f)
         print("File wav data to sanding")
         ThreadCount -= 1
-
     connection.close()
 
 
