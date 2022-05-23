@@ -30,7 +30,7 @@ class Client_Server_Encryption:
         טוען את המפתח שנוצר קודם לכן
         """
         # return open(self.locate+self.file_key, "rb").read()
-        with open(self.locate+self.file_key, 'rb+') as filekey:
+        with open(self.file_key, 'rb+') as filekey:
             key = filekey.read()
         return key
 

@@ -27,7 +27,7 @@ except socket.error as e:
     print(str(e))
 
 print('Waitiing for a Connection..')
-ServerSocket.listen(Info.Cores_computer())
+ServerSocket.listen(Info.Cores_Computer())
 
 ###########################################
 

@@ -40,21 +40,21 @@ def Form():
     כדי לחלץ את המידע מהאתר
     """
     global send_message, client_encryption, file_text
-    try:
-        data = request.form
-        if data['text'] != '':  # כתיבת טקסט
-            text = data['text']
-        else:  # העלאת קובץ
-            data = request.files
-            text = data['upload'].filename
-            file_text.Set_File_Name(text)
-        message = file_text.Read_Data()
-        print('send_message:', message)
-        send_message = client_encryption.Encrypt_text(message)  # הצפנת הטקסט
-        print('send_message:', send_message)
-    except:
-        print('refresh page')
-        return Home()  # מרענן את אתר
+    # try:
+    data = request.form
+    if data['text'] != '':  # כתיבת טקסט
+        text = data['text']
+    else:  # העלאת קובץ
+        data = request.files
+        text = data['upload'].filename
+        file_text.Set_File_Name(text)
+    message = file_text.Read_Data()
+    print('send_message:', message)
+    send_message = client_encryption.Encrypt_text(message)  # הצפנת הטקסט
+    print('send_message:', send_message)
+    # except:
+    #     print('refresh page')
+    #     return Home()  # מרענן את אתר
     sleep(10)  # מהשעה את הביצוע למשך מספר 10 השניות
 
     return render_template('vois.html', data=text)
