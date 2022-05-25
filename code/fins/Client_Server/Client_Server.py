@@ -18,7 +18,6 @@ port = 21
 size = 9000000
 send_message = ''
 app = Flask(__name__)
-file_text = File_Data('')
 try:  # socket בדיקה של
     ClientSocket.connect((host, port))
 except socket.error as e:
@@ -39,16 +38,16 @@ def Form():
     POST and GET
     כדי לחלץ את המידע מהאתר
     """
-    global send_message, client_encryption, file_text
+    global send_message, client_encryption
     try:
         data = request.form
         if data['text'] != '':  # כתיבת טקסט
-            text = data['text']
+            message = data['text']
         else:  # העלאת קובץ
             data = request.files
-            text = data['upload'].filename
-            file_text.Set_File_Name(text)
-        message = file_text.Read_Data()
+            file = File_Data(data['upload'].filename)
+            message = file.Read_Data()
+
         print('send_message:', message)
         send_message = client_encryption.Encrypt_text(message)  # הצפנת הטקסט
         print('send_message:', send_message)
@@ -57,7 +56,7 @@ def Form():
         return Home()  # מרענן את אתר
     sleep(10)  # מהשעה את הביצוע למשך מספר 10 השניות
 
-    return render_template('vois.html', data=text)
+    return render_template('vois.html', data=message)
 
 
 def Thread_App():
