@@ -87,7 +87,8 @@ def main():
     start_new_thread(Thread_App, ())
     sleep(1)  # מהשעה את הביצוע למשך 1 שניות
     print("The html running from flask now :)\n Waiting for connection; )")
-    while True:
+    client_run = True
+    while client_run:
         # send_message משתנה השולח מידע html
         if send_message != '':
             print('Sending message')
@@ -97,7 +98,7 @@ def main():
             print(Response)
             print("file 'wav' name received", Receiving_wav(Response))
             send_message = ''
-    connection.close()
+    ClientSocket.close()
 
 
 if __name__ == "__main__":

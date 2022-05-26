@@ -25,7 +25,7 @@ ThreadCount = 0
 try:
     ServerSocket.bind((host, port))
 except socket.error as e:
-    print(str(e))#מדפיס את שגיאת התחברות
+    print(str(e))  # מדפיס את שגיאת התחברות
 
 print('Waitiing for a Connection')
 ServerSocket.listen(Info.Cores_Computer())
@@ -40,7 +40,7 @@ def threaded_client(connection):
     """
     global server_encryption, ThreadCount
     connection.send(str.encode('Welcome to the Servern'))
-    client_run=True
+    client_run = True
     while client_run:
         data = connection.recv(size).decode()
         print('get client text ', data)
@@ -60,10 +60,9 @@ def threaded_client(connection):
     connection.close()
 
 
-
 def main():
     global ServerSocket, ThreadCount
-    server_run=True
+    server_run = True
     while server_run:
         Client, address = ServerSocket.accept()
         print('Connected to: ' + address[0] + ':' + str(address[1]))
