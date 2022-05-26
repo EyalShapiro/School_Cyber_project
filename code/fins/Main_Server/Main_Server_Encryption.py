@@ -31,7 +31,7 @@ class Main_Server_Encryption:
 
         """
         # return open(self.locate+self.file_key, "rb").read()
-        with open(self.file_key, 'rb') as filekey:
+        with open(self.file_key, 'rb+') as filekey:
             key = filekey.read()
         return key
 
