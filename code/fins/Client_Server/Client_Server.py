@@ -14,7 +14,7 @@ from File_Data import *
 client_encryption = Client_Server_Encryption()
 ClientSocket = socket.socket()
 hostname = socket.gethostname()
-host =  socket.gethostbyname(hostname)
+host = socket.gethostbyname(hostname)
 port = 21
 size = 9000000
 send_message = ''
@@ -22,7 +22,7 @@ app = Flask(__name__)
 try:  # socket בדיקה של
     ClientSocket.connect((host, port))
 except socket.error as e:
-    print(str(e))#מדפיס את שגיאת התחברות
+    print(str(e))  # מדפיס את שגיאת התחברות
 ###########################################
 
 
@@ -50,11 +50,11 @@ def Form():
             message = file.Read_Data()
 
         print('send_message:', message)
-        send_message = client_encryption.Encrypt_text(message)  # הצפנת הטקסט
-        print('send_message:', send_message)
     except:
         print('refresh page')
         return Home()  # מרענן את אתר
+    send_message = client_encryption.Encrypt_text(message)  # הצפנת הטקסט
+    print('send_message:', send_message)
     sleep(10)  # מהשעה את הביצוע למשך מספר 10 השניות
 
     return render_template('vois.html', data=message)
@@ -65,8 +65,8 @@ def Thread_App():
     הפעולה מפעילה  שכדי להריץ את
     Flask
     """
-    global app,host
-    app.run(debug=False,host=host)
+    global app, host
+    app.run(debug=False, host=host)
 ######################################################################
 
 
