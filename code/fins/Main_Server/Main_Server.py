@@ -17,16 +17,17 @@ if Info.Check_Python_Version('3.7.0'):
 server_encryption = Main_Server_Encryption()
 text_to_speech = Text_To_Speech('text', location='fins/Main_Server/')
 ServerSocket = socket.socket()
-host = '127.0.0.1'
+hostname = socket.gethostname()
+host = socket.gethostbyname(hostname)
 port = 21
 size = 9000000
 ThreadCount = 0
 try:
     ServerSocket.bind((host, port))
 except socket.error as e:
-    print(str(e))
+    print(str(e))#מדפיס את שגיאת התחברות
 
-print('Waitiing for a Connection..')
+print('Waitiing for a Connection')
 ServerSocket.listen(Info.Cores_Computer())
 
 ###########################################
@@ -39,7 +40,8 @@ def threaded_client(connection):
     """
     global server_encryption, ThreadCount
     connection.send(str.encode('Welcome to the Servern'))
-    while True:
+    client_run=True
+    while client_run:
         data = connection.recv(size).decode()
         print('get client text ', data)
         text = server_encryption.Decrypt_text(data)  # פענוך טקסט
@@ -52,19 +54,23 @@ def threaded_client(connection):
         print(f)
         connection.send(f)
         print("File wav data to sanding")
-        ThreadCount -= 1
+    print("client connection it is closed ")
+    ThreadCount -= 1
+    print()
     connection.close()
+
 
 
 def main():
     global ServerSocket, ThreadCount
-    while True:
+    server_run=True
+    while server_run:
         Client, address = ServerSocket.accept()
         print('Connected to: ' + address[0] + ':' + str(address[1]))
         start_new_thread(threaded_client, (Client, ))
         ThreadCount += 1
-
         print('Thread Number: ' + str(ThreadCount))
+    print("The server is closed")
     ServerSocket.close()
 
 

@@ -13,7 +13,8 @@ from File_Data import *
 ###########################################
 client_encryption = Client_Server_Encryption()
 ClientSocket = socket.socket()
-host = '127.0.0.1'
+hostname = socket.gethostname()
+host =  socket.gethostbyname(hostname)
 port = 21
 size = 9000000
 send_message = ''
@@ -21,7 +22,7 @@ app = Flask(__name__)
 try:  # socket בדיקה של
     ClientSocket.connect((host, port))
 except socket.error as e:
-    print(str(e))
+    print(str(e))#מדפיס את שגיאת התחברות
 ###########################################
 
 
@@ -64,8 +65,8 @@ def Thread_App():
     הפעולה מפעילה  שכדי להריץ את
     Flask
     """
-    global app
-    app.run(debug=False)
+    global app,host
+    app.run(debug=False,host=host)
 ######################################################################
 
 
