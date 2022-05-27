@@ -43,20 +43,20 @@ def Form():
     global send_message, client_encryption
     try:
         data = request.form
-        if data['text'] != '':  # כתיבת טקסט
-            message = data['text']
-        else:  # העלאת קובץ
+        message = data['text']  # כתיבת טקסט
+        if data['upload'] != None:
             data = request.files
-            file = File_Data(data['upload'].filename)
-            message = file.Read_Data()
-
+            filename = data['upload'].filename  # העלאת קובץ
+            file = File_Data(filename)
+            f = file.Read_Data()
+        message = message+" "+f
         print('send_message:', message)
     except:
         print('refresh page')
         return Home()  # מרענן את אתר
     send_message = client_encryption.Encrypt_text(message)  # הצפנת הטקסט
     print('send_message:', send_message)
-    sleep(10)  # מהשעה את הביצוע למשך מספר 10 השניות
+    sleep(8)  # מהשעה את הביצוע למשך מספר 8 השניות
 
     return render_template('vois.html', data=message)
 
@@ -67,7 +67,7 @@ def Thread_App():
     Flask
     """
     global app, host
-    app.run(debug=False, host=host)
+    app.run(debug=False, host=host, threaded=True)
 ######################################################################
 
 
