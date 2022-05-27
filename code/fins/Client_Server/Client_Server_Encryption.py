@@ -66,9 +66,9 @@ class Client_Server_Encryption:
         with open(locate+file_key, 'rb+') as filekey:
             key = filekey.read()
         fernet = Fernet(key)
-        with open(locate+name_file, 'rb') as f:
+        with open(locate+name_file, 'rb+') as f:
             file = f.read()
         decrypt_file = fernet.decrypt(file)
         with open(locate+'static/'+name_file, 'wb+') as decrypted_file:
-            decrypted_file.write(decrypt_file.decode())
+            decrypted_file.write(decrypt_file)
         return decrypt_file  # קורא את כל עמידע של קובץ
