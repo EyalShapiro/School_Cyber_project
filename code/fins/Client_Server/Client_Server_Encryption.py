@@ -1,19 +1,13 @@
 # Client_Server_Encryption.py
 from cryptography.fernet import Fernet
 ###########################################
-f = Fernet(Fernet.generate_key())
-
-###########################################
 
 
 class Client_Server_Encryption:
-    def __init__(self, locate="fins/Client_Server/"):
+    def __init__(self, locate="code/fins/Client_Server/"):
         """
         locate(str): מיקום הקובץ
         """
-        global f
-        self.fernet = f
-
         self.file_key = "file_key.key"
         self.locate = locate
 
@@ -30,7 +24,7 @@ class Client_Server_Encryption:
         טוען את המפתח שנוצר קודם לכן
         """
         # return open(self.locate+self.file_key, "rb").read()
-        with open(self.file_key, 'rb+') as filekey:
+        with open(self.locate+self.file_key, 'rb+') as filekey:
             key = filekey.read()
         return key
 
@@ -76,5 +70,5 @@ class Client_Server_Encryption:
             file = f.read()
         decrypt_file = fernet.decrypt(file)
         with open(locate+'static/'+name_file, 'wb+') as decrypted_file:
-            decrypted_file.write(decrypt_file)
+            decrypted_file.write(decrypt_file.decode())
         return decrypt_file  # קורא את כל עמידע של קובץ

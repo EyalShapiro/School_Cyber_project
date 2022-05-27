@@ -1,19 +1,13 @@
 # Main_Server_Encryption.py
 from cryptography.fernet import Fernet
 ###########################################
-f = Fernet(Fernet.generate_key())
-
-###########################################
 
 
 class Main_Server_Encryption:
-    def __init__(self, locate="fins/Main_Server/"):
+    def __init__(self, locate="code/fins/Main_Server/"):
         """
         locate(str): מיקום הקובץ
         """
-        global f
-        self.fernet = f
-
         self.file_key = "file_key.key"
         self.locate = locate
 
@@ -31,7 +25,7 @@ class Main_Server_Encryption:
 
         """
         # return open(self.locate+self.file_key, "rb").read()
-        with open(self.file_key, 'rb+') as filekey:
+        with open(self.locate+self.file_key, 'rb+') as filekey:
             key = filekey.read()
         return key
 

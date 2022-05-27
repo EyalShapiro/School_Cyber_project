@@ -1,11 +1,9 @@
-from flask import Flask
-app = Flask(__name__)
-
-
-@app.route('/')
-def home():
-    return "Hey there!"
-
-
-if __name__ == '__main__':
-    app.run(debug=True, host="172.24.48.1", port=443)
+from cryptography.fernet import Fernet
+###########################################
+print(Fernet.generate_key())
+k = b'SdftnB2G3UvBQ9XHv1_VI2qQPnG46MiN4QQZ5xx-NdI='
+f = Fernet(k)
+t = f.encrypt('text'.encode())
+print(t)
+t = f.decrypt(t)
+print(t)

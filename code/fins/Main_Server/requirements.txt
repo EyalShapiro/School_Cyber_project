@@ -1,6 +1,6 @@
-threading
 socket
-_thread
+threading
+thread
 os
 sys
 cryptography
@@ -11,3 +11,4 @@ gtts
 googletrans
 docx
 PyPDF2
+time

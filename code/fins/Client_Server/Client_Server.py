@@ -15,12 +15,13 @@ client_encryption = Client_Server_Encryption()
 ClientSocket = socket.socket()
 hostname = socket.gethostname()
 host = socket.gethostbyname(hostname)
+server_host = host  # Main_Server להחליף בלפי
 port = 21
 size = 9000000
 send_message = ''
 app = Flask(__name__)
 try:  # socket בדיקה של
-    ClientSocket.connect((host, port))
+    ClientSocket.connect((server_host, port))
 except socket.error as e:
     print(str(e))  # מדפיס את שגיאת התחברות
 ###########################################
@@ -86,7 +87,7 @@ def main():
     global ClientSocket, client_encryption, size, send_message
     start_new_thread(Thread_App, ())
     sleep(1)  # מהשעה את הביצוע למשך 1 שניות
-    print("The html running from flask now :)\n Waiting for connection; )")
+    print("The html running from flask now :)\n Waiting for loging to html")
     client_run = True
     while client_run:
         # send_message משתנה השולח מידע html
