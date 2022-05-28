@@ -3,7 +3,7 @@ import socket
 from _thread import *
 from threading import *
 from time import sleep
-import flask
+from flask import *
 from flask import Flask, redirect, render_template, request, url_for
 # קבצים שלי
 from Client_Server_Encryption import *
@@ -12,13 +12,16 @@ from File_Data import *
 
 ###########################################
 client_encryption = Client_Server_Encryption()
-ClientSocket = socket.socket()
-hostname = socket.gethostname()
-host = socket.gethostbyname(hostname)
-server_host = host  # Main_Server להחליף בלפי
-port = 21
 size = 9000000
+ClientSocket = socket.socket()
+
+hostname = socket.gethostname()
+ip = socket.gethostbyname(hostname)
+server_host = ip  # Main_Server להחליף בלפי
+port = 20
 send_message = ''
+client_run = True  # הוא רץ True כל עוד זה
+
 app = Flask(__name__)
 try:  # socket בדיקה של
     ClientSocket.connect((server_host, port))
@@ -42,14 +45,20 @@ def Form():
     """
     global send_message, client_encryption
     try:
-        data = request.form
-        message = data['text']  # כתיבת טקסט
-        if data['upload'] != None:
-            data = request.files
-            filename = data['upload'].filename  # העלאת קובץ
-            file = File_Data(filename)
-            f = file.Read_Data()
-        message = message+" "+f
+        data = request.form  # כתיבת טקסט
+        text = data['text']
+        if data['upload'] != '':
+            data = request.files  # העלאת קובץ
+            file = File_Data(data['upload'].filename)
+            text_file = ''
+            file = File_Data(data['upload'].filename)
+            text_file = file.Read_Data()
+            if message and text_file != '' and text_file != '':
+                message = message+" "+text_file
+            else:
+                message = text_file
+        else:
+            message = text
         print('send_message:', message)
     except:
         print('refresh page')
@@ -67,7 +76,7 @@ def Thread_App():
     Flask
     """
     global app, host
-    app.run(debug=False, host=host, threaded=True)
+    app.run(debug=False, host='0.0.0.0', threaded=True)  # run the app on main
 ######################################################################
 
 
@@ -84,20 +93,20 @@ def Receiving_wav(data, filename='say.wav'):
 
 
 def main():
-    global ClientSocket, client_encryption, size, send_message
+    global ClientSocket, client_encryption, send_message, client_run, size
     start_new_thread(Thread_App, ())
-    sleep(1)  # מהשעה את הביצוע למשך 1 שניות
+    sleep(0.2)  # מהשעה את הביצוע למשך .0.2 שניות
     print("The html running from flask now :)\n Waiting for loging to html")
-    client_run = True
     while client_run:
-        # send_message משתנה השולח מידע html
+        # send_message משת1`נה השולח מידע html
         if send_message != '':
-            print('Sending message')
-            Response = ClientSocket.recv(size)
+            print('Data Message is not null')
+            response = ClientSocket.recv(size)
+            print('Received: \f', response)
             ClientSocket.send(send_message.encode())
-            Response = ClientSocket.recv(size)
-            print(Response)
-            print("file 'wav' name received", Receiving_wav(Response))
+            response = ClientSocket.recv(size).decode()
+            print(response)
+            print("file 'wav' name received", Receiving_wav(response))
             send_message = ''
     ClientSocket.close()
 

@@ -19,12 +19,14 @@ server_encryption = Main_Server_Encryption()
 text_to_speech = Text_To_Speech('text', location='fins/Main_Server/')
 ServerSocket = socket.socket()
 hostname = socket.gethostname()
-host = socket.gethostbyname(hostname)
-port = 21
+ip_address = socket.gethostbyname(hostname)
+port = 20
 size = 9000000
 ThreadCount = 0
+server_run = True  # הוא רץ True כל עוד זה
+
 try:
-    ServerSocket.bind((host, port))
+    ServerSocket.bind((ip_address, port))
 except socket.error as e:
     print(str(e))  # מדפיס את שגיאת התחברות
 
@@ -40,7 +42,7 @@ def threaded_client(connection):
     שולחת לו את המידע של קובץ
     """
     global server_encryption, ThreadCount
-    connection.send(str.encode('Welcome to the Servern'))
+    connection.send(str.encode('Welcome to the Main_Servern'))
     client_run = True
     while client_run:
         data = connection.recv(size).decode()
@@ -50,10 +52,10 @@ def threaded_client(connection):
         text_to_speech.Set_text(text)
         text_to_speech.Save_Speech()
         filename = text_to_speech.Get_File_Name()
-        print(filename)
-        f = server_encryption.Encryption_File_wav(filename)
-        print(f)
-        connection.send(f)
+        print('file name', filename)
+        file = server_encryption.Encryption_File_wav(filename)
+        print('encryption data file: \n', file)
+        connection.sendall(file)
         print("File wav data to sanding")
     print("client connection it is closed ")
     ThreadCount -= 1
@@ -62,8 +64,8 @@ def threaded_client(connection):
 
 
 def main():
-    global ServerSocket, ThreadCount
-    server_run = True
+    global ServerSocket, ThreadCount, server_run
+
     while server_run:
         Client, address = ServerSocket.accept()
         print('Connected to: ' + address[0] + ':' + str(address[1]))

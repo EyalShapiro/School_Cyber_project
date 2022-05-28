@@ -2,6 +2,8 @@ import os
 import sys
 from sys import *
 
+from libcst import In
+
 
 class Info:  # אין פעולה בונה
 
@@ -74,8 +76,8 @@ class Info:  # אין פעולה בונה
         הפעולה מקבלת קובץ
         הפעולה מחזירה את גודל קובץ 
         """
-        # open file for reading
-        file = open(filename)
-        # move file cursor to end
-        file.seek(0, os.SEEK_END)
-        return file.tell()
+        file_size = os.stat(filename)
+        return file_size
+
+
+

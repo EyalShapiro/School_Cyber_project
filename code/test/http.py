@@ -1,8 +1,8 @@
-import os
-import flask
-from flask import Flask, render_template, request, redirect, url_for
 from File_Data import *
+import os
+from flask import Flask, redirect, render_template, request, url_for
 app = Flask(__name__)
+
 
 @app.route('/')
 def home():

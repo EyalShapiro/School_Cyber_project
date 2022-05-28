@@ -100,9 +100,9 @@ class File_Data():
 
 def main():
     # txt = File_Data('code/fins/test.txt')
-    pdf = File_Data('code/fins/test.pdf')
+    pdf = File_Data('test.pdf')
     # doc = File_Data('code/fins/test.doc')
-    docx = File_Data('code/fins/test.docx')
+    # docx = File_Data('code/fins/test.docx')
     text = File_Data('text')
     # print("txt file :\n", txt.Txt_File())
     print("pdf file :\n", pdf.Pdf_File())
@@ -111,8 +111,8 @@ def main():
 
     print(text.Read_Data())
     print(pdf.Read_Data())
-    print(docx.Read_Data())
+    # print(docx.Read_Data())
 
 
-if __name__ == '__main__':
-    main()
+# if __name__ == '__main__':
+#     main()
