@@ -65,7 +65,7 @@ def Form():
         return Home()  # מרענן את אתר
     send_message = client_encryption.Encrypt_text(message)  # הצפנת הטקסט
     print('send_message:', send_message)
-    sleep(8)  # מהשעה את הביצוע למשך מספר 8 השניות
+    sleep(4)  # מהשעה את הביצוע למשך מספר 4 השניות
 
     return render_template('vois.html', data=message)
 
