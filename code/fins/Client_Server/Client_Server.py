@@ -75,7 +75,7 @@ def Thread_App():
     הפעולה מפעילה  שכדי להריץ את
     Flask
     """
-    global app, host
+    global app
     app.run(debug=False, host='0.0.0.0', threaded=True)  # run the app on main
 ######################################################################
 
