@@ -2,7 +2,6 @@ import os
 import sys
 from sys import *
 
-from libcst import In
 
 
 class Info:  # אין פעולה בונה
