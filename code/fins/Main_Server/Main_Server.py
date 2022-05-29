@@ -55,7 +55,7 @@ def threaded_client(connection):
         print('file name', filename)
         file = server_encryption.Encryption_File_wav(filename)
         print('encryption data file: \n', file)
-        connection.sendall(file)
+        connection.send(file)
         print("File wav data to sanding")
     print("client connection it is closed ")
     ThreadCount -= 1
