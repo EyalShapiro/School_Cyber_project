@@ -65,8 +65,8 @@ class Main_Server_Encryption:
         file_key = self.file_key
         key = self.load_key()  # generate encryption key
         # write the key in a file of .key extension
-        with open(locate+file_key, 'wb') as filekey:
-            filekey.write(key)
+        # with open(locate+file_key, 'wb') as filekey:
+        #     filekey.write(key)
         # crate instance of Fernet    # and load generated key
         fernet = Fernet(key)
         # read the file to encrypt
