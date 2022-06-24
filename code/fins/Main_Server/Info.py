@@ -57,6 +57,7 @@ class Info:  # אין פעולה בונה
         הפעולה מחזר טקסט שכל מה שקוא בשורת הפקודה
 
         """
+        print(name_package)
         return os.system('pip install '+str(name_package))
 
     def Install_in_File(file_name):
@@ -79,4 +80,6 @@ class Info:  # אין פעולה בונה
         return file_size
 
 
+if __name__ == "__main__":
+    Info.Install_in_File('code/fins/Main_Server/requirements.txt')
 
