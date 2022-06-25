@@ -2,6 +2,9 @@ import googletrans
 from gtts import gTTS
 from gtts import *
 import os
+from langdetect import detect
+
+
 # https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes
 
 ###########################################
@@ -15,12 +18,12 @@ def Identifies_Languages(text):
     מזהה את שפת הדיבור שבה הטקסט רשום
     ומחזירה את מפתח השפה
     """
-    revealed = googletrans.Translator().detect(text).lang
-    return revealed
+    # return googletrans.Translator().detect(text).lang
+    return detect(text)
 
 
 class Text_To_Speech:
-    def __init__(self, text, location='/fins/Main_Server/', file_name='say.wav'):
+    def __init__(self, text, location='code/fins/Main_Server/', file_name='say.wav'):
         '''
         location(str): מיקום הקובץ
         text (str): טקס לקריאה
@@ -31,18 +34,6 @@ class Text_To_Speech:
         self.file_name = file_name
         self.location = location
         self.language = Identifies_Languages(text)
-
-    def Get_File_Name(self):
-        """
-        מחזיר את שם הקובץ
-        """
-        return self.file_name
-
-    def Get_File_Location(self):
-        """
-        הפעולה מחזריה את מיקום המאלה של הקובץ
-        """
-        return self.location+self.file_name
 
     def Set_Location(self, location):
         """
@@ -69,6 +60,18 @@ class Text_To_Speech:
         """
 
         return self.text
+
+    def Get_File_Name(self):
+        """
+        מחזיר את שם הקובץ
+        """
+        return self.file_name
+
+    def Get_File_Location(self):
+        """
+        הפעולה מחזריה את מיקום המאלה של הקובץ
+        """
+        return self.location+self.file_name
 
     def Save_Speech(self):
         '''
@@ -100,7 +103,7 @@ class Text_To_Speech:
             print('not')
             return False
 
-    def Find_Language_key(self, name_language):
+    def Find_Language_key(name_language):
         global dict_language  # מילון הם כל השפות
         '''
         name_language[str]= שם של שפה
@@ -118,7 +121,7 @@ class Text_To_Speech:
             print('not find thi language'+language)
         return kes
 
-    def Print_languages_Kes(self):
+    def Print_languages_Kes():
         global dict_language  # מילון הם כל השפות
         '''
         הפעולה מדפיסה את כל השפות ואת כל מפתחות השפה
@@ -127,7 +130,7 @@ class Text_To_Speech:
         for kes, language in dict_language.items():
             print('kes=', kes, ': language=', language)
 
-    def Get_Num_Languages(self):
+    def Get_Num_Languages():
         """
         הפעולה מחזירה את מספר השפות שיש בספירה
         """
@@ -147,8 +150,7 @@ class Text_To_Speech:
 
 
 if __name__ == '__main__':
-    # speech = Text_To_Speech('Hello World')
-    # speech.Save_Speech()
-    # speech.Open_Sound()
-    text = 'Eyal '
-    print(text, '/t lang', Identifies_Languages(text))
+    speech = Text_To_Speech('text')
+    speech.Save_Speech()
+    print(speech.Open_Sound())
+    print(speech.language)
