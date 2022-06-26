@@ -106,7 +106,7 @@ def main():
             print('Data Message is not null')
             # response = ClientSocket.recv(size)
             ClientSocket.send(send_message.encode())
-            response = ClientSocket.recv(size).decode()
+            response = ClientSocket.recv(size)
             print('Received: \f', response)
             print("file 'wav' name received", Receiving_wav(response))
             send_message = ''

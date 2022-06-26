@@ -84,8 +84,8 @@ class Text_To_Speech:
         שקר אם היא לא הצליחה לשמור (שם הקובץ שגוי או הסוג שלו)
 
         '''
-        obj = gTTS(text=self.text, lang=self.language)
         try:
+            obj = gTTS(text=self.text, lang=self.language)
             obj.save(self.location+self.file_name)
             return True
         except:
