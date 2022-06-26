@@ -19,8 +19,8 @@ def Identifies_Languages(text):
     ומחזירה את מפתח השפה
     """
     try:
-        # id=googletrans.Translator().detect(text).lang
-        id = detect(text)
+        id = googletrans.Translator().detect(text).lang
+        # id = detect(text)
     except:
         id = 'en'
     return id
@@ -155,7 +155,7 @@ class Text_To_Speech:
 
 if __name__ == '__main__':
     pass
-    speech = Text_To_Speech('helo')
+    speech = Text_To_Speech('text')
     speech.Save_Speech()
     print(speech.Open_Sound())
     print(speech.language)

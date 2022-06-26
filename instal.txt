@@ -1,0 +1,11 @@
+pip install cryptography
+pip install fernet
+pip install flask
+pip install gTTS
+pip install gtts
+pip install googletrans
+pip install docx
+pip install PyPDF2
+pip install detect
+pip install python-docx
+pip install time
