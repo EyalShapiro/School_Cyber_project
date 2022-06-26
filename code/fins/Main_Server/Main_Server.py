@@ -27,7 +27,7 @@ try:
     ServerSocket.bind((host, port))
 except socket.error as e:
     print(str(e))
-print("host\n ip: ", host, "port:", port)
+# print("host\n ip: ", host, "port:", port)
 print('Waitiing for a Connection..')
 
 ServerSocket.listen(Info.Cores_Computer())
@@ -50,13 +50,14 @@ def threaded_client(connection):
         data = server_encryption.Decrypt_text(data)  # פענוך טקסט
         print('get client text ', data)
         text_to_speech.Set_text(data)
-        if text_to_speech.Save_Speech() != True:
-            print("Unable to save")
+        text_to_speech.Save_Speech()
         filename = text_to_speech.Get_File_Name()
-        f = server_encryption.Encryption_File_wav(filename)
-        print(f)
-        connection.send(f)
-
+        t = input('t')
+        data_file = server_encryption.Encryption_File_wav(
+            filename)
+        print(data_file)
+        connection.send(data_file)
+        print('\t↢server sand:)↣ \n')
     ThreadCount -= 1
     connection.close()
 
@@ -68,7 +69,6 @@ def main():
         print('Connected to: ' + address[0] + ':' + str(address[1]))
         start_new_thread(threaded_client, (Client, ))
         ThreadCount += 1
-
         print('Thread Number: ' + str(ThreadCount))
     ServerSocket.close()
 

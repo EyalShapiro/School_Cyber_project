@@ -64,7 +64,7 @@ def Form():
         print('refresh page')
         return Home()  # מרענן את אתר
     send_message = client_encryption.Encrypt_text(message)  # הצפנת הטקסט
-    print('send_message:', send_message)
+    print('send_message encrypt:', send_message)
     sleep(4)  # מהשעה את הביצוע למשך מספר 4 השניות
 
     return render_template('vois.html', data=message)
@@ -86,8 +86,8 @@ def Receiving_wav(data, filename='say.wav'):
      ושומרת  את המידע  המתקבל בקובץ wav בשל המתקבל
     """
     global client_encryption
-    if data is not bytes:
-        data = data.encode()
+    # if data is not bytes:
+    #     data = data.encode()
     with open(client_encryption.locate+filename, 'wb+') as file:
         file.write(data)
     decryption = client_encryption.Deciphering_File_wav(filename)
@@ -103,12 +103,12 @@ def main():
     while client_run:
         # send_message משת1`נה השולח מידע html
         if send_message != '':
-            print('Data Message is not null')
-            # response = ClientSocket.recv(size)
+            response = ClientSocket.recv(size).decode()
+            print('server say: ', response)
             ClientSocket.send(send_message.encode())
             response = ClientSocket.recv(size)
-            print('Received: \f', response)
-            print("file 'wav' name received", Receiving_wav(response))
+            print('Received: \n', response)
+            print("\t ⇃file 'wav' name received⇂\n", Receiving_wav(response))
             send_message = ''
     ClientSocket.close()
 
