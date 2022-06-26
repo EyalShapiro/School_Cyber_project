@@ -150,6 +150,7 @@ class Text_To_Speech:
 
 
 if __name__ == '__main__':
+    pass
     speech = Text_To_Speech('text')
     speech.Save_Speech()
     print(speech.Open_Sound())

@@ -43,10 +43,11 @@ class Client_Server_Encryption:
 
     def Encrypt_text(self, text):  # str
         """        # הצפנה של טקסט
-        הפעולה מקבלת שם של קובץ wav
-        מפענחת את תוכן הקובץ לפי מפתח הספריה 
-        ומחזירה את תוכן הקובץ המפוענח
+        הפעולה מקבלת טקסט 
+        מצפינה את טקסט לפי מפתח הספריה
+        ומחזירה את הטקסט המוצפן
         """
+
         f = Fernet(self.Load_Key())
         encrypted_text = f.encrypt(bytes(text, "UTF-8"))
         return encrypted_text.decode()

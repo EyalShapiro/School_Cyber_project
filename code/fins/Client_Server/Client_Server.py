@@ -86,6 +86,8 @@ def Receiving_wav(data, filename='say.wav'):
      ושומרת  את המידע  המתקבל בקובץ wav בשל המתקבל
     """
     global client_encryption
+    if data is not bytes:
+        data = data.encode()
     with open(client_encryption.locate+filename, 'wb+') as file:
         file.write(data)
     decryption = client_encryption.Deciphering_File_wav(filename)

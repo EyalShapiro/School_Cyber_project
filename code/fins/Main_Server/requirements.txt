@@ -6,3 +6,4 @@ gtts
 googletrans
 docx
 PyPDF2
+detect
