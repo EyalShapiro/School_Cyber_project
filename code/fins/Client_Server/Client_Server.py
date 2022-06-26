@@ -18,7 +18,7 @@ ClientSocket = socket.socket()
 hostname = socket.gethostname()
 ip = socket.gethostbyname(hostname)
 server_host = ip  # Main_Server להחליף בלפי
-port = 20
+port = 21
 send_message = ''
 client_run = True  # הוא רץ True כל עוד זה
 
@@ -99,15 +99,15 @@ def main():
     start_new_thread(Thread_App, ())
     sleep(0.2)  # מהשעה את הביצוע למשך .0.2 שניות
     print("The html running from flask now :)\n Waiting for loging to html")
+    response = ''
     while client_run:
         # send_message משת1`נה השולח מידע html
         if send_message != '':
             print('Data Message is not null')
-            response = ClientSocket.recv(size)
-            print('Received: \f', response)
+            # response = ClientSocket.recv(size)
             ClientSocket.send(send_message.encode())
             response = ClientSocket.recv(size).decode()
-            print(response)
+            print('Received: \f', response)
             print("file 'wav' name received", Receiving_wav(response))
             send_message = ''
     ClientSocket.close()

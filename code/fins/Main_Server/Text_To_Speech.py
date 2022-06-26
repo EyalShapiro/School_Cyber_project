@@ -18,8 +18,12 @@ def Identifies_Languages(text):
     מזהה את שפת הדיבור שבה הטקסט רשום
     ומחזירה את מפתח השפה
     """
-    # return googletrans.Translator().detect(text).lang
-    return detect(text)
+    try:
+        # id=googletrans.Translator().detect(text).lang
+        id = detect(text)
+    except:
+        id = 'en'
+    return id
 
 
 class Text_To_Speech:
