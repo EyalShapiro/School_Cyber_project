@@ -51,7 +51,7 @@ class Text_To_Speech:
         """
         self.file_name = file_name
 
-    def Set_text(self, text):
+    def Set_Text(self, text):
         """
          מקבלת טקסט ומעדכנת את text ומעדכנת את השפה
         """
@@ -155,7 +155,7 @@ class Text_To_Speech:
 
 if __name__ == '__main__':
     pass
-    speech = Text_To_Speech('text')
+    speech = Text_To_Speech('helo')
     speech.Save_Speech()
     print(speech.Open_Sound())
     print(speech.language)

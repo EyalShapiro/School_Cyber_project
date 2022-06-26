@@ -34,7 +34,7 @@ class File_Data():
         if extension[-1] != 'pdf':
             return 'This is Not a correct file'
         # creating a pdf file object
-        pdfFileObj = open(self.file_name, 'rb')
+        pdfFileObj = open(self.file_name, 'r')
         pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
         # print(pdfReader.numPages)#מספר עמודים
 
@@ -114,5 +114,5 @@ def main():
     # print(docx.Read_Data())
 
 
-# if __name__ == '__main__':
-#     main()
+if __name__ == '__main__':
+    main()

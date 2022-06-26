@@ -14,7 +14,7 @@ if Info.Check_Python_Version('3.7.0'):
     print('The Python version could not run the project\n Replace the Python version')
     sys.exit()
 server_encryption = Main_Server_Encryption()
-text_to_speech = Text_To_Speech('text', location='code/fins/Main_Server/')
+text_to_speech = Text_To_Speech("")
 ServerSocket = socket.socket()
 hostname = socket.gethostname()
 ip = socket.gethostbyname(hostname)
@@ -49,10 +49,9 @@ def threaded_client(connection):
         data = data.decode('utf-8')
         data = server_encryption.Decrypt_text(data)  # פענוך טקסט
         print('get client text ', data)
-        text_to_speech.Set_text(data)
+        text_to_speech.Set_Text(data)
         text_to_speech.Save_Speech()
         filename = text_to_speech.Get_File_Name()
-        t = input('t')
         data_file = server_encryption.Encryption_File_wav(
             filename)
         print(data_file)

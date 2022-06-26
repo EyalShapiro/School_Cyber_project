@@ -101,7 +101,6 @@ def main():
     print("The html running from flask now :)\n Waiting for loging to html")
     response = ''
     while client_run:
-        # send_message משת1`נה השולח מידע html
         if send_message != '':
             response = ClientSocket.recv(size).decode()
             print('server say: ', response)
