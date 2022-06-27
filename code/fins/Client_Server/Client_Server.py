@@ -49,7 +49,6 @@ def Form():
         text = data['text']
         if data['upload'] != '':
             data = request.files  # העלאת קובץ
-            file = File_Data(data['upload'].filename)
             text_file = ''
             file = File_Data(data['upload'].filename)
             text_file = file.Read_Data()

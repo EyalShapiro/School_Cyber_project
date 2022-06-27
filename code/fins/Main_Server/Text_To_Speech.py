@@ -19,8 +19,8 @@ def Identifies_Languages(text):
     ומחזירה את מפתח השפה
     """
     try:
-        id = googletrans.Translator().detect(text).lang
-        # id = detect(text)
+        # id = googletrans.Translator().detect(text).lang
+        id = detect(text)
     except:
         id = 'en'
     return id
