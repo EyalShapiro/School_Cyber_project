@@ -3,7 +3,6 @@ import sys
 from sys import *
 
 
-
 class Info:  # אין פעולה בונה
 
     def Get_Platform_PC():
@@ -62,7 +61,7 @@ class Info:  # אין פעולה בונה
 
     def Install_in_File(file_name):
         """
-        מקבלת שם קובץ ומוסיפה את כל ספריות בתוכו
+        מקבלת מיקום של קובץ כלל השם ומוסיפה את כל ספריות בתוכו
         הפעולה מחזר רשימה שכל מה שקוא בשורת הפקודה
 
         """
@@ -82,4 +81,3 @@ class Info:  # אין פעולה בונה
 
 if __name__ == "__main__":
     Info.Install_in_File('code/fins/Main_Server/requirements.txt')
-
