@@ -127,7 +127,7 @@ class Text_To_Speech:
 
     def Print_languages_Kes():
         global dict_language  # מילון הם כל השפות
-        '''
+        '''1`;1
         הפעולה מדפיסה את כל השפות ואת כל מפתחות השפה
         '''
         print("Languages:")

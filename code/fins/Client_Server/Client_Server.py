@@ -10,7 +10,7 @@ from Client_Server_Encryption import *
 from File_Data import *
 
 
-###########################################
+    ###########################################
 client_encryption = Client_Server_Encryption()
 size = 9000000
 ClientSocket = socket.socket()
